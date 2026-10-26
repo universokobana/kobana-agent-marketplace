@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://www.kobana.com.br/es">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/brand/kobana-logo-dark.png">
+      <img src="assets/brand/kobana-logo-light.png" alt="Kobana" width="320">
+    </picture>
+  </a>
+</p>
+
 # Kobana Agent Marketplace
 
 [🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**

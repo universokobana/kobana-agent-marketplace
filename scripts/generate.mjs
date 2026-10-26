@@ -52,6 +52,7 @@ const readmeText = {
     sandbox: "sandbox, data isolated from production",
     auth: "Authentication is OAuth 2.1: on first use, your client opens the Kobana login.",
     learn: "Learn more about the product",
+    privacy: "[Privacy](https://www.kobana.com.br/en/privacy)",
     generated: "This folder is generated from the repository's `catalog.json` and `src/`. Do not edit it by hand.",
   },
   "pt-BR": {
@@ -68,6 +69,7 @@ const readmeText = {
     sandbox: "sandbox, dados separados da produção",
     auth: "A autenticação é OAuth 2.1: no primeiro uso, o cliente abre o login da Kobana.",
     learn: "Saiba mais sobre o produto",
+    privacy: "[Privacidade](https://www.kobana.com.br/privacidade)",
     generated: "Esta pasta é gerada a partir do `catalog.json` e de `src/` do repositório. Não edite à mão.",
   },
   es: {
@@ -84,6 +86,7 @@ const readmeText = {
     sandbox: "sandbox, datos aislados de producción",
     auth: "La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de sesión de Kobana.",
     learn: "Conoce más sobre el producto",
+    privacy: "[Privacidad](https://www.kobana.com.br/es/privacidad)",
     generated: "Esta carpeta se genera a partir de `catalog.json` y `src/` del repositorio. No la edites a mano.",
   },
 };
@@ -107,8 +110,9 @@ for (const p of plugins) {
   files[`${dir}/plugin.json`] = { $schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", ...meta };
   files[`${dir}/mcp.json`] = { mcpServers: httpServers(p.servers) };
 
-  // Claude Code (also read by Codex)
-  files[`${dir}/.claude-plugin/plugin.json`] = { ...meta, icon: "./assets/icon.png", privacyPolicyUrl: shared.privacyPolicy };
+  // Claude Code (also read by Codex). The icon is found at assets/icon.png and the privacy policy through the
+  // README link: claude.ai marketplace sync strips unknown plugin.json keys such as `icon` and `privacyPolicyUrl`.
+  files[`${dir}/.claude-plugin/plugin.json`] = meta;
   files[`${dir}/.mcp.json`] = { mcpServers: httpServers(p.servers) };
 
   // OpenAI Codex
@@ -162,7 +166,7 @@ for (const p of plugins) {
       `## ${t.servers}`,
       `${t.cols}\n|---|---|\n${serverRows}`,
       t.auth,
-      `[${t.learn}](${p.pages[lang]}) · [MCP docs](${p.servers[0].docs})`,
+      `[${t.learn}](${p.pages[lang]}) · [MCP docs](${p.servers[0].docs}) · ${t.privacy}`,
       `> ${t.generated}`,
     ].join("\n\n") + "\n";
   }

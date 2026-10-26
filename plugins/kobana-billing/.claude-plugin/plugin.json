@@ -22,7 +22,5 @@
     "nfs-e",
     "recurring-billing",
     "saas"
-  ],
-  "icon": "./assets/icon.png",
-  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
+  ]
 }

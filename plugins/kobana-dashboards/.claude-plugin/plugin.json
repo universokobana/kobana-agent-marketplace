@@ -20,7 +20,5 @@
     "dashboards",
     "portal-users",
     "white-label"
-  ],
-  "icon": "./assets/icon.png",
-  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
+  ]
 }

@@ -25,6 +25,6 @@ For other clients, see the [install guides](../../install/README.md).
 
 Authentication is OAuth 2.1: on first use, your client opens the Kobana login.
 
-[Learn more about the product](https://www.kobana.com.br/en/products/automatic-billing) · [MCP docs](https://docs.billing.kobana.com.br/pt/mcp/overview/introduction)
+[Learn more about the product](https://www.kobana.com.br/en/products/automatic-billing) · [MCP docs](https://docs.billing.kobana.com.br/pt/mcp/overview/introduction) · [Privacy](https://www.kobana.com.br/en/privacy)
 
 > This folder is generated from the repository's `catalog.json` and `src/`. Do not edit it by hand.

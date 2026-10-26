@@ -23,7 +23,5 @@
     "transfers",
     "ted",
     "bank-statement"
-  ],
-  "icon": "./assets/icon.png",
-  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
+  ]
 }
