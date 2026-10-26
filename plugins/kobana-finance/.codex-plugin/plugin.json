@@ -1,6 +1,6 @@
 {
   "name": "kobana-finance",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
   "author": {
     "name": "Kobana",
@@ -25,7 +25,7 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Kobana Smart Finance",
+    "displayName": "Kobana - Smart Finance / Financeiro Inteligente / Financiero Inteligente",
     "shortDescription": "Payables, receivables, reconciliation and cash flow.",
     "longDescription": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
     "developerName": "Kobana",

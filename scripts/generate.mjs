@@ -21,6 +21,8 @@ const allServers = plugins.flatMap((p) => p.servers);
 const read = (path) => readFileSync(join(root, path), "utf8");
 const httpServers = (servers) => Object.fromEntries(servers.map((s) => [s.id, { type: "http", url: s.url }]));
 const installCommand = (p) => `/plugin install ${p.name}@${mkt.name}`;
+// "Kobana - Banking Gateway / Gateway Bancário / Gateway Bancario": the product name in each language, without repeats
+const pluginTitle = (p) => `Kobana - ${[...new Set(Object.values(p.i18n).map((t) => t.product))].join(" / ")}`;
 
 // --- Skills: product skill + shared core rules (with the product table) ---
 const productsTable = [
@@ -93,7 +95,7 @@ const readmeText = {
 
 for (const p of plugins) {
   const dir = `plugins/${p.name}`;
-  const displayName = `Kobana ${p.product}`;
+  const displayName = pluginTitle(p);
   const keywords = [...shared.keywords, ...p.keywords];
   const meta = {
     name: p.name,
@@ -112,7 +114,7 @@ for (const p of plugins) {
 
   // Claude Code (also read by Codex). The icon is found at assets/icon.png and the privacy policy through the
   // README link: claude.ai marketplace sync strips unknown plugin.json keys such as `icon` and `privacyPolicyUrl`.
-  files[`${dir}/.claude-plugin/plugin.json`] = meta;
+  files[`${dir}/.claude-plugin/plugin.json`] = { ...meta, displayName };
   files[`${dir}/.mcp.json`] = { mcpServers: httpServers(p.servers) };
 
   // OpenAI Codex
@@ -180,6 +182,7 @@ files[".claude-plugin/marketplace.json"] = {
   metadata: { description: `${mkt.displayName}. ${mkt.description}`, version },
   plugins: plugins.map((p) => ({
     name: p.name,
+    displayName: pluginTitle(p),
     source: `./plugins/${p.name}`,
     description: p.description,
     version,

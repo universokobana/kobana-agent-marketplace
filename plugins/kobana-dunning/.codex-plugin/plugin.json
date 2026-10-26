@@ -1,6 +1,6 @@
 {
   "name": "kobana-dunning",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
   "author": {
     "name": "Kobana",
@@ -25,7 +25,7 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Kobana Dunning",
+    "displayName": "Kobana - Dunning / Régua de Cobrança / Regla de Cobranza",
     "shortDescription": "Collections from due date to payment.",
     "longDescription": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
     "developerName": "Kobana",

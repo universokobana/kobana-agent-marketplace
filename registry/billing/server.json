@@ -3,7 +3,7 @@
   "name": "br.com.kobana/billing",
   "title": "Kobana Automatic Billing",
   "description": "Customers, subscriptions, invoices, NFS-e and proposals in Kobana Automatic Billing.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "websiteUrl": "https://docs.billing.kobana.com.br/pt/mcp/overview/introduction",
   "repository": {
     "url": "https://github.com/universokobana/kobana-agent-marketplace",
