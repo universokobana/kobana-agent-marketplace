@@ -36,7 +36,7 @@ opencode mcp auth kobana-banking
 
 Con un token personal, usa `"headers": { "Authorization": "Bearer {env:KOBANA_MCP_TOKEN}" }` y `"oauth": false`.
 
-OpenCode también carga Agent Skills: copia `plugins/kobana/skills/*` en `.opencode/skills/` o `.agents/skills/`.
+OpenCode también carga Agent Skills: copia `skills/*` en `.opencode/skills/` o `.agents/skills/`.
 
 ## Servidores
 

@@ -78,11 +78,11 @@ Crie um token em **Conta Kobana → Tokens e Acesso → Meus Tokens Pessoais →
 
 ## Skills
 
-Se o seu cliente aceita Agent Skills (`SKILL.md`), copie as pastas de [`plugins/kobana/skills/`](../plugins/kobana/skills) para o diretório de skills dele (normalmente `.agents/skills/` ou `~/.agents/skills/`).
+Se o seu cliente aceita Agent Skills (`SKILL.md`), copie as pastas de [`skills/`](../skills) para o diretório de skills dele (normalmente `.agents/skills/` ou `~/.agents/skills/`).
 
 ## Falta algum cliente?
 
-Abra uma issue ou um pull request com um novo guia. Veja o [CONTRIBUTING.md](../CONTRIBUTING.pt-BR.md).
+Abra uma issue ou um pull request com um novo guia. Veja o [CONTRIBUTING.md](../i18n/CONTRIBUTING.pt-BR.md).
 
 ## Próximos passos
 

@@ -78,7 +78,7 @@ Create a token in **Kobana Account → Tokens and Access → My Personal Tokens 
 
 ## Skills
 
-If your client supports Agent Skills (`SKILL.md`), copy the folders from [`plugins/kobana/skills/`](../plugins/kobana/skills) into its skills directory (commonly `.agents/skills/` or `~/.agents/skills/`).
+If your client supports Agent Skills (`SKILL.md`), copy the folders from [`skills/`](../skills) into its skills directory (commonly `.agents/skills/` or `~/.agents/skills/`).
 
 ## Missing a client?
 

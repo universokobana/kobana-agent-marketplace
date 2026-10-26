@@ -1,0 +1,28 @@
+{
+  "name": "kobana-billing",
+  "version": "2.0.0",
+  "description": "Kobana Automatic Billing for AI agents: customers, plans, subscriptions, invoices, payments, NFS-e, proposals, usage, MRR and churn for recurring billing in Brazil.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/automatic-billing",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "billing",
+    "subscriptions",
+    "invoices",
+    "nfs-e",
+    "recurring-billing",
+    "saas"
+  ],
+  "icon": "./assets/icon.png",
+  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "kobana-finance",
+  "version": "2.0.0",
+  "description": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/smart-finance",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "accounts-payable",
+    "accounts-receivable",
+    "reconciliation",
+    "cash-flow",
+    "back-office"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana Smart Finance",
+    "shortDescription": "Payables, receivables, reconciliation and cash flow.",
+    "longDescription": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.kobana.com.br/en/products/smart-finance",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "Which workspaces can you act on?",
+      "Which accounts payable are due this week?",
+      "How does the cash flow look this month?"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

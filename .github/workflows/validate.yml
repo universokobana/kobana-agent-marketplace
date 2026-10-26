@@ -25,9 +25,12 @@ jobs:
       - name: Every document has English, Portuguese and Spanish versions
         run: |
           missing=0
-          for f in $(git ls-files '*.md' | grep -vE '\.(pt-BR|es)\.md$' | grep -vE '^(CHANGELOG|AGENTS|CLAUDE|GEMINI)\.md$|SKILL\.md$|^\.github/|^docs/'); do
+          for f in $(git ls-files '*.md' | grep -vE '\.(pt-BR|es)\.md$' | grep -vE '^(CHANGELOG|AGENTS|CLAUDE|GEMINI)\.md$|SKILL\.md$|^\.github/|^docs/|^src/'); do
             for lang in pt-BR es; do
-              t="${f%.md}.$lang.md"
+              case "$f" in
+                CODE_OF_CONDUCT.md|CONTRIBUTING.md|SECURITY.md|SUPPORT.md) t="i18n/${f%.md}.$lang.md" ;;
+                *) t="${f%.md}.$lang.md" ;;
+              esac
               [ -f "$t" ] || { echo "missing $t"; missing=1; }
             done
           done

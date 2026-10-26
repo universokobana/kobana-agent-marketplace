@@ -1,6 +1,6 @@
 # Security Policy
 
-**🇺🇸 English** · [🇧🇷 Português](SECURITY.pt-BR.md) · [🇪🇸 Español](SECURITY.es.md)
+**🇺🇸 English** · [🇧🇷 Português](i18n/SECURITY.pt-BR.md) · [🇪🇸 Español](i18n/SECURITY.es.md)
 
 ## Scope
 
@@ -14,7 +14,7 @@ Report through this policy:
 
 ## Reporting a vulnerability
 
-**Do not open a public issue.** Email **security@kobana.com.br** (or **whitehat@kobana.com.br** for the reward program) with:
+**Do not open a public issue.** Read our [White Hat Policy](https://www.kobana.com.br/en/white-hat) and email **security@kobana.com.br** (or **whitehat@kobana.com.br** for the reward program) with:
 
 - A description of the issue and its impact.
 - Steps to reproduce, affected URLs or files, and any proof of concept.

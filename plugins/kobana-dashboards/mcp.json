@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kobana-dashboards": {
+      "type": "http",
+      "url": "https://mcp.dashboards.kobana.com.br"
+    }
+  }
+}

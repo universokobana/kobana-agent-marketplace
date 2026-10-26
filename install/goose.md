@@ -34,7 +34,7 @@ extensions:
     timeout: 300
 ```
 
-Goose also loads Agent Skills: copy `plugins/kobana/skills/*` into `~/.config/goose/skills/` or `.agents/skills/`.
+Goose also loads Agent Skills: copy `skills/*` into `~/.config/goose/skills/` or `.agents/skills/`.
 
 ## Servers
 

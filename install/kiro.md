@@ -45,7 +45,7 @@ With a personal token:
 
 Don't add Kobana write tools to `autoApprove`.
 
-Kiro also loads Agent Skills: copy `plugins/kobana/skills/*` into `.kiro/skills/` to use them.
+Kiro also loads Agent Skills: copy `skills/*` into `.kiro/skills/` to use them.
 
 ## Servers
 

@@ -2,7 +2,7 @@
 
 [🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**
 
-Cada producto Kobana tiene un servidor MCP remoto. La mayoría de los clientes se conecta solo con la URL y un login de Kobana (OAuth). Los clientes marcados como **Plugin** también pueden instalar el plugin completo de Kobana desde este marketplace, que agrega todos los servidores y las skills de Kobana de una sola vez.
+Cada producto Kobana tiene un servidor MCP remoto. La mayoría de los clientes se conecta solo con la URL y un login de Kobana (OAuth). Los clientes marcados como **Plugin** también pueden instalar plugins de Kobana desde este marketplace: uno por producto (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`), cada uno con su servidor MCP y su skill. Instala solo los productos que usas.
 
 | Cliente | Tipo | Cómo | Autenticación | Guía |
 |---|---|---|---|---|

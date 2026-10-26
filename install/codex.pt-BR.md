@@ -2,19 +2,27 @@
 
 [🇺🇸 English](codex.md) · **🇧🇷 Português** · [🇪🇸 Español](codex.es.md)
 
-Instale o **plugin Kobana** deste marketplace ou adicione os servidores MCP da Kobana diretamente no Codex.
+Instale os **plugins Kobana** deste marketplace (um por produto) ou adicione os servidores MCP da Kobana diretamente no Codex.
 
 **Autenticação:** OAuth (`codex mcp login`) ou token pessoal.
 
-## Instale o plugin
+## Instale os plugins
 
-Este repositório traz um marketplace do Codex em `.agents/plugins/marketplace.json` e o manifesto do plugin em `plugins/kobana/.codex-plugin/plugin.json`.
+Este repositório traz um marketplace do Codex em `.agents/plugins/marketplace.json` com um plugin por produto (`plugins/<plugin>/.codex-plugin/plugin.json`):
+
+| Plugin | Produto | Servidores MCP |
+|---|---|---|
+| `kobana-banking` | Gateway Bancário | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Faturamento Automático | `kobana-billing` |
+| `kobana-finance` | Financeiro Inteligente | `kobana-finance` |
+| `kobana-dunning` | Régua de Cobrança | `kobana-dunning` |
+| `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
 
 ```bash
 codex plugin marketplace add universokobana/kobana-agent-marketplace
 ```
 
-Depois, abra `/plugins` em uma sessão do Codex, encontre **Kobana** e instale. Entre em cada servidor Kobana quando o Codex pedir, ou rode `codex mcp login <server>`.
+Depois, abra `/plugins` em uma sessão do Codex, e instale os plugins Kobana de que você precisa. Entre em cada servidor Kobana quando o Codex pedir, ou rode `codex mcp login <server>`.
 
 ## Adicione os servidores manualmente
 
@@ -43,7 +51,7 @@ bearer_token_env_var = "KOBANA_MCP_TOKEN"
 
 ## Só as skills
 
-O Codex lê Agent Skills de `~/.agents/skills/` (pessoais) e `.agents/skills/` (do repositório). Copie as pastas de `plugins/kobana/skills/` para lá se quiser apenas as skills.
+O Codex lê Agent Skills de `~/.agents/skills/` (pessoais) e `.agents/skills/` (do repositório). Copie as pastas de [`skills/`](../skills) para lá se quiser apenas as skills.
 
 ## Servidores
 

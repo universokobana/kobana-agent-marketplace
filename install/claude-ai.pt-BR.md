@@ -64,7 +64,7 @@ O Claude Desktop também lê o `claude_desktop_config.json` para servidores loca
 
 ### Quer as skills também?
 
-As skills da Kobana (`plugins/kobana/skills/`) podem ser enviadas em **Configurações → Capacidades → Skills** (Settings → Capabilities → Skills): compacte a pasta de uma skill em zip (por exemplo `kobana-banking/`) e faça o upload.
+As skills da Kobana ([`skills/`](../skills), uma por produto) podem ser enviadas em **Configurações → Capacidades → Skills** (Settings → Capabilities → Skills): compacte a pasta de uma skill em zip (por exemplo `kobana-banking/`) e faça o upload.
 
 ## Próximos passos
 

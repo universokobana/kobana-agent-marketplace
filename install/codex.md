@@ -2,19 +2,27 @@
 
 **🇺🇸 English** · [🇧🇷 Português](codex.pt-BR.md) · [🇪🇸 Español](codex.es.md)
 
-Install the **Kobana plugin** from this marketplace, or add the Kobana MCP servers to Codex directly.
+Install the **Kobana plugins** from this marketplace (one per product), or add the Kobana MCP servers to Codex directly.
 
 **Auth:** OAuth (`codex mcp login`) or personal token.
 
-## Install the plugin
+## Install the plugins
 
-This repository ships a Codex marketplace at `.agents/plugins/marketplace.json` and the plugin manifest at `plugins/kobana/.codex-plugin/plugin.json`.
+This repository ships a Codex marketplace at `.agents/plugins/marketplace.json` with one plugin per product (`plugins/<plugin>/.codex-plugin/plugin.json`):
+
+| Plugin | Product | MCP servers |
+|---|---|---|
+| `kobana-banking` | Banking Gateway | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Automatic Billing | `kobana-billing` |
+| `kobana-finance` | Smart Finance | `kobana-finance` |
+| `kobana-dunning` | Dunning | `kobana-dunning` |
+| `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
 
 ```bash
 codex plugin marketplace add universokobana/kobana-agent-marketplace
 ```
 
-Then open `/plugins` in a Codex session, find **Kobana** and install it. Sign in to each Kobana server when Codex asks, or run `codex mcp login <server>`.
+Then open `/plugins` in a Codex session and install the Kobana plugins you need. Sign in to each Kobana server when Codex asks, or run `codex mcp login <server>`.
 
 ## Add servers manually
 
@@ -43,7 +51,7 @@ bearer_token_env_var = "KOBANA_MCP_TOKEN"
 
 ## Skills only
 
-Codex reads Agent Skills from `~/.agents/skills/` (personal) and `.agents/skills/` (repository). Copy the folders from `plugins/kobana/skills/` there if you only want the skills.
+Codex reads Agent Skills from `~/.agents/skills/` (personal) and `.agents/skills/` (repository). Copy the folders from [`skills/`](../skills) there if you only want the skills.
 
 ## Servers
 

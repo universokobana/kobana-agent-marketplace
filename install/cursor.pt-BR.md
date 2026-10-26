@@ -2,13 +2,23 @@
 
 [🇺🇸 English](cursor.md) · **🇧🇷 Português** · [🇪🇸 Español](cursor.es.md)
 
-Instale o **plugin Kobana** no Cursor ou adicione os servidores MCP da Kobana com um clique.
+Instale os **plugins Kobana** no Cursor (um por produto) ou adicione os servidores MCP da Kobana com um clique.
 
 **Autenticação:** OAuth (o Cursor abre o navegador) ou token pessoal.
 
-## Instale o plugin
+## Instale os plugins
 
-Este repositório traz um marketplace do Cursor em `.cursor-plugin/marketplace.json` e o plugin em `plugins/kobana/` (com `.cursor-plugin/plugin.json`, `mcp.json` e `skills/`). Adicione o repositório como fonte de plugins em **Cursor Settings → Plugins**, ou instale **Kobana** pelo Cursor Marketplace quando ele estiver listado.
+Este repositório traz um marketplace do Cursor em `.cursor-plugin/marketplace.json` com um plugin por produto em `plugins/<plugin>/` (cada um com `.cursor-plugin/plugin.json`, `mcp.json` e `skills/`):
+
+| Plugin | Produto | Servidores MCP |
+|---|---|---|
+| `kobana-banking` | Gateway Bancário | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Faturamento Automático | `kobana-billing` |
+| `kobana-finance` | Financeiro Inteligente | `kobana-finance` |
+| `kobana-dunning` | Régua de Cobrança | `kobana-dunning` |
+| `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
+
+Adicione o repositório como fonte de plugins em **Cursor Settings → Plugins** e instale os produtos que você usa, ou instale-os pelo Cursor Marketplace quando estiverem listados.
 
 ## Instalação de um servidor com um clique
 

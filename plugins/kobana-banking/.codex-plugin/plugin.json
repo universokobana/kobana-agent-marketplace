@@ -1,0 +1,51 @@
+{
+  "name": "kobana-banking",
+  "version": "2.0.0",
+  "description": "Kobana Banking Gateway for AI agents: boletos, bolepix, Pix charges, payments, Pix and TED transfers, bank accounts, balances and statements across 40+ Brazilian banks. Includes the sandbox server for safe testing.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/banking-gateway",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "banking",
+    "pix",
+    "boleto",
+    "payments",
+    "transfers",
+    "ted",
+    "bank-statement"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana Banking Gateway",
+    "shortDescription": "Boletos, Pix, payments and transfers on 40+ Brazilian banks.",
+    "longDescription": "Kobana Banking Gateway for AI agents: boletos, bolepix, Pix charges, payments, Pix and TED transfers, bank accounts, balances and statements across 40+ Brazilian banks. Includes the sandbox server for safe testing.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.kobana.com.br/en/products/banking-gateway",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "List my overdue boletos",
+      "What is the balance of my financial accounts?",
+      "Create a Pix charge of R$ 99.90"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

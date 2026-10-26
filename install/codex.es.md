@@ -2,19 +2,27 @@
 
 [🇺🇸 English](codex.md) · [🇧🇷 Português](codex.pt-BR.md) · **🇪🇸 Español**
 
-Instala el **plugin de Kobana** desde este marketplace o agrega los servidores MCP de Kobana directamente en Codex.
+Instala los **plugins de Kobana** desde este marketplace (uno por producto) o agrega los servidores MCP de Kobana directamente en Codex.
 
 **Autenticación:** OAuth (`codex mcp login`) o token personal.
 
-## Instala el plugin
+## Instala los plugins
 
-Este repositorio incluye un marketplace de Codex en `.agents/plugins/marketplace.json` y el manifiesto del plugin en `plugins/kobana/.codex-plugin/plugin.json`.
+Este repositorio incluye un marketplace de Codex en `.agents/plugins/marketplace.json` con un plugin por producto (`plugins/<plugin>/.codex-plugin/plugin.json`):
+
+| Plugin | Producto | Servidores MCP |
+|---|---|---|
+| `kobana-banking` | Gateway Bancario | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Facturación Automática | `kobana-billing` |
+| `kobana-finance` | Financiero Inteligente | `kobana-finance` |
+| `kobana-dunning` | Regla de Cobranza | `kobana-dunning` |
+| `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
 
 ```bash
 codex plugin marketplace add universokobana/kobana-agent-marketplace
 ```
 
-Luego abre `/plugins` en una sesión de Codex, busca **Kobana** e instálalo. Inicia sesión en cada servidor Kobana cuando Codex lo pida, o ejecuta `codex mcp login <server>`.
+Luego abre `/plugins` en una sesión de Codex, e instala los plugins de Kobana que necesites. Inicia sesión en cada servidor Kobana cuando Codex lo pida, o ejecuta `codex mcp login <server>`.
 
 ## Agrega los servidores manualmente
 
@@ -43,7 +51,7 @@ bearer_token_env_var = "KOBANA_MCP_TOKEN"
 
 ## Solo las skills
 
-Codex lee Agent Skills desde `~/.agents/skills/` (personales) y `.agents/skills/` (del repositorio). Copia ahí las carpetas de `plugins/kobana/skills/` si solo quieres las skills.
+Codex lee Agent Skills desde `~/.agents/skills/` (personales) y `.agents/skills/` (del repositorio). Copia ahí las carpetas de [`skills/`](../skills) si solo quieres las skills.
 
 ## Servidores
 

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kobana-dunning": {
+      "type": "http",
+      "url": "https://mcp.dunning.kobana.com.br"
+    }
+  }
+}

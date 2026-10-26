@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kobana-finance",
+  "version": "2.0.0",
+  "description": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/smart-finance",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "accounts-payable",
+    "accounts-receivable",
+    "reconciliation",
+    "cash-flow",
+    "back-office"
+  ]
+}

@@ -2,13 +2,23 @@
 
 **🇺🇸 English** · [🇧🇷 Português](cursor.pt-BR.md) · [🇪🇸 Español](cursor.es.md)
 
-Install the **Kobana plugin** in Cursor, or add the Kobana MCP servers with one click.
+Install the **Kobana plugins** in Cursor (one per product), or add the Kobana MCP servers with one click.
 
 **Auth:** OAuth (Cursor opens the browser) or personal token.
 
-## Install the plugin
+## Install the plugins
 
-This repository ships a Cursor marketplace at `.cursor-plugin/marketplace.json` and the plugin at `plugins/kobana/` (with `.cursor-plugin/plugin.json`, `mcp.json` and `skills/`). Add the repository as a plugin source in **Cursor Settings → Plugins**, or install **Kobana** from the Cursor Marketplace once it is listed.
+This repository ships a Cursor marketplace at `.cursor-plugin/marketplace.json` with one plugin per product in `plugins/<plugin>/` (each with `.cursor-plugin/plugin.json`, `mcp.json` and `skills/`):
+
+| Plugin | Product | MCP servers |
+|---|---|---|
+| `kobana-banking` | Banking Gateway | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Automatic Billing | `kobana-billing` |
+| `kobana-finance` | Smart Finance | `kobana-finance` |
+| `kobana-dunning` | Dunning | `kobana-dunning` |
+| `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+
+Add the repository as a plugin source in **Cursor Settings → Plugins** and install the products you use, or install them from the Cursor Marketplace once they are listed.
 
 ## One-click install of a server
 

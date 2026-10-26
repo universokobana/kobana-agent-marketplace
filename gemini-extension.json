@@ -1,7 +1,7 @@
 {
   "name": "kobana",
-  "version": "1.0.0",
-  "description": "Run Brazilian financial operations from your AI agent: boletos, Pix, payments, transfers, subscriptions, invoices, accounts payable and receivable, reconciliation, dunning and customer portals. Connects to Kobana's official remote MCP servers with OAuth 2.1.",
+  "version": "2.0.0",
+  "description": "Official Kobana plugins for AI agents: one plugin per product, each with its remote MCP server and skills. Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "kobana-banking": {

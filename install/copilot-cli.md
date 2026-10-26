@@ -2,17 +2,21 @@
 
 **🇺🇸 English** · [🇧🇷 Português](copilot-cli.pt-BR.md) · [🇪🇸 Español](copilot-cli.es.md)
 
-Install the **Kobana plugin** in GitHub Copilot CLI, or add the Kobana MCP servers.
+Install the **Kobana plugins** in GitHub Copilot CLI (one per product), or add the Kobana MCP servers.
 
 **Auth:** OAuth or personal token.
 
-## Install the plugin
+## Install the plugins
 
-In a Copilot CLI session:
+In a Copilot CLI session, add the marketplace once and install the products you use:
 
 ```text
 /plugin marketplace add universokobana/kobana-agent-marketplace
-/plugin install kobana@kobana-agent-marketplace
+/plugin install kobana-banking@kobana-agent-marketplace
+/plugin install kobana-billing@kobana-agent-marketplace
+/plugin install kobana-finance@kobana-agent-marketplace
+/plugin install kobana-dunning@kobana-agent-marketplace
+/plugin install kobana-dashboards@kobana-agent-marketplace
 ```
 
 ## Add servers manually

@@ -4,7 +4,7 @@ How a release of this repository reaches each directory. Internal maintainer not
 
 ## Release
 
-1. Bump `plugin.version` in `catalog.json`.
+1. Bump `version` in `catalog.json`.
 2. `npm run generate && npm run check`.
 3. Update `CHANGELOG.md`.
 4. Commit, tag `vX.Y.Z` and create a GitHub release.
@@ -19,8 +19,8 @@ Git-based marketplaces (Claude Code, Codex, Cursor, VS Code / Copilot, Gemini CL
 | Claude connectors directory | Each remote MCP server | Submitted through Anthropic's connector review form; requires OAuth, privacy policy and tool annotations |
 | ChatGPT Apps Directory | Each remote MCP server as an app | Curated by OpenAI; until approved, users add servers in developer mode |
 | OpenAI Codex | Nothing, the repo is the marketplace (`.agents/plugins/marketplace.json`) | Submit to the Codex plugin directory when available |
-| Cursor | `.cursor-plugin/marketplace.json` + `plugins/kobana/.cursor-plugin/plugin.json` | Cursor Marketplace is reviewed manually and requires open source; also list on cursor.directory |
-| VS Code / GitHub Copilot | Root of `plugins/kobana` (Agent Plugins 1.0 `plugin.json`) | Installed from the repo via `chat.plugins.marketplaces` |
+| Cursor | `.cursor-plugin/marketplace.json` + `plugins/<plugin>/.cursor-plugin/plugin.json` | Cursor Marketplace is reviewed manually and requires open source; also list on cursor.directory |
+| VS Code / GitHub Copilot | Root of each `plugins/<plugin>` (Agent Plugins 1.0 `plugin.json`) | Installed from the repo via `chat.plugins.marketplaces` |
 | Gemini CLI / Antigravity | `gemini-extension.json` at repo root | Add the `gemini-cli-extension` topic to the GitHub repo to appear in the extensions gallery |
 | Official MCP Registry | `registry/<server>/server.json` | See below; the GitHub MCP Registry uses it as a source |
 

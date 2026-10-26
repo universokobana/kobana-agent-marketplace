@@ -2,7 +2,7 @@
 
 **🇺🇸 English** · [🇧🇷 Português](gemini-cli.pt-BR.md) · [🇪🇸 Español](gemini-cli.es.md)
 
-Install Kobana as a **Gemini CLI extension**. It registers all Kobana MCP servers and loads the Kobana context (`GEMINI.md`).
+Install Kobana as a **Gemini CLI extension**. Gemini CLI installs one extension per repository, so this one includes every Kobana product: all MCP servers, the skills (`skills/`) and the shared context (`GEMINI.md`).
 
 **Auth:** OAuth (`/mcp auth`) or personal token.
 
@@ -20,7 +20,7 @@ Start `gemini`, then authenticate each server you want to use:
 /mcp auth kobana-banking
 ```
 
-Check the status with `/mcp`. Update with `gemini extensions update kobana`, remove with `gemini extensions uninstall kobana`.
+You only need to authenticate the products you use; the others stay idle. Check the status with `/mcp`. Update with `gemini extensions update kobana`, remove with `gemini extensions uninstall kobana`.
 
 ## Add servers manually
 

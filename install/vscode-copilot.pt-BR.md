@@ -2,11 +2,11 @@
 
 [🇺🇸 English](vscode-copilot.md) · **🇧🇷 Português** · [🇪🇸 Español](vscode-copilot.es.md)
 
-Instale o **agent plugin da Kobana** (Agent Plugins 1.0) no VS Code ou adicione os servidores MCP da Kobana ao `mcp.json`.
+Instale os **agent plugins da Kobana** (Agent Plugins 1.0, um por produto) no VS Code ou adicione os servidores MCP da Kobana ao `mcp.json`.
 
 **Autenticação:** OAuth (o VS Code cuida do login no navegador) ou token pessoal. **Requisitos:** GitHub Copilot com modo agente. Em organizações, talvez um administrador precise liberar servidores MCP e agent plugins.
 
-## Instale o plugin
+## Instale os plugins
 
 Adicione este repositório como marketplace de plugins no `settings.json` do VS Code:
 
@@ -18,7 +18,15 @@ Adicione este repositório como marketplace de plugins no `settings.json` do VS 
 }
 ```
 
-Depois, abra a visualização **Extensions**, pesquise `@agentPlugins kobana` e instale **Kobana**. O plugin traz os servidores MCP (`plugins/kobana/mcp.json`) e as skills (`plugins/kobana/skills/`).
+Depois, abra a visualização **Extensions**, pesquise `@agentPlugins kobana` e instale os produtos que você usa. Cada plugin traz o seu servidor MCP (`plugins/<plugin>/mcp.json`) e a sua skill (`plugins/<plugin>/skills/`).
+
+| Plugin | Produto | Servidores MCP |
+|---|---|---|
+| `kobana-banking` | Gateway Bancário | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Faturamento Automático | `kobana-billing` |
+| `kobana-finance` | Financeiro Inteligente | `kobana-finance` |
+| `kobana-dunning` | Régua de Cobrança | `kobana-dunning` |
+| `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
 
 Para recomendá-lo a todos que trabalham em um repositório, adicione ao `.vscode/settings.json`:
 
@@ -33,7 +41,8 @@ Para recomendá-lo a todos que trabalham em um repositório, adicione ao `.vscod
     }
   },
   "enabledPlugins": {
-    "kobana@kobana-agent-marketplace": true
+    "kobana-banking@kobana-agent-marketplace": true,
+    "kobana-finance@kobana-agent-marketplace": true
   }
 }
 ```

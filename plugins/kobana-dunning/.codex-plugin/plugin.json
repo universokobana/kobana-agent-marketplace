@@ -1,0 +1,48 @@
+{
+  "name": "kobana-dunning",
+  "version": "2.0.0",
+  "description": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/dunning",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "dunning",
+    "collections",
+    "overdue",
+    "agreements",
+    "debt"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana Dunning",
+    "shortDescription": "Collections from due date to payment.",
+    "longDescription": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.kobana.com.br/en/products/dunning",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "Which charges are overdue?",
+      "Which agreements are in progress?"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

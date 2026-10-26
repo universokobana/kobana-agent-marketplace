@@ -1,0 +1,47 @@
+{
+  "name": "kobana-dashboards",
+  "version": "2.0.0",
+  "description": "Kobana Magic Dashboard for AI agents: customer portal users and invitations, team members and organization settings.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/products/magic-dashboard",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "customer-portal",
+    "dashboards",
+    "portal-users",
+    "white-label"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana Magic Dashboard",
+    "shortDescription": "Customer portal users, team and organization.",
+    "longDescription": "Kobana Magic Dashboard for AI agents: customer portal users and invitations, team members and organization settings.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.kobana.com.br/en/products/magic-dashboard",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "Which portal users have not accepted the invitation yet?",
+      "Who is on my team?"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

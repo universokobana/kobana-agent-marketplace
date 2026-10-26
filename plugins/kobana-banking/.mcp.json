@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "kobana-banking": {
+      "type": "http",
+      "url": "https://mcp.banking.kobana.com.br"
+    },
+    "kobana-banking-sandbox": {
+      "type": "http",
+      "url": "https://mcp.banking.sandbox.kobana.com.br"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)
 
-Every Kobana product has a remote MCP server. Most clients connect with just the URL and a Kobana login (OAuth). Clients marked **Plugin** can also install the full Kobana plugin from this marketplace, which adds all servers and the Kobana skills at once.
+Every Kobana product has a remote MCP server. Most clients connect with just the URL and a Kobana login (OAuth). Clients marked **Plugin** can also install Kobana plugins from this marketplace: one per product (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`), each with its MCP server and skill. Install only the products you use.
 
 | Client | Type | How | Auth | Guide |
 |---|---|---|---|---|

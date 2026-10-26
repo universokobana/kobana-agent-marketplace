@@ -2,25 +2,39 @@
 
 **🇺🇸 English** · [🇧🇷 Português](claude-code.pt-BR.md) · [🇪🇸 Español](claude-code.es.md)
 
-Install the **Kobana plugin** from this marketplace. It configures all Kobana MCP servers and adds the Kobana skills.
+Install the **Kobana plugins** from this marketplace, one per product. Each plugin configures the product's MCP server and adds its skill.
 
 **Auth:** OAuth via `/mcp` (recommended) or personal token.
 
-## Install the plugin (recommended)
+## Install the plugins (recommended)
 
-In a Claude Code session:
+| Plugin | Product | MCP servers |
+|---|---|---|
+| `kobana-banking` | Banking Gateway | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Automatic Billing | `kobana-billing` |
+| `kobana-finance` | Smart Finance | `kobana-finance` |
+| `kobana-dunning` | Dunning | `kobana-dunning` |
+| `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+
+In a Claude Code session, add the marketplace once and install the products you use:
 
 ```text
 /plugin marketplace add universokobana/kobana-agent-marketplace
-/plugin install kobana@kobana-agent-marketplace
+/plugin install kobana-banking@kobana-agent-marketplace
+/plugin install kobana-billing@kobana-agent-marketplace
+/plugin install kobana-finance@kobana-agent-marketplace
+/plugin install kobana-dunning@kobana-agent-marketplace
+/plugin install kobana-dashboards@kobana-agent-marketplace
 ```
 
 Or from your shell:
 
 ```bash
 claude plugin marketplace add universokobana/kobana-agent-marketplace
-claude plugin install kobana@kobana-agent-marketplace
+claude plugin install kobana-finance@kobana-agent-marketplace
 ```
+
+You can also run `/plugin`, open the **Discover** tab and pick the Kobana plugins.
 
 Then authenticate:
 
@@ -28,11 +42,11 @@ Then authenticate:
 2. Select a Kobana server (for example `kobana-banking`) and choose **Authenticate**.
 3. Sign in to Kobana in the browser and authorize.
 
-Repeat for each product you use. Servers you never authenticate stay idle.
+Repeat for each plugin you installed.
 
 ## Share with your team
 
-Commit this to your project's `.claude/settings.json` so teammates are offered the plugin automatically:
+Commit this to your project's `.claude/settings.json` so teammates are offered the plugins automatically:
 
 ```json
 {
@@ -45,12 +59,15 @@ Commit this to your project's `.claude/settings.json` so teammates are offered t
     }
   },
   "enabledPlugins": {
-    "kobana@kobana-agent-marketplace": true
+    "kobana-banking@kobana-agent-marketplace": true,
+    "kobana-finance@kobana-agent-marketplace": true
   }
 }
 ```
 
-## Add servers manually (without the plugin)
+List only the plugins your team uses.
+
+## Add servers manually (without the plugins)
 
 ```bash
 claude mcp add --transport http kobana-banking https://mcp.banking.kobana.com.br
@@ -81,7 +98,7 @@ claude mcp add --transport http kobana-banking https://mcp.banking.kobana.com.br
 
 ```text
 /plugin marketplace update kobana-agent-marketplace
-/plugin uninstall kobana@kobana-agent-marketplace
+/plugin uninstall kobana-finance@kobana-agent-marketplace
 ```
 
 ## Next steps

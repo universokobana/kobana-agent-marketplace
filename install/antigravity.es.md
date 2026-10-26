@@ -38,7 +38,7 @@ Antigravity CLI es el sucesor de Gemini CLI y mantiene el soporte de extensiones
 
 ## Skills
 
-Copia las carpetas de `plugins/kobana/skills/` al directorio de skills de tu workspace para darle al agente los flujos de trabajo y las reglas de seguridad de Kobana.
+Copia las carpetas de `skills/` al directorio de skills de tu workspace para darle al agente los flujos de trabajo y las reglas de seguridad de Kobana.
 
 ## Servidores
 

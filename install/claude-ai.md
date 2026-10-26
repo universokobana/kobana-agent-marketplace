@@ -64,7 +64,7 @@ Claude Desktop also reads `claude_desktop_config.json` for local servers. Custom
 
 ### Want the skills too?
 
-The Kobana skills (`plugins/kobana/skills/`) can be uploaded in **Settings → Capabilities → Skills**: zip a skill folder (for example `kobana-banking/`) and upload it.
+The Kobana skills ([`skills/`](../skills), one per product) can be uploaded in **Settings → Capabilities → Skills**: zip a skill folder (for example `kobana-banking/`) and upload it.
 
 ## Next steps
 

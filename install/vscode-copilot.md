@@ -2,11 +2,11 @@
 
 **🇺🇸 English** · [🇧🇷 Português](vscode-copilot.pt-BR.md) · [🇪🇸 Español](vscode-copilot.es.md)
 
-Install the **Kobana agent plugin** (Agent Plugins 1.0) in VS Code, or add the Kobana MCP servers to `mcp.json`.
+Install the **Kobana agent plugins** (Agent Plugins 1.0, one per product) in VS Code, or add the Kobana MCP servers to `mcp.json`.
 
 **Auth:** OAuth (VS Code handles the browser login) or personal token. **Requires:** GitHub Copilot with agent mode. In organizations, an admin may need to allow MCP servers and agent plugins.
 
-## Install the plugin
+## Install the plugins
 
 Add this repository as a plugin marketplace in your VS Code `settings.json`:
 
@@ -18,7 +18,15 @@ Add this repository as a plugin marketplace in your VS Code `settings.json`:
 }
 ```
 
-Then open the **Extensions** view, search for `@agentPlugins kobana` and install **Kobana**. The plugin brings the MCP servers (`plugins/kobana/mcp.json`) and the skills (`plugins/kobana/skills/`).
+Then open the **Extensions** view, search for `@agentPlugins kobana` and install the products you use. Each plugin brings its MCP server (`plugins/<plugin>/mcp.json`) and its skill (`plugins/<plugin>/skills/`).
+
+| Plugin | Product | MCP servers |
+|---|---|---|
+| `kobana-banking` | Banking Gateway | `kobana-banking`, `kobana-banking-sandbox` |
+| `kobana-billing` | Automatic Billing | `kobana-billing` |
+| `kobana-finance` | Smart Finance | `kobana-finance` |
+| `kobana-dunning` | Dunning | `kobana-dunning` |
+| `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
 
 To recommend it to everyone working on a repository, add to `.vscode/settings.json`:
 
@@ -33,7 +41,8 @@ To recommend it to everyone working on a repository, add to `.vscode/settings.js
     }
   },
   "enabledPlugins": {
-    "kobana@kobana-agent-marketplace": true
+    "kobana-banking@kobana-agent-marketplace": true,
+    "kobana-finance@kobana-agent-marketplace": true
   }
 }
 ```

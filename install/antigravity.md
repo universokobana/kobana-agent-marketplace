@@ -38,7 +38,7 @@ Antigravity CLI is the successor of Gemini CLI and keeps support for extensions.
 
 ## Skills
 
-Copy the folders from `plugins/kobana/skills/` into your workspace's skills directory to give the agent Kobana's workflows and safety rules.
+Copy the folders from `skills/` into your workspace's skills directory to give the agent Kobana's workflows and safety rules.
 
 ## Servers
 

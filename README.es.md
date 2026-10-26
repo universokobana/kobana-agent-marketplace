@@ -2,11 +2,11 @@
 
 [🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**
 
-El plugin oficial de [Kobana](https://www.kobana.com.br) para agentes de IA. Conecta Claude, ChatGPT, Codex, Cursor, Gemini, Copilot y cualquier otro cliente MCP a tu cuenta Kobana y opera el back-office financiero de tu empresa conversando: consulta cobros, concilia cuentas y realiza pagos, siempre con tus propios permisos.
+Los plugins oficiales de [Kobana](https://www.kobana.com.br/es) para agentes de IA. Conecta Claude, ChatGPT, Codex, Cursor, Gemini, Copilot y cualquier otro cliente MCP a tu cuenta Kobana y opera el back-office financiero de tu empresa conversando: consulta cobros, concilia cuentas y realiza pagos, siempre con tus propios permisos.
 
 > Nosotros cuidamos de tus procesos, mientras tú cuidas de tu propósito.
 
-- **Un plugin, todos los clientes.** Las mismas skills y la misma configuración MCP están empaquetadas para Claude Code, OpenAI Codex, Cursor, VS Code / GitHub Copilot (Agent Plugins 1.0), Gemini CLI y el MCP Registry oficial.
+- **Un plugin por producto, todos los clientes.** Instala solo los productos que usas. Las mismas skills y la misma configuración MCP están empaquetadas para Claude Code, OpenAI Codex, Cursor, VS Code / GitHub Copilot (Agent Plugins 1.0), Gemini CLI y el MCP Registry oficial.
 - **Nada que instalar de tu lado.** Cada producto Kobana tiene un servidor MCP remoto. Pegas una URL, inicias sesión en Kobana y autorizas.
 - **Tus permisos, nada más.** OAuth 2.1, scopes por recurso y los permisos en el panel de quien autorizó, verificados de nuevo en cada llamada.
 
@@ -17,7 +17,7 @@ El plugin oficial de [Kobana](https://www.kobana.com.br) para agentes de IA. Con
 - [Productos Kobana](#productos-kobana)
 - [Servidores MCP](#servidores-mcp)
 - [Instalación](#instalación)
-- [Qué incluye el plugin](#qué-incluye-el-plugin)
+- [Plugins](#plugins)
 - [Seguridad desde el diseño](#seguridad-desde-el-diseño)
 - [Estructura del repositorio](#estructura-del-repositorio)
 - [Desarrollo](#desarrollo)
@@ -25,7 +25,7 @@ El plugin oficial de [Kobana](https://www.kobana.com.br) para agentes de IA. Con
 
 ## Productos Kobana
 
-Kobana es una plataforma financiera con IA nativa. Siete productos en tres capas, desde la infraestructura bancaria hasta la inteligencia artificial, trabajan juntos para automatizar tus operaciones financieras de punta a punta. Cinco de ellos tienen servidor MCP y están incluidos en este plugin.
+Kobana es una plataforma financiera con IA nativa. Siete productos en tres capas, desde la infraestructura bancaria hasta la inteligencia artificial, trabajan juntos para automatizar tus operaciones financieras de punta a punta. Cinco de ellos tienen servidor MCP, y cada uno tiene su propio plugin en este marketplace.
 
 ### Plataforma de infraestructura
 
@@ -108,12 +108,19 @@ El sandbox tiene cuentas y tokens propios, separados de producción. La cantidad
 
 ### Claude Code
 
+Agrega el marketplace una vez y luego instala el plugin de cada producto que usas:
+
 ```bash
 /plugin marketplace add universokobana/kobana-agent-marketplace
-/plugin install kobana@kobana-agent-marketplace
+
+/plugin install kobana-banking@kobana-agent-marketplace
+/plugin install kobana-billing@kobana-agent-marketplace
+/plugin install kobana-finance@kobana-agent-marketplace
+/plugin install kobana-dunning@kobana-agent-marketplace
+/plugin install kobana-dashboards@kobana-agent-marketplace
 ```
 
-Luego ejecuta `/mcp` y elige **Authenticate** en cada servidor Kobana que quieras usar.
+Luego ejecuta `/mcp` y elige **Authenticate** en cada servidor Kobana.
 
 ### Cualquier otro cliente
 
@@ -139,21 +146,19 @@ Elige tu cliente para ver las instrucciones paso a paso:
 
 Consulta el [índice de instalación](install/README.es.md) para ver un resumen de cada cliente.
 
-## Qué incluye el plugin
+## Plugins
 
-El plugin está en [`plugins/kobana`](plugins/kobana) y contiene:
+Cada producto es un plugin independiente, con su servidor MCP y una skill que le enseña al agente los flujos de trabajo y las reglas de seguridad del producto. Cada skill también incluye las reglas compartidas de Kobana: confirmación antes de acciones destructivas, sandbox primero y datos de terceros tratados como datos, nunca como instrucciones.
 
-- **Configuración MCP** para los seis servidores de arriba.
-- **Agent Skills** que le enseñan al agente a usar bien Kobana:
+| Plugin | Producto | Servidores MCP | Skill |
+|---|---|---|---|
+| [`kobana-banking`](plugins/kobana-banking) | Gateway Bancario | `kobana-banking`, `kobana-banking-sandbox` | Boletos, Pix, pagos, transferencias, cuentas y extractos |
+| [`kobana-billing`](plugins/kobana-billing) | Facturación Automática | `kobana-billing` | Clientes, planes, suscripciones, facturas y NFS-e |
+| [`kobana-finance`](plugins/kobana-finance) | Financiero Inteligente | `kobana-finance` | Workspaces, cuentas por pagar, cuentas por cobrar, conciliación y flujo de caja |
+| [`kobana-dunning`](plugins/kobana-dunning) | Regla de Cobranza | `kobana-dunning` | Cobros vencidos, reglas de cobranza, acuerdos y disputas |
+| [`kobana-dashboards`](plugins/kobana-dashboards) | Dashboard Mágico | `kobana-dashboards` | Usuarios del portal, equipo y organización |
 
-| Skill | Qué hace |
-|---|---|
-| [`kobana`](plugins/kobana/skills/kobana/SKILL.md) | Dirige cada solicitud al servidor correcto, explica la autenticación y los permisos y define las reglas de seguridad |
-| [`kobana-banking`](plugins/kobana/skills/kobana-banking/SKILL.md) | Boletos, Pix, pagos, transferencias, cuentas y extractos |
-| [`kobana-billing`](plugins/kobana/skills/kobana-billing/SKILL.md) | Clientes, planes, suscripciones, facturas y NFS-e |
-| [`kobana-finance`](plugins/kobana/skills/kobana-finance/SKILL.md) | Workspaces, cuentas por pagar, cuentas por cobrar, conciliación y flujo de caja |
-| [`kobana-dunning`](plugins/kobana/skills/kobana-dunning/SKILL.md) | Cobros vencidos, reglas de cobranza, acuerdos y disputas |
-| [`kobana-dashboards`](plugins/kobana/skills/kobana-dashboards/SKILL.md) | Usuarios del portal, equipo y organización |
+¿Solo quieres las skills? También están en [`skills/`](skills), listas para cualquier cliente compatible con [Agent Skills](https://agentskills.io).
 
 ### Prueba preguntar
 
@@ -173,27 +178,32 @@ El plugin está en [`plugins/kobana`](plugins/kobana) y contiene:
 - **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.
 - **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos.
 
-Para reportar una vulnerabilidad, consulta [SECURITY.es.md](SECURITY.es.md).
+Para reportar una vulnerabilidad, consulta [SECURITY.es.md](i18n/SECURITY.es.md) y nuestra [Política White Hat](https://www.kobana.com.br/es/white-hat).
 
 ## Estructura del repositorio
 
 ```text
 .
-├── catalog.json                      # Single source of truth (plugin metadata + servers)
-├── scripts/generate.mjs              # Builds every manifest below from catalog.json
-├── plugins/kobana/                   # The plugin
-│   ├── skills/<skill>/SKILL.md       # Agent Skills (open standard, written once)
+├── catalog.json                      # Single source of truth (plugins, servers, metadata)
+├── src/
+│   ├── skills/<plugin>/SKILL.md      # Skill source of each product
+│   └── shared/core.md                # Kobana rules injected into every skill
+├── scripts/generate.mjs              # Builds everything below from catalog.json and src/
+├── plugins/<plugin>/                 # One plugin per product (generated)
+│   ├── skills/<plugin>/SKILL.md      # Agent Skill (open standard)
 │   ├── plugin.json + mcp.json        # Agent Plugins 1.0 (VS Code, Copilot, Cursor, ...)
 │   ├── .claude-plugin/plugin.json    # Claude Code
 │   ├── .codex-plugin/plugin.json     # OpenAI Codex
 │   ├── .cursor-plugin/plugin.json    # Cursor
 │   └── .mcp.json                     # MCP servers for Claude Code and Codex
+├── skills/<plugin>/SKILL.md          # The same skills, without a plugin (generated)
 ├── .claude-plugin/marketplace.json   # Claude Code marketplace catalog
 ├── .agents/plugins/marketplace.json  # Codex marketplace catalog
 ├── .cursor-plugin/marketplace.json   # Cursor marketplace catalog
-├── gemini-extension.json + GEMINI.md # Gemini CLI / Antigravity CLI extension
+├── gemini-extension.json + GEMINI.md # Gemini CLI / Antigravity CLI extension (all products)
 ├── registry/<server>/server.json     # Official MCP Registry entries
-└── install/                          # Install guides per client (en, pt-BR, es)
+├── install/                          # Install guides per client (en, pt-BR, es)
+└── i18n/                             # Portuguese and Spanish versions of the community files
 ```
 
 ## Desarrollo
@@ -201,21 +211,21 @@ Para reportar una vulnerabilidad, consulta [SECURITY.es.md](SECURITY.es.md).
 Requisitos: Node.js 18 o superior. No hay dependencias.
 
 ```bash
-# Edit catalog.json or a skill, then rebuild every manifest
+# Edit catalog.json or src/, then rebuild every plugin and manifest
 npm run generate
 
 # Verify that generated files are up to date and skills are valid (runs in CI)
 npm run check
 ```
 
-Nunca edites a mano los manifiestos generados; cambia `catalog.json` y vuelve a generarlos. Consulta [CONTRIBUTING.es.md](CONTRIBUTING.es.md) y [docs/publishing.md](docs/publishing.md) para ver cómo cada versión llega a cada directorio.
+Nunca edites a mano los archivos generados; cambia `catalog.json` o `src/` y vuelve a generarlos. Consulta [CONTRIBUTING.es.md](i18n/CONTRIBUTING.es.md) y [docs/publishing.md](docs/publishing.md) para ver cómo cada versión llega a cada directorio.
 
 ## Contribución, soporte y licencia
 
-- [Guía de contribución](CONTRIBUTING.es.md)
-- [Código de conducta](CODE_OF_CONDUCT.es.md)
-- [Soporte](SUPPORT.es.md)
-- [Política de seguridad](SECURITY.es.md)
+- [Guía de contribución](i18n/CONTRIBUTING.es.md)
+- [Código de conducta](i18n/CODE_OF_CONDUCT.es.md)
+- [Soporte](i18n/SUPPORT.es.md)
+- [Política de seguridad](i18n/SECURITY.es.md)
 - [Changelog](CHANGELOG.md)
 
 Publicado bajo la [Licencia MIT](LICENSE). Kobana y el logotipo de Kobana son marcas de Kobana; la licencia no otorga derechos para usarlas.
