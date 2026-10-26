@@ -1,0 +1,20 @@
+{
+  "name": "kobana-agent-marketplace",
+  "interface": {
+    "displayName": "Kobana Agent Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "kobana",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kobana"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_FIRST_USE"
+      },
+      "category": "Finance"
+    }
+  ]
+}

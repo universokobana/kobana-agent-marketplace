@@ -1,0 +1,35 @@
+name: Bug report
+description: Something in the plugin, a manifest or an install guide does not work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Never paste tokens or customer data. For security issues, follow SECURITY.md instead of opening an issue.
+  - type: input
+    id: client
+    attributes:
+      label: Client and version
+      placeholder: e.g. Claude Code 2.1, Cursor 2.3, ChatGPT web
+    validations:
+      required: true
+  - type: dropdown
+    id: product
+    attributes:
+      label: Kobana product
+      multiple: true
+      options:
+        - Banking Gateway
+        - Banking Gateway (sandbox)
+        - Automatic Billing
+        - Smart Finance
+        - Dunning
+        - Magic Dashboard
+        - Not product specific
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Steps you followed, what you expected and what you saw (error messages, screenshots).
+    validations:
+      required: true

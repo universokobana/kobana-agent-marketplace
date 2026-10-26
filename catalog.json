@@ -1,0 +1,98 @@
+{
+  "$comment": "Single source of truth. Edit this file, then run `npm run generate` to rebuild every vendor manifest.",
+  "marketplace": {
+    "name": "kobana-agent-marketplace",
+    "displayName": "Kobana Agent Marketplace",
+    "description": "Official Kobana plugins for AI agents: remote MCP servers and skills for Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
+    "owner": {
+      "name": "Kobana",
+      "email": "contato@kobana.com.br",
+      "url": "https://www.kobana.com.br"
+    },
+    "repository": "https://github.com/universokobana/kobana-agent-marketplace"
+  },
+  "plugin": {
+    "name": "kobana",
+    "displayName": "Kobana",
+    "version": "1.0.0",
+    "description": "Run Brazilian financial operations from your AI agent: boletos, Pix, payments, transfers, subscriptions, invoices, accounts payable and receivable, reconciliation, dunning and customer portals. Connects to Kobana's official remote MCP servers with OAuth 2.1.",
+    "shortDescription": "Kobana's official MCP servers and skills for financial automation in Brazil.",
+    "category": "Finance",
+    "homepage": "https://www.kobana.com.br/ia/mcp-servers",
+    "developerDocs": "https://www.kobana.com.br/desenvolvedores/mcp",
+    "privacyPolicy": "https://www.kobana.com.br/privacidade",
+    "termsOfService": "https://www.kobana.com.br/termos",
+    "license": "MIT",
+    "brandColor": "#D3FD54",
+    "keywords": [
+      "kobana",
+      "mcp",
+      "finance",
+      "fintech",
+      "brazil",
+      "banking",
+      "pix",
+      "boleto",
+      "billing",
+      "dunning",
+      "accounts-payable",
+      "accounts-receivable",
+      "reconciliation"
+    ],
+    "defaultPrompts": [
+      "List my overdue boletos",
+      "Which accounts payable are due this week?",
+      "Which subscriptions are active?"
+    ]
+  },
+  "servers": [
+    {
+      "id": "kobana-banking",
+      "product": "Banking Gateway",
+      "registryName": "br.com.kobana/banking",
+      "url": "https://mcp.banking.kobana.com.br",
+      "description": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks.",
+      "docs": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction"
+    },
+    {
+      "id": "kobana-banking-sandbox",
+      "product": "Banking Gateway (sandbox)",
+      "registryName": "br.com.kobana/banking-sandbox",
+      "url": "https://mcp.banking.sandbox.kobana.com.br",
+      "description": "Kobana Banking Gateway sandbox: test boletos, Pix and payments with data isolated from production.",
+      "docs": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction"
+    },
+    {
+      "id": "kobana-billing",
+      "product": "Automatic Billing",
+      "registryName": "br.com.kobana/billing",
+      "url": "https://mcp.billing.kobana.com.br",
+      "description": "Customers, subscriptions, invoices, NFS-e and proposals in Kobana Automatic Billing.",
+      "docs": "https://docs.billing.kobana.com.br/pt/mcp/overview/introduction"
+    },
+    {
+      "id": "kobana-finance",
+      "product": "Smart Finance",
+      "registryName": "br.com.kobana/finance",
+      "url": "https://mcp.finance.kobana.com.br",
+      "description": "Accounts payable and receivable, entries, bank reconciliation and cash flow in Kobana Smart Finance.",
+      "docs": "https://docs.finance.kobana.com.br/pt/mcp/overview/introduction"
+    },
+    {
+      "id": "kobana-dunning",
+      "product": "Dunning",
+      "registryName": "br.com.kobana/dunning",
+      "url": "https://mcp.dunning.kobana.com.br",
+      "description": "Charges, dunning workflows, agreements and disputes in Kobana Dunning.",
+      "docs": "https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction"
+    },
+    {
+      "id": "kobana-dashboards",
+      "product": "Magic Dashboard",
+      "registryName": "br.com.kobana/dashboards",
+      "url": "https://mcp.dashboards.kobana.com.br",
+      "description": "Portal users, team and organization of Kobana Magic Dashboard customer portals.",
+      "docs": "https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction"
+    }
+  ]
+}

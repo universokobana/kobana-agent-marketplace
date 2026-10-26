@@ -1,0 +1,26 @@
+{
+  "name": "kobana",
+  "version": "1.0.0",
+  "description": "Run Brazilian financial operations from your AI agent: boletos, Pix, payments, transfers, subscriptions, invoices, accounts payable and receivable, reconciliation, dunning and customer portals. Connects to Kobana's official remote MCP servers with OAuth 2.1.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "kobana-banking": {
+      "httpUrl": "https://mcp.banking.kobana.com.br"
+    },
+    "kobana-banking-sandbox": {
+      "httpUrl": "https://mcp.banking.sandbox.kobana.com.br"
+    },
+    "kobana-billing": {
+      "httpUrl": "https://mcp.billing.kobana.com.br"
+    },
+    "kobana-finance": {
+      "httpUrl": "https://mcp.finance.kobana.com.br"
+    },
+    "kobana-dunning": {
+      "httpUrl": "https://mcp.dunning.kobana.com.br"
+    },
+    "kobana-dashboards": {
+      "httpUrl": "https://mcp.dashboards.kobana.com.br"
+    }
+  }
+}

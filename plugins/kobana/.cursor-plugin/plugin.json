@@ -1,0 +1,30 @@
+{
+  "name": "kobana",
+  "displayName": "Kobana",
+  "logo": "assets/icon.svg",
+  "version": "1.0.0",
+  "description": "Run Brazilian financial operations from your AI agent: boletos, Pix, payments, transfers, subscriptions, invoices, accounts payable and receivable, reconciliation, dunning and customer portals. Connects to Kobana's official remote MCP servers with OAuth 2.1.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br"
+  },
+  "homepage": "https://www.kobana.com.br/ia/mcp-servers",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "banking",
+    "pix",
+    "boleto",
+    "billing",
+    "dunning",
+    "accounts-payable",
+    "accounts-receivable",
+    "reconciliation"
+  ]
+}

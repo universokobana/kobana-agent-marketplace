@@ -1,0 +1,44 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kobana-agent-marketplace",
+  "owner": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br"
+  },
+  "metadata": {
+    "description": "Kobana Agent Marketplace. Official Kobana plugins for AI agents: remote MCP servers and skills for Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "kobana",
+      "source": "./plugins/kobana",
+      "description": "Run Brazilian financial operations from your AI agent: boletos, Pix, payments, transfers, subscriptions, invoices, accounts payable and receivable, reconciliation, dunning and customer portals. Connects to Kobana's official remote MCP servers with OAuth 2.1.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Kobana",
+        "email": "contato@kobana.com.br",
+        "url": "https://www.kobana.com.br"
+      },
+      "homepage": "https://www.kobana.com.br/ia/mcp-servers",
+      "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "kobana",
+        "mcp",
+        "finance",
+        "fintech",
+        "brazil",
+        "banking",
+        "pix",
+        "boleto",
+        "billing",
+        "dunning",
+        "accounts-payable",
+        "accounts-receivable",
+        "reconciliation"
+      ],
+      "category": "finance"
+    }
+  ]
+}

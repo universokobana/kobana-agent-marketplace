@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/universokobana/kobana-agent-marketplace/security/advisories/new
+    about: Report privately. Do not open a public issue.
+  - name: Kobana account or product support
+    url: https://ajuda.kobana.com.br
+    about: Questions about your account, permissions or tokens.

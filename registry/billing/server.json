@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "br.com.kobana/billing",
+  "title": "Kobana Automatic Billing",
+  "description": "Customers, subscriptions, invoices, NFS-e and proposals in Kobana Automatic Billing.",
+  "version": "1.0.0",
+  "websiteUrl": "https://docs.billing.kobana.com.br/pt/mcp/overview/introduction",
+  "repository": {
+    "url": "https://github.com/universokobana/kobana-agent-marketplace",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.billing.kobana.com.br"
+    }
+  ]
+}

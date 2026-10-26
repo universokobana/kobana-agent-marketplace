@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "br.com.kobana/banking",
+  "title": "Kobana Banking Gateway",
+  "description": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks.",
+  "version": "1.0.0",
+  "websiteUrl": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction",
+  "repository": {
+    "url": "https://github.com/universokobana/kobana-agent-marketplace",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.banking.kobana.com.br"
+    }
+  ]
+}
