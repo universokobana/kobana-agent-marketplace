@@ -1,6 +1,6 @@
 # Kobana no Perplexity
 
-[English](perplexity.md) · **Português** · [Español](perplexity.es.md)
+[🇺🇸 English](perplexity.md) · **🇧🇷 Português** · [🇪🇸 Español](perplexity.es.md)
 
 Conecte a Kobana ao Perplexity por meio de **conectores personalizados** (MCP remoto) ou, no app para Mac, de uma ponte MCP local.
 

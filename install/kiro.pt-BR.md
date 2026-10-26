@@ -1,6 +1,6 @@
 # Kobana no Kiro
 
-[English](kiro.md) · **Português** · [Español](kiro.es.md)
+[🇺🇸 English](kiro.md) · **🇧🇷 Português** · [🇪🇸 Español](kiro.es.md)
 
 Adicione os servidores MCP da Kobana ao Kiro (IDE e CLI).
 

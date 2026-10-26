@@ -1,6 +1,6 @@
 # Kobana on ChatGPT
 
-**English** · [Português](chatgpt.pt-BR.md) · [Español](chatgpt.es.md)
+**🇺🇸 English** · [🇧🇷 Português](chatgpt.pt-BR.md) · [🇪🇸 Español](chatgpt.es.md)
 
 Add each Kobana product as a **custom app (connector)** in ChatGPT using its MCP server URL.
 

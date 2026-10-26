@@ -1,6 +1,6 @@
 # Política de Segurança
 
-[English](SECURITY.md) · **Português** · [Español](SECURITY.es.md)
+[🇺🇸 English](SECURITY.md) · **🇧🇷 Português** · [🇪🇸 Español](SECURITY.es.md)
 
 ## Escopo
 

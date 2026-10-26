@@ -1,6 +1,6 @@
 # Kobana plugin
 
-**English** · [Português](README.pt-BR.md) · [Español](README.es.md)
+**🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)
 
 The official Kobana plugin for AI agents. It connects your agent to Kobana's remote MCP servers and adds skills that teach it how to operate Brazilian finance safely.
 

@@ -1,6 +1,6 @@
 # Kobana en VS Code con GitHub Copilot
 
-[English](vscode-copilot.md) · [Português](vscode-copilot.pt-BR.md) · **Español**
+[🇺🇸 English](vscode-copilot.md) · [🇧🇷 Português](vscode-copilot.pt-BR.md) · **🇪🇸 Español**
 
 Instala el **agent plugin de Kobana** (Agent Plugins 1.0) en VS Code o agrega los servidores MCP de Kobana a `mcp.json`.
 

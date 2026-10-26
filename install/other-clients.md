@@ -1,6 +1,6 @@
 # Kobana on any other MCP client
 
-**English** · [Português](other-clients.pt-BR.md) · [Español](other-clients.es.md)
+**🇺🇸 English** · [🇧🇷 Português](other-clients.pt-BR.md) · [🇪🇸 Español](other-clients.es.md)
 
 Kobana's servers follow the MCP standard, so any client that supports remote servers works. Use these values.
 

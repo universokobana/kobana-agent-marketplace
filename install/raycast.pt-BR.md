@@ -1,6 +1,6 @@
 # Kobana no Raycast
 
-[English](raycast.md) · **Português** · [Español](raycast.es.md)
+[🇺🇸 English](raycast.md) · **🇧🇷 Português** · [🇪🇸 Español](raycast.es.md)
 
 Use a Kobana no Raycast AI por meio da extensão MCP.
 

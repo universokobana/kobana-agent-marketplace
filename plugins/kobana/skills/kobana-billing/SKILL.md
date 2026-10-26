@@ -1,6 +1,6 @@
 ---
 name: kobana-billing
-description: Operate Kobana Automatic Billing through the kobana-billing MCP server. Use for recurring billing in Brazil - customers and billing accounts, products, prices and plans, subscriptions (trial, upgrade, downgrade, cancellation), invoices, payments, NFS-e service invoices, proposals, usage, MRR and churn.
+description: "Operate Kobana Automatic Billing through the kobana-billing MCP server. Use for recurring billing in Brazil - customers and billing accounts, products, prices and plans, subscriptions (trial, upgrade, downgrade, cancellation), invoices, payments, NFS-e service invoices, proposals, usage, MRR and churn. Portuguese and Spanish terms: Faturamento Automático, assinatura, plano, fatura, nota fiscal de serviço, proposta, cobrança recorrente, cliente; Facturación Automática, suscripción, plan, factura, factura de servicio, propuesta, facturación recurrente, cliente."
 license: MIT
 metadata:
   author: Kobana

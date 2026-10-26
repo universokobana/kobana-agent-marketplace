@@ -1,6 +1,6 @@
 # Kobana no Mistral Le Chat
 
-[English](le-chat.md) · **Português** · [Español](le-chat.es.md)
+[🇺🇸 English](le-chat.md) · **🇧🇷 Português** · [🇪🇸 Español](le-chat.es.md)
 
 Adicione a Kobana ao Mistral Le Chat como **conector MCP personalizado**.
 

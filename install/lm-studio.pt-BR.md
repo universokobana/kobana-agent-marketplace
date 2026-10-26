@@ -1,6 +1,6 @@
 # Kobana no LM Studio
 
-[English](lm-studio.md) · **Português** · [Español](lm-studio.es.md)
+[🇺🇸 English](lm-studio.md) · **🇧🇷 Português** · [🇪🇸 Español](lm-studio.es.md)
 
 Use as ferramentas da Kobana com modelos locais no LM Studio.
 

@@ -1,6 +1,6 @@
 # Kobana Agent Marketplace
 
-**English** · [Português](README.pt-BR.md) · [Español](README.es.md)
+**🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)
 
 The official [Kobana](https://www.kobana.com.br) plugin for AI agents. Connect Claude, ChatGPT, Codex, Cursor, Gemini, Copilot and any other MCP client to your Kobana account, then operate your financial back-office by conversation: check charges, reconcile accounts and make payments, always with your own permissions.
 

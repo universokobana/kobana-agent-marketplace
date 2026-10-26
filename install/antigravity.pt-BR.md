@@ -1,6 +1,6 @@
 # Kobana no Google Antigravity
 
-[English](antigravity.md) · **Português** · [Español](antigravity.es.md)
+[🇺🇸 English](antigravity.md) · **🇧🇷 Português** · [🇪🇸 Español](antigravity.es.md)
 
 Adicione os servidores MCP da Kobana ao Google Antigravity (a IDE agêntica) e ao Antigravity CLI.
 

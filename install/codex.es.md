@@ -1,6 +1,6 @@
 # Kobana en OpenAI Codex (CLI, extensión de IDE y app)
 
-[English](codex.md) · [Português](codex.pt-BR.md) · **Español**
+[🇺🇸 English](codex.md) · [🇧🇷 Português](codex.pt-BR.md) · **🇪🇸 Español**
 
 Instala el **plugin de Kobana** desde este marketplace o agrega los servidores MCP de Kobana directamente en Codex.
 

@@ -1,6 +1,6 @@
 # Kobana en Cline
 
-[English](cline.md) · [Português](cline.pt-BR.md) · **Español**
+[🇺🇸 English](cline.md) · [🇧🇷 Português](cline.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a Cline (VS Code y JetBrains).
 

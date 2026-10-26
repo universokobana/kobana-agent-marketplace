@@ -1,6 +1,6 @@
 # Kobana on Manus
 
-**English** · [Português](manus.pt-BR.md) · [Español](manus.es.md)
+**🇺🇸 English** · [🇧🇷 Português](manus.pt-BR.md) · [🇪🇸 Español](manus.es.md)
 
 Add the Kobana MCP servers to Manus as **custom MCP connectors**.
 

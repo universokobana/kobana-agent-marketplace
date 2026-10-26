@@ -1,6 +1,6 @@
 ---
 name: kobana
-description: Entry point for working with Kobana, the Brazilian financial automation platform, through its MCP servers. Use when the user mentions Kobana or asks about boletos, Pix, bank payments or transfers, subscriptions, invoices, NFS-e, accounts payable or receivable, bank reconciliation, cash flow, dunning or customer portals in a Brazilian company context. Explains which Kobana MCP server covers each task, how authentication and permissions work, and the safety rules for money-moving actions.
+description: "Entry point for working with Kobana, the Brazilian financial automation platform, through its MCP servers. Use when the user mentions Kobana or asks about boletos, Pix, bank payments or transfers, subscriptions, invoices, NFS-e, accounts payable or receivable, bank reconciliation, cash flow, dunning or customer portals in a Brazilian company context. Explains which Kobana MCP server covers each task, how authentication and permissions work, and the safety rules for money-moving actions. Also triggers in Portuguese and Spanish: Kobana, boleto, cobrança, pagamento, transferência, assinatura, fatura, nota fiscal, contas a pagar, contas a receber, conciliação bancária, fluxo de caixa, régua de cobrança, portal do cliente; cobro, pago, transferencia, suscripción, factura, cuentas por pagar, cuentas por cobrar, conciliación bancaria, flujo de caja, cobranza, portal de clientes."
 license: MIT
 metadata:
   author: Kobana

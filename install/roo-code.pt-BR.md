@@ -1,6 +1,6 @@
 # Kobana no Roo Code
 
-[English](roo-code.md) · **Português** · [Español](roo-code.es.md)
+[🇺🇸 English](roo-code.md) · **🇧🇷 Português** · [🇪🇸 Español](roo-code.es.md)
 
 Adicione os servidores MCP da Kobana ao Roo Code.
 

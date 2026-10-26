@@ -1,6 +1,6 @@
 # Kobana no Zed
 
-[English](zed.md) · **Português** · [Español](zed.es.md)
+[🇺🇸 English](zed.md) · **🇧🇷 Português** · [🇪🇸 Español](zed.es.md)
 
 Adicione os servidores MCP da Kobana ao Agent Panel do Zed como context servers.
 

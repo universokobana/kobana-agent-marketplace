@@ -1,6 +1,6 @@
 # Instala Kobana en tu cliente de IA
 
-[English](README.md) · [Português](README.pt-BR.md) · **Español**
+[🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**
 
 Cada producto Kobana tiene un servidor MCP remoto. La mayoría de los clientes se conecta solo con la URL y un login de Kobana (OAuth). Los clientes marcados como **Plugin** también pueden instalar el plugin completo de Kobana desde este marketplace, que agrega todos los servidores y las skills de Kobana de una sola vez.
 

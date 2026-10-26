@@ -1,6 +1,6 @@
 # Kobana en Microsoft Copilot Studio
 
-[English](copilot-studio.md) · [Português](copilot-studio.pt-BR.md) · **Español**
+[🇺🇸 English](copilot-studio.md) · [🇧🇷 Português](copilot-studio.pt-BR.md) · **🇪🇸 Español**
 
 Dales a tus agentes de Copilot Studio las herramientas de Kobana agregando los servidores MCP de Kobana.
 

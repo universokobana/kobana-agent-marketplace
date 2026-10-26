@@ -1,6 +1,6 @@
 # Kobana no Gemini CLI
 
-[English](gemini-cli.md) · **Português** · [Español](gemini-cli.es.md)
+[🇺🇸 English](gemini-cli.md) · **🇧🇷 Português** · [🇪🇸 Español](gemini-cli.es.md)
 
 Instale a Kobana como **extensão do Gemini CLI**. Ela registra todos os servidores MCP da Kobana e carrega o contexto da Kobana (`GEMINI.md`).
 

@@ -1,6 +1,6 @@
 # Security Policy
 
-**English** · [Português](SECURITY.pt-BR.md) · [Español](SECURITY.es.md)
+**🇺🇸 English** · [🇧🇷 Português](SECURITY.pt-BR.md) · [🇪🇸 Español](SECURITY.es.md)
 
 ## Scope
 

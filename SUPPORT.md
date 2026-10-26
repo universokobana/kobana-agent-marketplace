@@ -1,6 +1,6 @@
 # Support
 
-**English** · [Português](SUPPORT.pt-BR.md) · [Español](SUPPORT.es.md)
+**🇺🇸 English** · [🇧🇷 Português](SUPPORT.pt-BR.md) · [🇪🇸 Español](SUPPORT.es.md)
 
 ## Where to get help
 

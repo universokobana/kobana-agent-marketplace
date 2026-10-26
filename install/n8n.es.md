@@ -1,6 +1,6 @@
 # Kobana en n8n
 
-[English](n8n.md) · [Português](n8n.pt-BR.md) · **Español**
+[🇺🇸 English](n8n.md) · [🇧🇷 Português](n8n.pt-BR.md) · **🇪🇸 Español**
 
 Dale herramientas de Kobana a los AI Agents de n8n con el nodo **MCP Client Tool**.
 

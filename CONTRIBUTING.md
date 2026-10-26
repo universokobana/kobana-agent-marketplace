@@ -1,6 +1,6 @@
 # Contributing
 
-**English** · [Português](CONTRIBUTING.pt-BR.md) · [Español](CONTRIBUTING.es.md)
+**🇺🇸 English** · [🇧🇷 Português](CONTRIBUTING.pt-BR.md) · [🇪🇸 Español](CONTRIBUTING.es.md)
 
 Thank you for helping improve the Kobana Agent Marketplace. Contributions of all sizes are welcome: fixing a step in an install guide, adding a new client, improving a skill or a translation.
 

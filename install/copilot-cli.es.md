@@ -1,6 +1,6 @@
 # Kobana en GitHub Copilot CLI
 
-[English](copilot-cli.md) · [Português](copilot-cli.pt-BR.md) · **Español**
+[🇺🇸 English](copilot-cli.md) · [🇧🇷 Português](copilot-cli.pt-BR.md) · **🇪🇸 Español**
 
 Instala el **plugin de Kobana** en GitHub Copilot CLI o agrega los servidores MCP de Kobana.
 

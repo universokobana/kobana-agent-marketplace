@@ -1,6 +1,6 @@
 # Kobana on Cursor
 
-**English** · [Português](cursor.pt-BR.md) · [Español](cursor.es.md)
+**🇺🇸 English** · [🇧🇷 Português](cursor.pt-BR.md) · [🇪🇸 Español](cursor.es.md)
 
 Install the **Kobana plugin** in Cursor, or add the Kobana MCP servers with one click.
 

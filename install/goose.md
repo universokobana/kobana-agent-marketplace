@@ -1,6 +1,6 @@
 # Kobana on Goose
 
-**English** · [Português](goose.pt-BR.md) · [Español](goose.es.md)
+**🇺🇸 English** · [🇧🇷 Português](goose.pt-BR.md) · [🇪🇸 Español](goose.es.md)
 
 Add the Kobana MCP servers to Goose (desktop and CLI) as remote extensions.
 

@@ -1,6 +1,6 @@
 ---
 name: kobana-banking
-description: Operate Kobana Banking Gateway through the kobana-banking MCP server (or kobana-banking-sandbox for tests). Use for boletos, bolepix, Pix charges and QR codes, paying boletos and taxes, Pix and TED transfers, bank accounts, balances, statements, DDA and customers across 40+ Brazilian banks.
+description: "Operate Kobana Banking Gateway through the kobana-banking MCP server (or kobana-banking-sandbox for tests). Use for boletos, bolepix, Pix charges and QR codes, paying boletos and taxes, Pix and TED transfers, bank accounts, balances, statements, DDA and customers across 40+ Brazilian banks. Portuguese and Spanish terms: Gateway Bancário, boleto vencido, cobrança Pix, QR code Pix, pagar boleto, pagar tributo, transferência Pix, TED, saldo, extrato, conta bancária; Gateway Bancario, cobro Pix, pagar boleto, transferencia, saldo, extracto, cuenta bancaria."
 license: MIT
 metadata:
   author: Kobana

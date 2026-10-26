@@ -1,6 +1,6 @@
 # Kobana en APIs y SDKs de agentes
 
-[English](apis-and-sdks.md) · [Português](apis-and-sdks.pt-BR.md) · **Español**
+[🇺🇸 English](apis-and-sdks.md) · [🇧🇷 Português](apis-and-sdks.pt-BR.md) · **🇪🇸 Español**
 
 Llama a los servidores MCP de Kobana desde tu propio código: Anthropic Messages API, OpenAI Responses API, SDKs de agentes y cualquier biblioteca cliente de MCP.
 

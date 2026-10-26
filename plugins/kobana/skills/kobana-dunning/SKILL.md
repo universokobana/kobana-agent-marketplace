@@ -1,6 +1,6 @@
 ---
 name: kobana-dunning
-description: Operate Kobana Dunning (Régua de Cobrança) through the kobana-dunning MCP server. Use for collections from due date to payment - overdue charges, multichannel dunning workflows (email, SMS, WhatsApp), payment agreements and promises, disputes, contact suppressions and the debtor portal.
+description: "Operate Kobana Dunning (Régua de Cobrança) through the kobana-dunning MCP server. Use for collections from due date to payment - overdue charges, multichannel dunning workflows (email, SMS, WhatsApp), payment agreements and promises, disputes, contact suppressions and the debtor portal. Portuguese and Spanish terms: Régua de Cobrança, cobrança vencida, inadimplência, devedor, acordo, promessa de pagamento, disputa, contestação; Regla de Cobranza, cobro vencido, morosidad, deudor, acuerdo de pago, promesa de pago, disputa."
 license: MIT
 metadata:
   author: Kobana

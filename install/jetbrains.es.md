@@ -1,6 +1,6 @@
 # Kobana en JetBrains AI Assistant y Junie
 
-[English](jetbrains.md) · [Português](jetbrains.pt-BR.md) · **Español**
+[🇺🇸 English](jetbrains.md) · [🇧🇷 Português](jetbrains.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a los IDE de JetBrains (IntelliJ IDEA, PyCharm, WebStorm, …) para AI Assistant y Junie.
 

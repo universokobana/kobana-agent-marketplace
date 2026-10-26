@@ -1,6 +1,6 @@
 # Kobana en Warp
 
-[English](warp.md) · [Português](warp.pt-BR.md) · **Español**
+[🇺🇸 English](warp.md) · [🇧🇷 Português](warp.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a los agentes de Warp.
 

@@ -1,6 +1,6 @@
 ---
 name: kobana-finance
-description: Operate Kobana Smart Finance through the kobana-finance MCP server. Use for the financial back-office - accounts payable and receivable, entries and installments, categories and cost centers, vendors and clients, bank reconciliation, multi-company workspaces, cash flow and projections. Always pick a workspace first.
+description: "Operate Kobana Smart Finance through the kobana-finance MCP server. Use for the financial back-office - accounts payable and receivable, entries and installments, categories and cost centers, vendors and clients, bank reconciliation, multi-company workspaces, cash flow and projections. Always pick a workspace first. Portuguese and Spanish terms: Financeiro Inteligente, contas a pagar, contas a receber, lançamento, parcela, categoria, centro de custo, fornecedor, conciliação bancária, fluxo de caixa, workspace; Financiero Inteligente, cuentas por pagar, cuentas por cobrar, asiento, cuota, categoría, centro de costo, proveedor, conciliación bancaria, flujo de caja."
 license: MIT
 metadata:
   author: Kobana

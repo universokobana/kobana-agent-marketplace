@@ -1,6 +1,6 @@
 # Kobana en Continue
 
-[English](continue.md) · [Português](continue.pt-BR.md) · **Español**
+[🇺🇸 English](continue.md) · [🇧🇷 Português](continue.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a Continue (VS Code y JetBrains).
 

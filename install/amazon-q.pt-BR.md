@@ -1,6 +1,6 @@
 # Kobana no Amazon Q Developer
 
-[English](amazon-q.md) · **Português** · [Español](amazon-q.es.md)
+[🇺🇸 English](amazon-q.md) · **🇧🇷 Português** · [🇪🇸 Español](amazon-q.es.md)
 
 Adicione os servidores MCP da Kobana ao Amazon Q Developer (CLI e plugins para IDE).
 

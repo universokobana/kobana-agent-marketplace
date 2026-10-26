@@ -1,6 +1,6 @@
 # Kobana en Windsurf
 
-[English](windsurf.md) · [Português](windsurf.pt-BR.md) · **Español**
+[🇺🇸 English](windsurf.md) · [🇧🇷 Português](windsurf.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a Cascade, de Windsurf.
 

@@ -1,6 +1,6 @@
 # Kobana on Claude (web, desktop and mobile)
 
-**English** · [Português](claude-ai.pt-BR.md) · [Español](claude-ai.es.md)
+**🇺🇸 English** · [🇧🇷 Português](claude-ai.pt-BR.md) · [🇪🇸 Español](claude-ai.es.md)
 
 Add Kobana as a **custom connector** in Claude. No installation needed: you paste a URL and sign in to Kobana.
 

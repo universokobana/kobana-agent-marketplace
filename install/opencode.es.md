@@ -1,6 +1,6 @@
 # Kobana en OpenCode
 
-[English](opencode.md) · [Português](opencode.pt-BR.md) · **Español**
+[🇺🇸 English](opencode.md) · [🇧🇷 Português](opencode.pt-BR.md) · **🇪🇸 Español**
 
 Agrega los servidores MCP de Kobana a OpenCode.
 

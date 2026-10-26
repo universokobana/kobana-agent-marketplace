@@ -1,6 +1,6 @@
 ---
 name: kobana-dashboards
-description: Operate Kobana Magic Dashboard through the kobana-dashboards MCP server. Use to manage white-label customer portals - portal users and invitations, team members and roles, and organization settings.
+description: "Operate Kobana Magic Dashboard through the kobana-dashboards MCP server. Use to manage white-label customer portals - portal users and invitations, team members and roles, and organization settings. Portuguese and Spanish terms: Dashboard Mágico, portal do cliente, usuário do portal, convite, equipe, organização; Dashboard Mágico, portal de clientes, usuario del portal, invitación, equipo, organización."
 license: MIT
 metadata:
   author: Kobana

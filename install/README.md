@@ -1,6 +1,6 @@
 # Install Kobana in your AI client
 
-**English** · [Português](README.pt-BR.md) · [Español](README.es.md)
+**🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)
 
 Every Kobana product has a remote MCP server. Most clients connect with just the URL and a Kobana login (OAuth). Clients marked **Plugin** can also install the full Kobana plugin from this marketplace, which adds all servers and the Kobana skills at once.
 

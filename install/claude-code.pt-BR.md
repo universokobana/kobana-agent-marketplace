@@ -1,6 +1,6 @@
 # Kobana no Claude Code
 
-[English](claude-code.md) · **Português** · [Español](claude-code.es.md)
+[🇺🇸 English](claude-code.md) · **🇧🇷 Português** · [🇪🇸 Español](claude-code.es.md)
 
 Instale o **plugin Kobana** deste marketplace. Ele configura todos os servidores MCP da Kobana e adiciona as skills da Kobana.
 

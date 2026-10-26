@@ -1,6 +1,6 @@
 # Política de seguridad
 
-[English](SECURITY.md) · [Português](SECURITY.pt-BR.md) · **Español**
+[🇺🇸 English](SECURITY.md) · [🇧🇷 Português](SECURITY.pt-BR.md) · **🇪🇸 Español**
 
 ## Alcance
 
