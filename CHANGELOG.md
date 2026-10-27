@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.3] - 2026-10-26
+
+### Fixed
+
+- Skills no longer include the `curl` connection test that sent `$MCP_TOKEN` to the MCP server. The plugin directory flagged it as reading a credential from the user's machine. The test stays in the install guides and the developer guide, and the skills now tell the agent never to ask for a token in the conversation.
+
 ## [2.0.2] - 2026-10-26
 
 ### Fixed
@@ -37,7 +43,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...HEAD
+[2.0.3]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/universokobana/kobana-agent-marketplace/compare/v1.0.0...v2.0.0

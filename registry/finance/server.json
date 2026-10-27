@@ -3,7 +3,7 @@
   "name": "br.com.kobana/finance",
   "title": "Kobana Smart Finance",
   "description": "Accounts payable and receivable, entries, bank reconciliation and cash flow in Kobana Smart Finance.",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "websiteUrl": "https://docs.finance.kobana.com.br/pt/mcp/overview/introduction",
   "repository": {
     "url": "https://github.com/universokobana/kobana-agent-marketplace",

@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Kobana Agent Marketplace. Official Kobana plugins for AI agents: one plugin per product, each with its remote MCP server and skills. Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
-    "version": "2.0.2"
+    "version": "2.0.3"
   },
   "plugins": [
     {
@@ -15,7 +15,7 @@
       "displayName": "Kobana - Banking Gateway / Gateway Bancário",
       "source": "./plugins/kobana-banking",
       "description": "Kobana Banking Gateway for AI agents: boletos, bolepix, Pix charges, payments, Pix and TED transfers, bank accounts, balances and statements across 40+ Brazilian banks. Includes the sandbox server for safe testing.",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "author": {
         "name": "Kobana",
         "email": "contato@kobana.com.br",
@@ -45,7 +45,7 @@
       "displayName": "Kobana - Automatic Billing / Faturamento Automático",
       "source": "./plugins/kobana-billing",
       "description": "Kobana Automatic Billing for AI agents: customers, plans, subscriptions, invoices, payments, NFS-e, proposals, usage, MRR and churn for recurring billing in Brazil.",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "author": {
         "name": "Kobana",
         "email": "contato@kobana.com.br",
@@ -74,7 +74,7 @@
       "displayName": "Kobana - Smart Finance / Financeiro Inteligente",
       "source": "./plugins/kobana-finance",
       "description": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "author": {
         "name": "Kobana",
         "email": "contato@kobana.com.br",
@@ -102,7 +102,7 @@
       "displayName": "Kobana - Dunning / Régua de Cobrança",
       "source": "./plugins/kobana-dunning",
       "description": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "author": {
         "name": "Kobana",
         "email": "contato@kobana.com.br",
@@ -130,7 +130,7 @@
       "displayName": "Kobana - Magic Dashboard / Dashboard Mágico",
       "source": "./plugins/kobana-dashboards",
       "description": "Kobana Magic Dashboard for AI agents: customer portal users and invitations, team members and organization settings.",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "author": {
         "name": "Kobana",
         "email": "contato@kobana.com.br",

@@ -79,15 +79,8 @@ Each Kobana product is a separate plugin with its own MCP server. When a request
 
 Setup guides for every client: https://github.com/universokobana/kobana-agent-marketplace/tree/main/install
 
-### Connection test
+### Connection problems
 
-```bash
-curl https://mcp.banking.kobana.com.br/ \
-  -H "Authorization: Bearer $MCP_TOKEN" \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -H "MCP-Protocol-Version: 2025-06-18" \
-  -d '{ "jsonrpc": "2.0", "id": 1, "method": "tools/list" }'
-```
+If a server does not respond or rejects authentication, point the user to the setup guide of their client (link above) and to the developer guide, which has a connection test they can run themselves. Never ask the user to paste a token into the conversation.
 
 Developer guide: https://www.kobana.com.br/en/developers/mcp · User guide: https://www.kobana.com.br/en/ai/mcp-servers
