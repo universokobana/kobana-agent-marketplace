@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kobana-billing",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Kobana Automatic Billing for AI agents: customers, plans, subscriptions, invoices, payments, NFS-e, proposals, usage, MRR and churn for recurring billing in Brazil.",
   "author": {
     "name": "Kobana",

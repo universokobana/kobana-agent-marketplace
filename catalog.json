@@ -1,6 +1,6 @@
 {
   "$comment": "Single source of truth. Edit this file or src/, then run `npm run generate` to rebuild every plugin and manifest.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "marketplace": {
     "name": "kobana-agent-marketplace",
     "displayName": "Kobana Agent Marketplace",
@@ -19,7 +19,18 @@
     "homepage": "https://www.kobana.com.br/en/ai/mcp-servers",
     "privacyPolicy": "https://www.kobana.com.br/en/privacy",
     "termsOfService": "https://www.kobana.com.br/en/terms",
-    "keywords": ["kobana", "mcp", "finance", "fintech", "brazil"]
+    "keywords": [
+      "kobana",
+      "mcp",
+      "finance",
+      "fintech",
+      "brazil"
+    ],
+    "developerPages": {
+      "en": "https://www.kobana.com.br/en/developers/cli",
+      "pt-BR": "https://www.kobana.com.br/desenvolvedores/cli",
+      "es": "https://www.kobana.com.br/es/desarrolladores/cli"
+    }
   },
   "plugins": [
     {
@@ -27,17 +38,38 @@
       "product": "Banking Gateway",
       "description": "Kobana Banking Gateway for AI agents: boletos, bolepix, Pix charges, payments, Pix and TED transfers, bank accounts, balances and statements across 40+ Brazilian banks. Includes the sandbox server for safe testing.",
       "shortDescription": "Boletos, Pix, payments and transfers on 40+ Brazilian banks.",
-      "keywords": ["banking", "pix", "boleto", "payments", "transfers", "ted", "bank-statement"],
-      "defaultPrompts": ["List my overdue boletos", "What is the balance of my financial accounts?", "Create a Pix charge of R$ 99.90"],
+      "keywords": [
+        "banking",
+        "pix",
+        "boleto",
+        "payments",
+        "transfers",
+        "ted",
+        "bank-statement"
+      ],
+      "defaultPrompts": [
+        "List my overdue boletos",
+        "What is the balance of my financial accounts?",
+        "Create a Pix charge of R$ 99.90"
+      ],
       "pages": {
         "en": "https://www.kobana.com.br/en/products/banking-gateway",
         "pt-BR": "https://www.kobana.com.br/produtos/gateway-bancario",
         "es": "https://www.kobana.com.br/es/productos/gateway-bancario"
       },
       "i18n": {
-        "en": { "product": "Banking Gateway", "summary": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks." },
-        "pt-BR": { "product": "Gateway Bancário", "summary": "Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos." },
-        "es": { "product": "Gateway Bancario", "summary": "Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños." }
+        "en": {
+          "product": "Banking Gateway",
+          "summary": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks."
+        },
+        "pt-BR": {
+          "product": "Gateway Bancário",
+          "summary": "Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos."
+        },
+        "es": {
+          "product": "Gateway Bancario",
+          "summary": "Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños."
+        }
       },
       "servers": [
         {
@@ -55,24 +87,48 @@
           "description": "Kobana Banking Gateway sandbox: test boletos, Pix and payments with data isolated from production.",
           "docs": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction"
         }
-      ]
+      ],
+      "docs": {
+        "base": "https://docs.banking.kobana.com.br",
+        "cli": true
+      }
     },
     {
       "name": "kobana-billing",
       "product": "Automatic Billing",
       "description": "Kobana Automatic Billing for AI agents: customers, plans, subscriptions, invoices, payments, NFS-e, proposals, usage, MRR and churn for recurring billing in Brazil.",
       "shortDescription": "Subscriptions, invoices and NFS-e for recurring billing in Brazil.",
-      "keywords": ["billing", "subscriptions", "invoices", "nfs-e", "recurring-billing", "saas"],
-      "defaultPrompts": ["Which subscriptions are active?", "Which invoices are open this month?", "What is our MRR?"],
+      "keywords": [
+        "billing",
+        "subscriptions",
+        "invoices",
+        "nfs-e",
+        "recurring-billing",
+        "saas"
+      ],
+      "defaultPrompts": [
+        "Which subscriptions are active?",
+        "Which invoices are open this month?",
+        "What is our MRR?"
+      ],
       "pages": {
         "en": "https://www.kobana.com.br/en/products/automatic-billing",
         "pt-BR": "https://www.kobana.com.br/produtos/faturamento-automatico",
         "es": "https://www.kobana.com.br/es/productos/facturacion-automatica"
       },
       "i18n": {
-        "en": { "product": "Automatic Billing", "summary": "Customers, subscriptions, invoices, NFS-e and proposals." },
-        "pt-BR": { "product": "Faturamento Automático", "summary": "Clientes, assinaturas, faturas, notas fiscais e propostas." },
-        "es": { "product": "Facturación Automática", "summary": "Clientes, suscripciones, facturas, NFS-e y propuestas." }
+        "en": {
+          "product": "Automatic Billing",
+          "summary": "Customers, subscriptions, invoices, NFS-e and proposals."
+        },
+        "pt-BR": {
+          "product": "Faturamento Automático",
+          "summary": "Clientes, assinaturas, faturas, notas fiscais e propostas."
+        },
+        "es": {
+          "product": "Facturación Automática",
+          "summary": "Clientes, suscripciones, facturas, NFS-e y propuestas."
+        }
       },
       "servers": [
         {
@@ -82,24 +138,47 @@
           "description": "Customers, subscriptions, invoices, NFS-e and proposals in Kobana Automatic Billing.",
           "docs": "https://docs.billing.kobana.com.br/pt/mcp/overview/introduction"
         }
-      ]
+      ],
+      "docs": {
+        "base": "https://docs.billing.kobana.com.br",
+        "cli": true
+      }
     },
     {
       "name": "kobana-finance",
       "product": "Smart Finance",
       "description": "Kobana Smart Finance for AI agents: accounts payable and receivable, entries, categories, bank reconciliation, multi-company workspaces and cash flow.",
       "shortDescription": "Payables, receivables, reconciliation and cash flow.",
-      "keywords": ["accounts-payable", "accounts-receivable", "reconciliation", "cash-flow", "back-office"],
-      "defaultPrompts": ["Which workspaces can you act on?", "Which accounts payable are due this week?", "How does the cash flow look this month?"],
+      "keywords": [
+        "accounts-payable",
+        "accounts-receivable",
+        "reconciliation",
+        "cash-flow",
+        "back-office"
+      ],
+      "defaultPrompts": [
+        "Which workspaces can you act on?",
+        "Which accounts payable are due this week?",
+        "How does the cash flow look this month?"
+      ],
       "pages": {
         "en": "https://www.kobana.com.br/en/products/smart-finance",
         "pt-BR": "https://www.kobana.com.br/produtos/financeiro-inteligente",
         "es": "https://www.kobana.com.br/es/productos/financiero-inteligente"
       },
       "i18n": {
-        "en": { "product": "Smart Finance", "summary": "Accounts payable and receivable, entries, reconciliation and cash flow." },
-        "pt-BR": { "product": "Financeiro Inteligente", "summary": "Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa." },
-        "es": { "product": "Financiero Inteligente", "summary": "Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja." }
+        "en": {
+          "product": "Smart Finance",
+          "summary": "Accounts payable and receivable, entries, reconciliation and cash flow."
+        },
+        "pt-BR": {
+          "product": "Financeiro Inteligente",
+          "summary": "Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa."
+        },
+        "es": {
+          "product": "Financiero Inteligente",
+          "summary": "Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja."
+        }
       },
       "servers": [
         {
@@ -109,24 +188,46 @@
           "description": "Accounts payable and receivable, entries, bank reconciliation and cash flow in Kobana Smart Finance.",
           "docs": "https://docs.finance.kobana.com.br/pt/mcp/overview/introduction"
         }
-      ]
+      ],
+      "docs": {
+        "base": "https://docs.finance.kobana.com.br",
+        "cli": true
+      }
     },
     {
       "name": "kobana-dunning",
       "product": "Dunning",
       "description": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
       "shortDescription": "Collections from due date to payment.",
-      "keywords": ["dunning", "collections", "overdue", "agreements", "debt"],
-      "defaultPrompts": ["Which charges are overdue?", "Which agreements are in progress?"],
+      "keywords": [
+        "dunning",
+        "collections",
+        "overdue",
+        "agreements",
+        "debt"
+      ],
+      "defaultPrompts": [
+        "Which charges are overdue?",
+        "Which agreements are in progress?"
+      ],
       "pages": {
         "en": "https://www.kobana.com.br/en/products/dunning",
         "pt-BR": "https://www.kobana.com.br/produtos/regua-de-cobranca",
         "es": "https://www.kobana.com.br/es/productos/cobranza"
       },
       "i18n": {
-        "en": { "product": "Dunning", "summary": "Charges, dunning workflows, agreements and disputes." },
-        "pt-BR": { "product": "Régua de Cobrança", "summary": "Cobranças, réguas, acordos e disputas." },
-        "es": { "product": "Regla de Cobranza", "summary": "Cobros, reglas de cobranza, acuerdos y disputas." }
+        "en": {
+          "product": "Dunning",
+          "summary": "Charges, dunning workflows, agreements and disputes."
+        },
+        "pt-BR": {
+          "product": "Régua de Cobrança",
+          "summary": "Cobranças, réguas, acordos e disputas."
+        },
+        "es": {
+          "product": "Regla de Cobranza",
+          "summary": "Cobros, reglas de cobranza, acuerdos y disputas."
+        }
       },
       "servers": [
         {
@@ -136,24 +237,45 @@
           "description": "Charges, dunning workflows, agreements and disputes in Kobana Dunning.",
           "docs": "https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction"
         }
-      ]
+      ],
+      "docs": {
+        "base": "https://docs.dunning.kobana.com.br",
+        "cli": false
+      }
     },
     {
       "name": "kobana-dashboards",
       "product": "Magic Dashboard",
       "description": "Kobana Magic Dashboard for AI agents: customer portal users and invitations, team members and organization settings.",
       "shortDescription": "Customer portal users, team and organization.",
-      "keywords": ["customer-portal", "dashboards", "portal-users", "white-label"],
-      "defaultPrompts": ["Which portal users have not accepted the invitation yet?", "Who is on my team?"],
+      "keywords": [
+        "customer-portal",
+        "dashboards",
+        "portal-users",
+        "white-label"
+      ],
+      "defaultPrompts": [
+        "Which portal users have not accepted the invitation yet?",
+        "Who is on my team?"
+      ],
       "pages": {
         "en": "https://www.kobana.com.br/en/products/magic-dashboard",
         "pt-BR": "https://www.kobana.com.br/produtos/dashboard-magico",
         "es": "https://www.kobana.com.br/es/productos/dashboard-magico"
       },
       "i18n": {
-        "en": { "product": "Magic Dashboard", "summary": "Portal users, team and organization." },
-        "pt-BR": { "product": "Dashboard Mágico", "summary": "Usuários do portal, equipe e organização." },
-        "es": { "product": "Dashboard Mágico", "summary": "Usuarios del portal, equipo y organización." }
+        "en": {
+          "product": "Magic Dashboard",
+          "summary": "Portal users, team and organization."
+        },
+        "pt-BR": {
+          "product": "Dashboard Mágico",
+          "summary": "Usuários do portal, equipe e organização."
+        },
+        "es": {
+          "product": "Dashboard Mágico",
+          "summary": "Usuarios del portal, equipo y organización."
+        }
       },
       "servers": [
         {
@@ -163,7 +285,11 @@
           "description": "Portal users, team and organization of Kobana Magic Dashboard customer portals.",
           "docs": "https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction"
         }
-      ]
+      ],
+      "docs": {
+        "base": "https://docs.dashboards.kobana.com.br",
+        "cli": true
+      }
     }
   ]
 }

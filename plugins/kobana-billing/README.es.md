@@ -25,6 +25,14 @@ Para otros clientes, consulta las [guías de instalación](../../install/README.
 
 La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de sesión de Kobana.
 
-[Conoce más sobre el producto](https://www.kobana.com.br/es/productos/facturacion-automatica) · [MCP docs](https://docs.billing.kobana.com.br/pt/mcp/overview/introduction) · [Privacidad](https://www.kobana.com.br/es/privacidad)
+## Enlaces
+
+- **Sitio web**: https://www.kobana.com.br/es/productos/facturacion-automatica
+- **Documentación**: https://docs.billing.kobana.com.br/es
+- **API**: https://docs.billing.kobana.com.br/es/api/overview
+- **MCP**: https://docs.billing.kobana.com.br/es/mcp/overview/introduction
+- **CLI**: https://docs.billing.kobana.com.br/es/cli/overview/introduction
+- **Privacidad**: https://www.kobana.com.br/es/privacidad
+- **Términos de uso**: https://www.kobana.com.br/es/terminos
 
 > Esta carpeta se genera a partir de `catalog.json` y `src/` del repositorio. No la edites a mano.

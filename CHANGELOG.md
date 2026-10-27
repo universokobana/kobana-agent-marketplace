@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.5] - 2026-10-26
+
+### Added
+
+- Plugin READMEs have a links section in each language: website, documentation, API, MCP, CLI, privacy and terms of use. Dunning has no CLI docs yet, so it links to the Kobana CLI page.
+- The Claude plugin manifests declare `documentationUrl` (the product's MCP docs in English), `supportUrl` (SUPPORT.md) and `termsOfServiceUrl` for the plugin directory listing.
+
 ## [2.0.4] - 2026-10-26
 
 ### Changed
@@ -49,7 +56,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...HEAD
+[2.0.5]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.1...v2.0.2

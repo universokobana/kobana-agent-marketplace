@@ -26,6 +26,14 @@ Para outros clientes, veja os [guias de instalação](../../install/README.pt-BR
 
 A autenticação é OAuth 2.1: no primeiro uso, o cliente abre o login da Kobana.
 
-[Saiba mais sobre o produto](https://www.kobana.com.br/produtos/gateway-bancario) · [MCP docs](https://docs.banking.kobana.com.br/pt/mcp/overview/introduction) · [Privacidade](https://www.kobana.com.br/privacidade)
+## Links
+
+- **Site**: https://www.kobana.com.br/produtos/gateway-bancario
+- **Documentação**: https://docs.banking.kobana.com.br/pt
+- **API**: https://docs.banking.kobana.com.br/pt/api/overview
+- **MCP**: https://docs.banking.kobana.com.br/pt/mcp/overview/introduction
+- **CLI**: https://docs.banking.kobana.com.br/pt/cli/overview/introduction
+- **Privacidade**: https://www.kobana.com.br/privacidade
+- **Termos de uso**: https://www.kobana.com.br/termos
 
 > Esta pasta é gerada a partir do `catalog.json` e de `src/` do repositório. Não edite à mão.

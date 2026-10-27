@@ -54,8 +54,8 @@ const readmeText = {
     cols: "| Server | URL |",
     sandbox: "sandbox, data isolated from production",
     auth: "Authentication is OAuth 2.1: on first use, your client opens the Kobana login.",
-    learn: "Learn more about the product",
-    privacy: "[Privacy](https://www.kobana.com.br/en/privacy)",
+    links: "Links",
+    labels: { site: "Website", docs: "Documentation", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacy", terms: "Terms of use" },
     generated: "This folder is generated from the repository's `catalog.json` and `src/`. Do not edit it by hand.",
   },
   "pt-BR": {
@@ -71,8 +71,8 @@ const readmeText = {
     cols: "| Servidor | URL |",
     sandbox: "sandbox, dados separados da produção",
     auth: "A autenticação é OAuth 2.1: no primeiro uso, o cliente abre o login da Kobana.",
-    learn: "Saiba mais sobre o produto",
-    privacy: "[Privacidade](https://www.kobana.com.br/privacidade)",
+    links: "Links",
+    labels: { site: "Site", docs: "Documentação", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacidade", terms: "Termos de uso" },
     generated: "Esta pasta é gerada a partir do `catalog.json` e de `src/` do repositório. Não edite à mão.",
   },
   es: {
@@ -88,8 +88,8 @@ const readmeText = {
     cols: "| Servidor | URL |",
     sandbox: "sandbox, datos aislados de producción",
     auth: "La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de sesión de Kobana.",
-    learn: "Conoce más sobre el producto",
-    privacy: "[Privacidad](https://www.kobana.com.br/es/privacidad)",
+    links: "Enlaces",
+    labels: { site: "Sitio web", docs: "Documentación", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacidad", terms: "Términos de uso" },
     generated: "Esta carpeta se genera a partir de `catalog.json` y `src/` del repositorio. No la edites a mano.",
   },
 };
@@ -113,9 +113,16 @@ for (const p of plugins) {
   files[`${dir}/plugin.json`] = { $schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", ...meta };
   files[`${dir}/mcp.json`] = { mcpServers: httpServers(p.servers) };
 
-  // Claude Code (also read by Codex). The plugin directory reads `privacyPolicyUrl` from here; claude.ai marketplace
-  // sync does not know it and strips it with a warning. The icon is found at assets/icon.png without a key.
-  files[`${dir}/.claude-plugin/plugin.json`] = { ...meta, displayName, privacyPolicyUrl: shared.privacyPolicy };
+  // Claude Code (also read by Codex). The plugin directory reads its listing links from here; claude.ai marketplace
+  // sync does not know these directory listing fields and strips them with a warning. The icon is found at assets/icon.png without a key.
+  files[`${dir}/.claude-plugin/plugin.json`] = {
+    ...meta,
+    displayName,
+    documentationUrl: `${p.docs.base}/en/mcp/overview/introduction`,
+    supportUrl: `${mkt.repository}/blob/main/SUPPORT.md`,
+    privacyPolicyUrl: shared.privacyPolicy,
+    termsOfServiceUrl: shared.termsOfService,
+  };
   files[`${dir}/.mcp.json`] = { mcpServers: httpServers(p.servers) };
 
   // OpenAI Codex
@@ -151,7 +158,19 @@ for (const p of plugins) {
   binaries[`${dir}/assets/icon.png`] = "assets/icon.png";
 
   // README in three languages
+  const privacyPages = { en: shared.privacyPolicy, "pt-BR": "https://www.kobana.com.br/privacidade", es: "https://www.kobana.com.br/es/privacidad" };
+  const termsPages = { en: shared.termsOfService, "pt-BR": "https://www.kobana.com.br/termos", es: "https://www.kobana.com.br/es/terminos" };
   for (const [lang, t] of Object.entries(readmeText)) {
+    const docs = `${p.docs.base}/${lang === "pt-BR" ? "pt" : lang}`;
+    const links = [
+      ["site", p.pages[lang]],
+      ["docs", docs],
+      ["api", `${docs}/api/overview`],
+      ["mcp", `${docs}/mcp/overview/introduction`],
+      ["cli", p.docs.cli ? `${docs}/cli/overview/introduction` : shared.developerPages[lang]],
+      ["privacy", privacyPages[lang]],
+      ["terms", termsPages[lang]],
+    ];
     const l = p.i18n[lang];
     const serverRows = p.servers
       .map((s) => `| \`${s.id}\`${s.sandbox ? ` (${t.sandbox})` : ""} | \`${s.url}\` |`)
@@ -169,7 +188,8 @@ for (const p of plugins) {
       `## ${t.servers}`,
       `${t.cols}\n|---|---|\n${serverRows}`,
       t.auth,
-      `[${t.learn}](${p.pages[lang]}) · [MCP docs](${p.servers[0].docs}) · ${t.privacy}`,
+      `## ${t.links}`,
+      links.map(([key, url]) => `- **${t.labels[key]}**: ${url}`).join("\n"),
       `> ${t.generated}`,
     ].join("\n\n") + "\n";
   }
