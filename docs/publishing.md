@@ -8,6 +8,8 @@ The private repository is the source of truth: `main` there is mirrored to the p
 
 Pull requests and issues from the community arrive on the public repository. To merge a pull request: `git fetch public pull/<N>/head:pr-<N>`, merge it into `main`, push to `origin` and the mirror publishes it. Never push directly to the public `main`: the mirror would fail until both are equal again.
 
+Clones of the private repository get the `public` remote automatically: `scripts/setup-remotes.mjs` runs on `npm install` (prepare) and when Claude Code starts a session (`.claude/settings.json`). Run `npm run setup` to add it by hand.
+
 ## Release
 
 1. Bump `version` in `catalog.json`.
