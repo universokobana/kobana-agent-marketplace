@@ -1,6 +1,6 @@
 {
   "name": "kobana",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Official Kobana plugins for AI agents: one plugin per product, each with its remote MCP server and skills. Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {

@@ -1,5 +1,8 @@
 <!-- Generated from catalog.json by scripts/generate.mjs. Do not edit by hand. -->
 
+![Kobana](assets/kobana-logo-light.png#gh-light-mode-only)
+![Kobana](assets/kobana-logo-dark.png#gh-dark-mode-only)
+
 # Kobana Régua de Cobrança
 
 [🇺🇸 English](README.md) · **🇧🇷 Português** · [🇪🇸 Español](README.es.md)

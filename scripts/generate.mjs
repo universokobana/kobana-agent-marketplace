@@ -220,6 +220,8 @@ for (const p of plugins) {
   files[`${dir}/LICENSE`] = read("LICENSE");
   files[`${dir}/assets/icon.svg`] = read("assets/icon.svg");
   binaries[`${dir}/assets/icon.png`] = "assets/icon.png";
+  binaries[`${dir}/assets/kobana-logo-light.png`] = "assets/brand/kobana-logo-light-small.png";
+  binaries[`${dir}/assets/kobana-logo-dark.png`] = "assets/brand/kobana-logo-dark-small.png";
 
   // README in three languages
   for (const [lang, t] of Object.entries(readmeText)) {
@@ -244,6 +246,9 @@ for (const p of plugins) {
     const sections = [t.about(l), t.ask, t.install, t.servers, t.security, t.others, t.links, t.license];
     files[`${dir}/${t.file}`] = [
       `<!-- ${header} -->`,
+      // Markdown images (the directory accepts only Markdown syntax for bundled images); the fragments pick the
+      // logo for GitHub's light or dark theme
+      "![Kobana](assets/kobana-logo-light.png#gh-light-mode-only)\n![Kobana](assets/kobana-logo-dark.png#gh-dark-mode-only)",
       `# ${t.title(l)}`,
       t.switcher,
       t.intro(l, sitePages.home[lang]),

@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.7] - 2026-10-26
+
+### Added
+
+- The Kobana logo at the top of every plugin README, bundled in the plugin folder as 280 px images, black for light themes and white for dark themes on GitHub.
+
 ## [2.0.6] - 2026-10-26
 
 ### Changed
@@ -63,7 +69,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.6...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.7...HEAD
+[2.0.7]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.6...v2.0.7
 [2.0.6]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...v2.0.4
