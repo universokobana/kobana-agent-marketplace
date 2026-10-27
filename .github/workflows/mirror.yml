@@ -24,6 +24,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Refuse to publish internal material
+        run: |
+          # The internal branch must never reach main: neither merged nor copied into an internal/ folder
+          git fetch origin internal || true
+          if git rev-parse -q --verify origin/internal >/dev/null && git merge-base --is-ancestor origin/internal HEAD; then
+            echo "::error::main contains the internal branch. Revert the merge before publishing."; exit 1
+          fi
+          if git ls-tree -r --name-only HEAD | grep -E '^internal/'; then
+            echo "::error::main contains internal/ files. Remove them before publishing."; exit 1
+          fi
       - name: Push main to the public repository
         env:
           PUBLIC_MIRROR_DEPLOY_KEY: ${{ secrets.PUBLIC_MIRROR_DEPLOY_KEY }}
