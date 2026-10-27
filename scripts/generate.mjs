@@ -65,7 +65,7 @@ const readmeText = {
     installText:
       "On claude.ai and in Cowork, add the plugin from the directory. In Claude Code, add the marketplace once and install the plugin:",
     other: (url) => `For ChatGPT, Codex, Cursor, Copilot, Gemini and 20+ other clients, see the [install guides](${url}).`,
-    guides: "install/README.md",
+    guides: "install/en-US/README.md",
     servers: "MCP servers",
     cols: "| Server | URL |",
     sandbox: "sandbox, data isolated from production",
@@ -99,7 +99,7 @@ const readmeText = {
     installText:
       "No claude.ai e no Cowork, adicione o plugin pelo diretório. No Claude Code, adicione o marketplace uma vez e instale o plugin:",
     other: (url) => `Para ChatGPT, Codex, Cursor, Copilot, Gemini e mais de 20 outros clientes, veja os [guias de instalação](${url}).`,
-    guides: "install/README.pt-BR.md",
+    guides: "install/pt-BR/README.md",
     servers: "Servidores MCP",
     cols: "| Servidor | URL |",
     sandbox: "sandbox, dados separados da produção",
@@ -133,7 +133,7 @@ const readmeText = {
     installText:
       "En claude.ai y en Cowork, agrega el plugin desde el directorio. En Claude Code, agrega el marketplace una vez e instala el plugin:",
     other: (url) => `Para ChatGPT, Codex, Cursor, Copilot, Gemini y más de 20 clientes, consulta las [guías de instalación](${url}).`,
-    guides: "install/README.es.md",
+    guides: "install/es/README.md",
     servers: "Servidores MCP",
     cols: "| Servidor | URL |",
     sandbox: "sandbox, datos aislados de producción",

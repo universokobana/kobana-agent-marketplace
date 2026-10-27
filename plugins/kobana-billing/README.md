@@ -50,7 +50,7 @@ On claude.ai and in Cowork, add the plugin from the directory. In Claude Code, a
 /plugin install kobana-billing@kobana-agent-marketplace
 ```
 
-For ChatGPT, Codex, Cursor, Copilot, Gemini and 20+ other clients, see the [install guides](https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/README.md).
+For ChatGPT, Codex, Cursor, Copilot, Gemini and 20+ other clients, see the [install guides](https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/en-US/README.md).
 
 ## MCP servers
 

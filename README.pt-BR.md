@@ -136,23 +136,23 @@ Escolha o seu cliente para ver o passo a passo:
 
 | Cliente | Guia | Cliente | Guia |
 |---|---|---|---|
-| Claude (web, desktop, mobile) | [claude-ai](install/claude-ai.pt-BR.md) | Claude Code | [claude-code](install/claude-code.pt-BR.md) |
-| ChatGPT | [chatgpt](install/chatgpt.pt-BR.md) | OpenAI Codex | [codex](install/codex.pt-BR.md) |
-| Cursor | [cursor](install/cursor.pt-BR.md) | VS Code + GitHub Copilot | [vscode-copilot](install/vscode-copilot.pt-BR.md) |
-| GitHub Copilot CLI | [copilot-cli](install/copilot-cli.pt-BR.md) | Gemini CLI | [gemini-cli](install/gemini-cli.pt-BR.md) |
-| Google Antigravity | [antigravity](install/antigravity.pt-BR.md) | Manus | [manus](install/manus.pt-BR.md) |
-| Perplexity | [perplexity](install/perplexity.pt-BR.md) | Mistral Le Chat | [le-chat](install/le-chat.pt-BR.md) |
-| Microsoft Copilot Studio | [copilot-studio](install/copilot-studio.pt-BR.md) | Windsurf | [windsurf](install/windsurf.pt-BR.md) |
-| Cline | [cline](install/cline.pt-BR.md) | Roo Code | [roo-code](install/roo-code.pt-BR.md) |
-| Continue | [continue](install/continue.pt-BR.md) | Zed | [zed](install/zed.pt-BR.md) |
-| JetBrains AI Assistant / Junie | [jetbrains](install/jetbrains.pt-BR.md) | Kiro | [kiro](install/kiro.pt-BR.md) |
-| Amazon Q Developer | [amazon-q](install/amazon-q.pt-BR.md) | Goose | [goose](install/goose.pt-BR.md) |
-| OpenCode | [opencode](install/opencode.pt-BR.md) | Warp | [warp](install/warp.pt-BR.md) |
-| LM Studio | [lm-studio](install/lm-studio.pt-BR.md) | Raycast | [raycast](install/raycast.pt-BR.md) |
-| n8n | [n8n](install/n8n.pt-BR.md) | APIs e SDKs (Anthropic, OpenAI, …) | [apis-and-sdks](install/apis-and-sdks.pt-BR.md) |
-| Qualquer outro cliente MCP | [other-clients](install/other-clients.pt-BR.md) | | |
+| Claude (web, desktop, mobile) | [claude-ai](install/pt-BR/claude-ai.md) | Claude Code | [claude-code](install/pt-BR/claude-code.md) |
+| ChatGPT | [chatgpt](install/pt-BR/chatgpt.md) | OpenAI Codex | [codex](install/pt-BR/codex.md) |
+| Cursor | [cursor](install/pt-BR/cursor.md) | VS Code + GitHub Copilot | [vscode-copilot](install/pt-BR/vscode-copilot.md) |
+| GitHub Copilot CLI | [copilot-cli](install/pt-BR/copilot-cli.md) | Gemini CLI | [gemini-cli](install/pt-BR/gemini-cli.md) |
+| Google Antigravity | [antigravity](install/pt-BR/antigravity.md) | Manus | [manus](install/pt-BR/manus.md) |
+| Perplexity | [perplexity](install/pt-BR/perplexity.md) | Mistral Le Chat | [le-chat](install/pt-BR/le-chat.md) |
+| Microsoft Copilot Studio | [copilot-studio](install/pt-BR/copilot-studio.md) | Windsurf | [windsurf](install/pt-BR/windsurf.md) |
+| Cline | [cline](install/pt-BR/cline.md) | Roo Code | [roo-code](install/pt-BR/roo-code.md) |
+| Continue | [continue](install/pt-BR/continue.md) | Zed | [zed](install/pt-BR/zed.md) |
+| JetBrains AI Assistant / Junie | [jetbrains](install/pt-BR/jetbrains.md) | Kiro | [kiro](install/pt-BR/kiro.md) |
+| Amazon Q Developer | [amazon-q](install/pt-BR/amazon-q.md) | Goose | [goose](install/pt-BR/goose.md) |
+| OpenCode | [opencode](install/pt-BR/opencode.md) | Warp | [warp](install/pt-BR/warp.md) |
+| LM Studio | [lm-studio](install/pt-BR/lm-studio.md) | Raycast | [raycast](install/pt-BR/raycast.md) |
+| n8n | [n8n](install/pt-BR/n8n.md) | APIs e SDKs (Anthropic, OpenAI, …) | [apis-and-sdks](install/pt-BR/apis-and-sdks.md) |
+| Slack (Slackbot) | [slack](install/pt-BR/slack.md) | Qualquer outro cliente MCP | [other-clients](install/pt-BR/other-clients.md) |
 
-Veja o [índice de instalação](install/README.pt-BR.md) para um resumo de cada cliente.
+Veja o [índice de instalação](install/pt-BR/README.md) para um resumo de cada cliente.
 
 ## Plugins
 

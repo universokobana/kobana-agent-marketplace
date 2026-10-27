@@ -11,7 +11,7 @@ Ao participar, você concorda em seguir o nosso [Código de Conduta](CODE_OF_CON
 - **Reportar um problema**: abra uma [issue](https://github.com/universokobana/kobana-agent-marketplace/issues/new/choose). Para problemas de segurança, siga o [SECURITY.pt-BR.md](SECURITY.pt-BR.md).
 - **Corrigir ou adicionar um guia de instalação**: os guias ficam em [`install/`](../install). Os menus dos clientes mudam com frequência; correções com uma captura de tela ou um link para a documentação do cliente ajudam muito.
 - **Melhorar uma skill**: as fontes das skills ficam em [`src/skills/`](../src/skills), e as regras da Kobana compartilhadas por todas as skills ficam em [`src/shared/core.md`](../src/shared/core.md). Elas seguem o formato [Agent Skills](https://agentskills.io).
-- **Traduzir**: todo documento tem versões em inglês (padrão), português (`.pt-BR.md`) e espanhol (`.es.md`).
+- **Traduzir**: todo documento tem versões em inglês (padrão), português e espanhol. Os guias de instalação ficam numa pasta por idioma (`install/en-US/`, `install/pt-BR/`, `install/es/`); os demais documentos usam os sufixos `.pt-BR.md` e `.es.md`.
 
 ## Desenvolvimento
 
@@ -34,9 +34,9 @@ Requisitos: Node.js 18 ou superior. Sem dependências.
 
 ## Adicionando um guia para um novo cliente
 
-1. Copie um guia existente em `install/` com configuração parecida (URL com OAuth, arquivo JSON ou CLI).
-2. Crie as três versões de idioma: `install/<client>.md`, `install/<client>.pt-BR.md`, `install/<client>.es.md`.
-3. Adicione o cliente às tabelas em `install/README*.md` e `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
+1. Copie um guia existente em `install/en-US/` com configuração parecida (URL com OAuth, arquivo JSON ou CLI).
+2. Crie as três versões de idioma: `install/en-US/<client>.md`, `install/pt-BR/<client>.md`, `install/es/<client>.md`.
+3. Adicione o cliente às tabelas em `install/*/README.md` e `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
 4. Inclua o link para a documentação oficial do cliente.
 
 ## Versões

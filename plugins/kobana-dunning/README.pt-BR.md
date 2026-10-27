@@ -48,7 +48,7 @@ No claude.ai e no Cowork, adicione o plugin pelo diretório. No Claude Code, adi
 /plugin install kobana-dunning@kobana-agent-marketplace
 ```
 
-Para ChatGPT, Codex, Cursor, Copilot, Gemini e mais de 20 outros clientes, veja os [guias de instalação](https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/README.pt-BR.md).
+Para ChatGPT, Codex, Cursor, Copilot, Gemini e mais de 20 outros clientes, veja os [guias de instalação](https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/pt-BR/README.md).
 
 ## Servidores MCP
 

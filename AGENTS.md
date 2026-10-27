@@ -10,7 +10,7 @@ The Kobana Agent Marketplace: one plugin per Kobana product (`plugins/kobana-*`)
 
 - `catalog.json` and `src/` are the single source of truth. Skill sources are `src/skills/<plugin>/SKILL.md`; the rules shared by every skill are `src/shared/core.md` (injected at `{{core}}`). After changing them, run `npm run generate`, then `npm run check`.
 - Never hand-edit generated files: `plugins/`, `skills/`, `registry/`, `.claude-plugin/`, `.agents/`, `.cursor-plugin/`, `gemini-extension.json`, `GEMINI.md`.
-- User-facing Markdown exists in three languages: `name.md` (English, default), `name.pt-BR.md` and `name.es.md`. Update all three together. Translations of the root community files (CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, SUPPORT) live in `i18n/`, because GitHub would otherwise pick a translation as the default. CI fails when a translation file is missing.
+- User-facing Markdown exists in three languages: `name.md` (English, default), `name.pt-BR.md` and `name.es.md`, except install guides, which live in `install/en-US/`, `install/pt-BR/` and `install/es/` with the same file names. Update all three together. Translations of the root community files (CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, SUPPORT) live in `i18n/`, because GitHub would otherwise pick a translation as the default. CI fails when a translation file is missing.
 - Links to www.kobana.com.br use the page in the document's language: `/en/...` in English, no prefix in Portuguese, `/es/...` in Spanish.
 - Skills (`SKILL.md`) are written in English only; the agent replies in the user's language.
 - MCP server URLs must match the official list at https://www.kobana.com.br/en/developers/mcp.

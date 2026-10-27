@@ -11,7 +11,7 @@ Al participar, aceptas seguir nuestro [Código de conducta](CODE_OF_CONDUCT.es.m
 - **Reportar un problema**: abre un [issue](https://github.com/universokobana/kobana-agent-marketplace/issues/new/choose). Para problemas de seguridad, sigue en cambio [SECURITY.es.md](SECURITY.es.md).
 - **Corregir o agregar una guía de instalación**: las guías están en [`install/`](../install). Los menús de los clientes cambian con frecuencia; las correcciones con una captura de pantalla o un enlace a la documentación del cliente ayudan mucho.
 - **Mejorar una skill**: el código fuente de las skills está en [`src/skills/`](../src/skills), y las reglas de Kobana compartidas por todas las skills están en [`src/shared/core.md`](../src/shared/core.md). Siguen el formato [Agent Skills](https://agentskills.io).
-- **Traducir**: cada documento tiene versión en inglés (predeterminada), portugués (`.pt-BR.md`) y español (`.es.md`).
+- **Traducir**: cada documento tiene versión en inglés (predeterminada), portugués y español. Las guías de instalación están en una carpeta por idioma (`install/en-US/`, `install/pt-BR/`, `install/es/`); los demás documentos usan los sufijos `.pt-BR.md` y `.es.md`.
 
 ## Desarrollo
 
@@ -34,9 +34,9 @@ Requisitos: Node.js 18 o superior. Sin dependencias.
 
 ## Agregar una guía para un cliente nuevo
 
-1. Copia una guía existente en `install/` con una configuración similar (URL con OAuth, archivo JSON o CLI).
-2. Crea las tres versiones de idioma: `install/<client>.md`, `install/<client>.pt-BR.md`, `install/<client>.es.md`.
-3. Agrega el cliente a las tablas de `install/README*.md` y `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
+1. Copia una guía existente en `install/en-US/` con una configuración similar (URL con OAuth, archivo JSON o CLI).
+2. Crea las tres versiones de idioma: `install/en-US/<client>.md`, `install/pt-BR/<client>.md`, `install/es/<client>.md`.
+3. Agrega el cliente a las tablas de `install/*/README.md` y `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
 4. Enlaza la documentación oficial del cliente.
 
 ## Versiones

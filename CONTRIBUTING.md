@@ -11,7 +11,7 @@ By participating, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 - **Report a problem**: open an [issue](https://github.com/universokobana/kobana-agent-marketplace/issues/new/choose). For security problems, follow [SECURITY.md](SECURITY.md) instead.
 - **Fix or add an install guide**: guides live in [`install/`](install). Client menus change often; corrections with a screenshot or a link to the client's docs are very helpful.
 - **Improve a skill**: skill sources live in [`src/skills/`](src/skills), and the Kobana rules shared by every skill live in [`src/shared/core.md`](src/shared/core.md). They follow the [Agent Skills](https://agentskills.io) format.
-- **Translate**: every document has English (default), Portuguese (`.pt-BR.md`) and Spanish (`.es.md`) versions.
+- **Translate**: every document has English (default), Portuguese and Spanish versions. Install guides live in one folder per language (`install/en-US/`, `install/pt-BR/`, `install/es/`); other documents use the `.pt-BR.md` and `.es.md` suffixes.
 
 ## Development
 
@@ -34,9 +34,9 @@ Requirements: Node.js 18 or later. No dependencies.
 
 ## Adding a new client guide
 
-1. Copy an existing guide in `install/` with a similar setup (OAuth URL, JSON file or CLI).
-2. Create the three language versions: `install/<client>.md`, `install/<client>.pt-BR.md`, `install/<client>.es.md`.
-3. Add the client to the tables in `install/README*.md` and `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
+1. Copy an existing guide in `install/en-US/` with a similar setup (OAuth URL, JSON file or CLI).
+2. Create the three language versions: `install/en-US/<client>.md`, `install/pt-BR/<client>.md`, `install/es/<client>.md`.
+3. Add the client to the tables in `install/*/README.md` and `README*.md` (`README.md`, `README.pt-BR.md`, `README.es.md`).
 4. Link the client's official documentation.
 
 ## Releases

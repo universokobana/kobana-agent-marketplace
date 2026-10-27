@@ -4,6 +4,16 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.8] - 2026-10-26
+
+### Added
+
+- Slack install guide in English, Portuguese and Spanish: install Kobana's official Slack apps, connect your Kobana account and use Kobana in Slackbot.
+
+### Changed
+
+- Install guides are organized in one folder per language: `install/en-US/`, `install/pt-BR/` and `install/es/`, with the same file name in each.
+
 ## [2.0.7] - 2026-10-26
 
 ### Added
@@ -69,7 +79,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.7...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.8...HEAD
+[2.0.8]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.7...v2.0.8
 [2.0.7]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.6...v2.0.7
 [2.0.6]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...v2.0.5

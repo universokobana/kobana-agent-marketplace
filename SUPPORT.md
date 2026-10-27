@@ -6,7 +6,7 @@
 
 | You need help with | Go to |
 |---|---|
-| Installing the plugin or connecting a client | The [install guides](install/README.md), then a [GitHub issue](https://github.com/universokobana/kobana-agent-marketplace/issues) |
+| Installing the plugin or connecting a client | The [install guides](install/en-US/README.md), then a [GitHub issue](https://github.com/universokobana/kobana-agent-marketplace/issues) |
 | Your Kobana account, permissions, tokens or a product question | Kobana support: **suporte@kobana.com.br** or the [help center](https://ajuda.kobana.com.br) |
 | MCP servers for developers (transport, scopes, examples) | [Developer guide](https://www.kobana.com.br/en/developers/mcp) and each product's MCP docs |
 | Building an agent on Kobana | [Schedule a chat](https://www.kobana.com.br/en/schedule) |
