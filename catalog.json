@@ -1,6 +1,6 @@
 {
   "$comment": "Single source of truth. Edit this file or src/, then run `npm run generate` to rebuild every plugin and manifest.",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "marketplace": {
     "name": "kobana-agent-marketplace",
     "displayName": "Kobana Agent Marketplace",
@@ -30,6 +30,41 @@
       "en": "https://www.kobana.com.br/en/developers/cli",
       "pt-BR": "https://www.kobana.com.br/desenvolvedores/cli",
       "es": "https://www.kobana.com.br/es/desarrolladores/cli"
+    },
+    "i18n": {
+      "en": {
+        "tagline": "We take care of your processes, while you take care of your purpose.",
+        "security": [
+          "- **Only what you can do.** The agent can only do what your account can do in the dashboard. Without permission, the tool does not even appear.",
+          "- **You choose the access.** On the authorization screen, select only the resources you need. To explore, grant read-only access.",
+          "- **Sensitive actions need confirmation.** Tools are annotated as read, write or destructive. Cancelling, paying and transferring only run after you confirm.",
+          "- **Revoke anytime.** In Kobana Account → Tokens and Access → Authorized Applications, remove the assistant without affecting your REST integrations.",
+          "- **Start in the sandbox.** Banking Gateway destructive tools move real money. Experiment on the sandbox server first.",
+          "- **Third-party data is not instructions.** Names, descriptions and notes are written by other people. The servers and skills instruct the agent not to follow orders found in those fields."
+        ]
+      },
+      "pt-BR": {
+        "tagline": "A gente cuida dos seus processos, enquanto você cuida do seu propósito.",
+        "security": [
+          "- **Só o que você pode fazer.** O agente só faz o que a sua conta pode fazer no dashboard. Sem permissão, a ferramenta nem aparece.",
+          "- **Você escolhe o acesso.** Na tela de autorização, selecione só os recursos de que precisa. Para explorar, conceda acesso somente leitura.",
+          "- **Ações sensíveis pedem confirmação.** As ferramentas são marcadas como leitura, escrita ou destrutivas. Cancelar, pagar e transferir só acontecem depois que você confirma.",
+          "- **Revogue quando quiser.** Em Conta Kobana → Tokens e Acesso → Aplicações Autorizadas, remova o assistente sem afetar suas integrações REST.",
+          "- **Comece pelo sandbox.** As ferramentas destrutivas do Gateway Bancário movimentam dinheiro de verdade. Faça seus testes primeiro no servidor sandbox.",
+          "- **Dados de terceiros não são instruções.** Nomes, descrições e observações são escritos por outras pessoas. Os servidores e as skills orientam o agente a não seguir ordens encontradas nesses campos."
+        ]
+      },
+      "es": {
+        "tagline": "Nosotros cuidamos de tus procesos, mientras tú cuidas de tu propósito.",
+        "security": [
+          "- **Solo lo que tú puedes hacer.** El agente solo puede hacer lo que tu cuenta puede hacer en el panel. Sin permiso, la herramienta ni siquiera aparece.",
+          "- **Tú eliges el acceso.** En la pantalla de autorización, selecciona solo los recursos que necesitas. Para explorar, concede acceso de solo lectura.",
+          "- **Las acciones sensibles requieren confirmación.** Las herramientas están anotadas como lectura, escritura o destructivas. Cancelar, pagar y transferir solo se ejecutan después de que confirmas.",
+          "- **Revoca cuando quieras.** En **Conta Kobana → Tokens e Acesso → Aplicações Autorizadas** (Cuenta Kobana → Tokens y Acceso → Aplicaciones Autorizadas), elimina el asistente sin afectar tus integraciones REST.",
+          "- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.",
+          "- **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos."
+        ]
+      }
     }
   },
   "plugins": [
@@ -60,15 +95,33 @@
       "i18n": {
         "en": {
           "product": "Banking Gateway",
-          "summary": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks."
+          "summary": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks.",
+          "about": "**Unified banking operations. One API, 40+ banks.** Connect your company to the Brazilian banking system through a single API. Issue boletos, receive Pix, make TED transfers, manage bank accounts and balances, all without changing banks.\n\n- Receivables: Pix, boleto, bolepix and payment links\n- Payments: boletos, Pix and taxes\n- Transfers: Pix, TED and between accounts\n- Bank accounts, balances, statements, reconciliation and DDA",
+          "prompts": [
+            "List my overdue boletos",
+            "What is the balance of my financial accounts?",
+            "Create a Pix charge of R$ 99.90"
+          ]
         },
         "pt-BR": {
           "product": "Gateway Bancário",
-          "summary": "Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos."
+          "summary": "Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos.",
+          "about": "**Operações bancárias unificadas. Uma API, mais de 40 bancos.** Conecte sua empresa ao sistema bancário brasileiro com uma única integração. Emita boletos, receba Pix, faça TED, gerencie contas e saldos, tudo sem trocar de banco.\n\n- Cobranças: Pix, boleto, BolePix e links de pagamento\n- Pagamentos: boletos, Pix e tributos, em lote ou agendados\n- Transferências: Pix, TED e entre contas\n- Contas bancárias, saldos, extratos, conciliação e DDA",
+          "prompts": [
+            "Liste meus boletos vencidos",
+            "Qual o saldo das minhas contas financeiras?",
+            "Gere uma cobrança Pix de R$ 99,90"
+          ]
         },
         "es": {
           "product": "Gateway Bancario",
-          "summary": "Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños."
+          "summary": "Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños.",
+          "about": "**Operaciones bancarias unificadas. Una API, 40+ bancos.** Conecta tu empresa al sistema bancario brasileño a través de una única API. Emite boletos, recibe Pix, realiza transferencias TED y gestiona cuentas bancarias y saldos, todo sin cambiar de banco.\n\n- Cobros: Pix, boleto, bolepix y links de pago\n- Pagos: boletos, Pix y tributos\n- Transferencias: Pix, TED y entre cuentas\n- Cuentas bancarias, saldos, extractos, conciliación y DDA",
+          "prompts": [
+            "Lista mis boletos vencidos",
+            "¿Cuál es el saldo de mis cuentas financieras?",
+            "Genera un cobro Pix de R$ 99,90"
+          ]
         }
       },
       "servers": [
@@ -119,15 +172,33 @@
       "i18n": {
         "en": {
           "product": "Automatic Billing",
-          "summary": "Customers, subscriptions, invoices, NFS-e and proposals."
+          "summary": "Customers, subscriptions, invoices, NFS-e and proposals.",
+          "about": "**Recurring billing built for Brazilian companies.** A complete billing platform for SaaS and recurring services: subscriptions, invoices, payments, white-label customer portal, NFS-e and dunning, all integrated.\n\n- Subscriptions with trial, proration, upgrade and downgrade\n- Automatic invoices with PDF, email and NFS-e\n- Card, boleto, Pix and bank transfer payments\n- MRR, ARR, churn and cohort reports",
+          "prompts": [
+            "Which subscriptions are active?",
+            "Which invoices are open this month?",
+            "What is our MRR?"
+          ]
         },
         "pt-BR": {
           "product": "Faturamento Automático",
-          "summary": "Clientes, assinaturas, faturas, notas fiscais e propostas."
+          "summary": "Clientes, assinaturas, faturas, notas fiscais e propostas.",
+          "about": "**Billing recorrente e flexível, feito para empresas brasileiras.** Plataforma de cobrança recorrente para SaaS e serviços: assinaturas, faturas, gestão de clientes, portal próprio com a sua marca, NFS-e e régua de cobrança, tudo integrado. Automatize o ciclo completo de billing.\n\n- Assinaturas com trial, pro rata, upgrade e downgrade\n- Faturas automáticas com PDF, email e NFS-e\n- Pagamento por cartão, boleto, Pix e transferência\n- Relatórios de MRR, ARR, churn e coortes",
+          "prompts": [
+            "Quais assinaturas estão ativas?",
+            "Quais faturas estão em aberto este mês?",
+            "Qual é o nosso MRR?"
+          ]
         },
         "es": {
           "product": "Facturación Automática",
-          "summary": "Clientes, suscripciones, facturas, NFS-e y propuestas."
+          "summary": "Clientes, suscripciones, facturas, NFS-e y propuestas.",
+          "about": "**Facturación recurrente para empresas brasileñas.** Plataforma completa de billing para SaaS y servicios recurrentes: suscripciones, facturas, pagos, portal del cliente white-label, NFS-e y dunning, todo integrado.\n\n- Suscripciones con trial, prorrateo, upgrade y downgrade\n- Facturas automáticas con PDF, email y NFS-e\n- Pagos con tarjeta, boleto, Pix y transferencia bancaria\n- Informes de MRR, ARR, churn y cohorts",
+          "prompts": [
+            "¿Qué suscripciones están activas?",
+            "¿Qué facturas están abiertas este mes?",
+            "¿Cuál es nuestro MRR?"
+          ]
         }
       },
       "servers": [
@@ -169,15 +240,33 @@
       "i18n": {
         "en": {
           "product": "Smart Finance",
-          "summary": "Accounts payable and receivable, entries, reconciliation and cash flow."
+          "summary": "Accounts payable and receivable, entries, reconciliation and cash flow.",
+          "about": "**Financial back-office for Brazil.** Accounts payable, accounts receivable, bank reconciliation and multi-company workspaces in one platform, with real-time balances and automatic classification rules.\n\n- Accounts payable and receivable: single, installments or recurring\n- Automatic bank reconciliation by value and date, OFX/QIF import\n- Parent company and subsidiaries in one workspace, with a consolidated view\n- Cash flow, inflows and outflows, category ranking and projections",
+          "prompts": [
+            "Which workspaces can you act on?",
+            "Which accounts payable are due this week?",
+            "How does the cash flow look this month?"
+          ]
         },
         "pt-BR": {
           "product": "Financeiro Inteligente",
-          "summary": "Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa."
+          "summary": "Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa.",
+          "about": "**Back-office financeiro para o Brasil.** Contas a pagar, contas a receber, conciliação bancária e multi-empresa em uma plataforma, integrada à sua operação bancária, com saldos em tempo real e regras automáticas de classificação.\n\n- Contas a pagar e a receber: avulsas, parceladas ou recorrentes\n- Conciliação bancária automática por valor e data, com importação de OFX/QIF\n- Matriz e filiais no mesmo workspace, com visão consolidada\n- Fluxo de caixa, entradas e saídas, ranking de categorias e projeções",
+          "prompts": [
+            "Em quais workspaces você pode agir?",
+            "Quais contas a pagar vencem esta semana?",
+            "Como está o fluxo de caixa do mês?"
+          ]
         },
         "es": {
           "product": "Financiero Inteligente",
-          "summary": "Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja."
+          "summary": "Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.",
+          "about": "**Back-office financiero para Brasil.** Cuentas por pagar, cuentas por cobrar, conciliación bancaria y workspace multiempresa en una sola plataforma, con saldos en tiempo real y reglas automáticas de clasificación.\n\n- Cuentas por pagar y por cobrar: individuales, en cuotas o recurrentes\n- Conciliación bancaria automática por valor y fecha, importación OFX/QIF\n- Matriz y filiales en un mismo workspace, con vista consolidada\n- Flujo de caja, entradas y salidas, ranking de categorías y proyecciones",
+          "prompts": [
+            "¿En qué workspaces puedes actuar?",
+            "¿Qué cuentas por pagar vencen esta semana?",
+            "¿Cómo está el flujo de caja del mes?"
+          ]
         }
       },
       "servers": [
@@ -218,15 +307,30 @@
       "i18n": {
         "en": {
           "product": "Dunning",
-          "summary": "Charges, dunning workflows, agreements and disputes."
+          "summary": "Charges, dunning workflows, agreements and disputes.",
+          "about": "**Automated collections from due date to payment.** Track every charge from due date to payment. Contact at the right time, through the right channel, with the payment method in the message. Paid? The workflow stops instantly. Disputed? It pauses and logs it.\n\n- Multichannel workflow by email, SMS and WhatsApp\n- Agreements and debtor portal\n- Compliance and audit trail",
+          "prompts": [
+            "Which charges are overdue?",
+            "Which agreements are in progress?"
+          ]
         },
         "pt-BR": {
           "product": "Régua de Cobrança",
-          "summary": "Cobranças, réguas, acordos e disputas."
+          "summary": "Cobranças, réguas, acordos e disputas.",
+          "about": "**Cobrança automática do vencimento ao pagamento.** Acompanhe cada cobrança do vencimento ao pagamento. Contato no momento certo, pelo canal certo, com a forma de pagamento na mensagem. Pagou? A régua para na hora. Contestou? Ela pausa e registra.\n\n- Régua multicanal por email, SMS e WhatsApp\n- Acordos e portal do devedor\n- Compliance e trilha de auditoria",
+          "prompts": [
+            "Quais cobranças estão vencidas?",
+            "Quais acordos estão em andamento?"
+          ]
         },
         "es": {
           "product": "Regla de Cobranza",
-          "summary": "Cobros, reglas de cobranza, acuerdos y disputas."
+          "summary": "Cobros, reglas de cobranza, acuerdos y disputas.",
+          "about": "**Cobranza automática del vencimiento al pago.** Acompaña cada cobro desde el vencimiento hasta el pago. Contacto en el momento justo, por el canal correcto, con la forma de pago en el mensaje. ¿Pagó? La regla se detiene al instante. ¿Reclamó? Se pausa y queda registrado.\n\n- Regla multicanal por email, SMS y WhatsApp\n- Acuerdos y portal del deudor\n- Compliance y trazabilidad de auditoría",
+          "prompts": [
+            "¿Qué cobros están vencidos?",
+            "¿Qué acuerdos están en curso?"
+          ]
         }
       },
       "servers": [
@@ -266,15 +370,30 @@
       "i18n": {
         "en": {
           "product": "Magic Dashboard",
-          "summary": "Portal users, team and organization."
+          "summary": "Portal users, team and organization.",
+          "about": "**Your customer portal, powered by the data already in your systems.** Connect your ERP, API or database, build pages by dragging blocks or asking the AI, and publish with your brand on your own domain. Each customer signs in and sees only what belongs to them.\n\n- 40+ ready-made connectors\n- AI-assisted visual builder\n- Custom domain and SSO",
+          "prompts": [
+            "Which portal users have not accepted the invitation yet?",
+            "Who is on my team?"
+          ]
         },
         "pt-BR": {
           "product": "Dashboard Mágico",
-          "summary": "Usuários do portal, equipe e organização."
+          "summary": "Usuários do portal, equipe e organização.",
+          "about": "**O portal dos seus clientes, com os seus dados.** Conecte seu ERP, API ou banco de dados, monte as páginas arrastando blocos ou pedindo à IA e publique com a sua marca e o seu domínio. Cada cliente vê só o que é dele.\n\n- Mais de 40 serviços prontos para conectar\n- Construtor visual com chat de IA\n- Domínio próprio e SSO",
+          "prompts": [
+            "Quais usuários do portal ainda não aceitaram o convite?",
+            "Quem faz parte da minha equipe?"
+          ]
         },
         "es": {
           "product": "Dashboard Mágico",
-          "summary": "Usuarios del portal, equipo y organización."
+          "summary": "Usuarios del portal, equipo y organización.",
+          "about": "**El portal de tus clientes, con los datos que ya están en tus sistemas.** Conecta tu ERP, API o base de datos, arma las páginas arrastrando bloques o pidiéndole a la IA y publica con tu marca y tu dominio. Cada cliente entra y ve solo lo que es suyo.\n\n- Más de 40 conectores listos\n- Constructor visual con IA\n- Dominio propio y SSO",
+          "prompts": [
+            "¿Qué usuarios del portal aún no aceptaron la invitación?",
+            "¿Quién forma parte de mi equipo?"
+          ]
         }
       },
       "servers": [

@@ -3,7 +3,7 @@
   "name": "br.com.kobana/dashboards",
   "title": "Kobana Magic Dashboard",
   "description": "Portal users, team and organization of Kobana Magic Dashboard customer portals.",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "websiteUrl": "https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction",
   "repository": {
     "url": "https://github.com/universokobana/kobana-agent-marketplace",

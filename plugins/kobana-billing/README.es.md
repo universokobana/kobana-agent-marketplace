@@ -1,21 +1,53 @@
 <!-- Generated from catalog.json by scripts/generate.mjs. Do not edit by hand. -->
 
-# Plugin Kobana Facturación Automática
+# Kobana Facturación Automática
 
 [🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**
 
-El plugin oficial de Kobana para Facturación Automática: clientes, suscripciones, facturas, NFS-e y propuestas. Conecta tu agente de IA al servidor MCP remoto de Kobana y agrega una skill con los flujos y las reglas de seguridad del producto.
+El plugin oficial de [Kobana](https://www.kobana.com.br/es) para **Facturación Automática**. Conecta Claude, o cualquier otro agente de IA, a tu cuenta Kobana y trabaja con clientes, suscripciones, facturas, NFS-e y propuestas conversando, siempre con tus propios permisos.
+
+> Nosotros cuidamos de tus procesos, mientras tú cuidas de tu propósito.
+
+- **Nada que instalar de tu lado.** El plugin se conecta al servidor MCP remoto de Kobana. Inicias sesión en Kobana y autorizas.
+- **Tus permisos, nada más.** OAuth 2.1, alcances por recurso y los permisos del panel de quien autorizó, verificados de nuevo en cada llamada.
+- **Una skill que conoce el producto.** Le enseña al agente los flujos del producto y pide confirmación antes de cualquier acción que mueva dinero o borre datos.
+
+## Contenido
+
+- [Acerca de Facturación Automática](#acerca-de-facturación-automática)
+- [Prueba a preguntar](#prueba-a-preguntar)
+- [Instalación](#instalación)
+- [Servidores MCP](#servidores-mcp)
+- [Seguridad desde el diseño](#seguridad-desde-el-diseño)
+- [Otros plugins de Kobana](#otros-plugins-de-kobana)
+- [Enlaces](#enlaces)
+- [Licencia](#licencia)
+
+## Acerca de Facturación Automática
+
+**Facturación recurrente para empresas brasileñas.** Plataforma completa de billing para SaaS y servicios recurrentes: suscripciones, facturas, pagos, portal del cliente white-label, NFS-e y dunning, todo integrado.
+
+- Suscripciones con trial, prorrateo, upgrade y downgrade
+- Facturas automáticas con PDF, email y NFS-e
+- Pagos con tarjeta, boleto, Pix y transferencia bancaria
+- Informes de MRR, ARR, churn y cohorts
+
+## Prueba a preguntar
+
+- "¿Qué suscripciones están activas?"
+- "¿Qué facturas están abiertas este mes?"
+- "¿Cuál es nuestro MRR?"
 
 ## Instalación
 
-En Claude Code:
+En claude.ai y en Cowork, agrega el plugin desde el directorio. En Claude Code, agrega el marketplace una vez e instala el plugin:
 
 ```text
 /plugin marketplace add universokobana/kobana-agent-marketplace
 /plugin install kobana-billing@kobana-agent-marketplace
 ```
 
-Para otros clientes, consulta las [guías de instalación](../../install/README.es.md).
+Para ChatGPT, Codex, Cursor, Copilot, Gemini y más de 20 clientes, consulta las [guías de instalación](https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/README.es.md).
 
 ## Servidores MCP
 
@@ -23,7 +55,25 @@ Para otros clientes, consulta las [guías de instalación](../../install/README.
 |---|---|
 | `kobana-billing` | `https://mcp.billing.kobana.com.br` |
 
-La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de sesión de Kobana.
+La autenticación es OAuth 2.1 con PKCE: en el primer uso, tu cliente abre el inicio de sesión de Kobana. No hay client secret.
+
+## Seguridad desde el diseño
+
+- **Solo lo que tú puedes hacer.** El agente solo puede hacer lo que tu cuenta puede hacer en el panel. Sin permiso, la herramienta ni siquiera aparece.
+- **Tú eliges el acceso.** En la pantalla de autorización, selecciona solo los recursos que necesitas. Para explorar, concede acceso de solo lectura.
+- **Las acciones sensibles requieren confirmación.** Las herramientas están anotadas como lectura, escritura o destructivas. Cancelar, pagar y transferir solo se ejecutan después de que confirmas.
+- **Revoca cuando quieras.** En **Conta Kobana → Tokens e Acesso → Aplicações Autorizadas** (Cuenta Kobana → Tokens y Acceso → Aplicaciones Autorizadas), elimina el asistente sin afectar tus integraciones REST.
+- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.
+- **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos.
+
+Para reportar una vulnerabilidad, consulta la [política de seguridad](https://github.com/universokobana/kobana-agent-marketplace/blob/main/i18n/SECURITY.es.md) y nuestra [Política White Hat](https://www.kobana.com.br/es/white-hat).
+
+## Otros plugins de Kobana
+
+- **[Gateway Bancario](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-banking)** (`kobana-banking`): Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños.
+- **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-finance)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
+- **[Regla de Cobranza](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dunning)** (`kobana-dunning`): Cobros, reglas de cobranza, acuerdos y disputas.
+- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
 
 ## Enlaces
 
@@ -34,5 +84,9 @@ La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de s
 - **CLI**: https://docs.billing.kobana.com.br/es/cli/overview/introduction
 - **Privacidad**: https://www.kobana.com.br/es/privacidad
 - **Términos de uso**: https://www.kobana.com.br/es/terminos
+
+## Licencia
+
+[MIT](https://github.com/universokobana/kobana-agent-marketplace/blob/main/LICENSE). Kobana y el logo de Kobana son marcas de Kobana.
 
 > Esta carpeta se genera a partir de `catalog.json` y `src/` del repositorio. No la edites a mano.

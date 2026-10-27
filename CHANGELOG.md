@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.6] - 2026-10-26
+
+### Changed
+
+- Plugin READMEs, shown as the plugin directory listing, now follow the main README in each language: introduction, highlights, contents, product description, example questions, install, MCP servers, security, other Kobana plugins, links and license. Links are absolute, because the directory receives only the plugin folder.
+- The main READMEs have a links section with the website, documentation, API, MCP and CLI of every product, plus Kobana's general pages.
+
 ## [2.0.5] - 2026-10-26
 
 ### Added
@@ -56,7 +63,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.6...HEAD
+[2.0.6]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...v2.0.3

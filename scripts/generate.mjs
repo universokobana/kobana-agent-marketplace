@@ -39,59 +39,123 @@ const skill = (name) => read(`src/skills/${name}/SKILL.md`).replace("{{core}}", 
 const files = {};
 const binaries = {};
 
-// --- Per-plugin README in each language ---
+// --- Per-plugin README in each language (the plugin directory shows it as the listing description) ---
+// Links are absolute: the directory receives only the plugin folder, so repository-relative links would break there.
+const repoUrl = (path) => `${mkt.repository}/blob/main/${path}`;
+const treeUrl = (path) => `${mkt.repository}/tree/main/${path}`;
+const lower = (text) => text.charAt(0).toLowerCase() + text.slice(1);
+// GitHub heading anchors: lowercase, drop punctuation, spaces become hyphens
+const anchor = (heading) =>
+  "#" + heading.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, "").trim().replace(/\s/g, "-");
 const readmeText = {
   en: {
-    switcher: (n) => `**🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)`,
-    title: (p, t) => `Kobana ${t.product} plugin`,
-    intro: (t) => `The official Kobana plugin for ${t.product}: ${t.summary.charAt(0).toLowerCase() + t.summary.slice(1)} It connects your AI agent to Kobana's remote MCP server and adds a skill with the product's workflows and safety rules.`,
+    file: "README.md",
+    title: (t) => `Kobana ${t.product}`,
+    intro: (t, site) =>
+      `The official [Kobana](${site}) plugin for **${t.product}**. Connect Claude, or any other AI agent, to your Kobana account and work with ${lower(t.summary).replace(/\.$/, "")} by conversation, always with your own permissions.`,
+    highlights: [
+      "**Nothing to install on your side.** The plugin connects to Kobana's remote MCP server. You sign in to Kobana and authorize.",
+      "**Your permissions, not more.** OAuth 2.1, scopes per resource and the dashboard permissions of whoever authorized, re-checked on every call.",
+      "**A skill that knows the product.** It teaches the agent the product's workflows and asks for confirmation before anything that moves money or deletes data.",
+    ],
+    contents: "Contents",
+    about: (t) => `About ${t.product}`,
+    ask: "Try asking",
     install: "Install",
-    inClaude: "In Claude Code:",
-    other: "For other clients, see the",
-    guides: "install guides",
-    guidesPath: "../../install/README.md",
+    installText:
+      "On claude.ai and in Cowork, add the plugin from the directory. In Claude Code, add the marketplace once and install the plugin:",
+    other: (url) => `For ChatGPT, Codex, Cursor, Copilot, Gemini and 20+ other clients, see the [install guides](${url}).`,
+    guides: "install/README.md",
     servers: "MCP servers",
     cols: "| Server | URL |",
     sandbox: "sandbox, data isolated from production",
-    auth: "Authentication is OAuth 2.1: on first use, your client opens the Kobana login.",
+    auth: "Authentication is OAuth 2.1 with PKCE: on first use, your client opens the Kobana login. There is no client secret.",
+    security: "Security by design",
+    report: (security, whiteHat) =>
+      `To report a vulnerability, see the [security policy](${security}) and our [White Hat Policy](${whiteHat}).`,
+    securityFile: "SECURITY.md",
+    others: "Other Kobana plugins",
     links: "Links",
     labels: { site: "Website", docs: "Documentation", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacy", terms: "Terms of use" },
+    license: "License",
+    licenseText: (url) => `[MIT](${url}). Kobana and the Kobana logo are trademarks of Kobana.`,
     generated: "This folder is generated from the repository's `catalog.json` and `src/`. Do not edit it by hand.",
+    switcher: "**🇺🇸 English** · [🇧🇷 Português](README.pt-BR.md) · [🇪🇸 Español](README.es.md)",
   },
   "pt-BR": {
-    switcher: () => `[🇺🇸 English](README.md) · **🇧🇷 Português** · [🇪🇸 Español](README.es.md)`,
-    title: (p, t) => `Plugin Kobana ${t.product}`,
-    intro: (t) => `O plugin oficial da Kobana para ${t.product}: ${t.summary.charAt(0).toLowerCase() + t.summary.slice(1)} Ele conecta o seu agente de IA ao servidor MCP remoto da Kobana e adiciona uma skill com os fluxos e as regras de segurança do produto.`,
+    file: "README.pt-BR.md",
+    title: (t) => `Kobana ${t.product}`,
+    intro: (t, site) =>
+      `O plugin oficial da [Kobana](${site}) para o produto **${t.product}**. Conecte o Claude, ou qualquer outro agente de IA, à sua conta Kobana e trabalhe com ${lower(t.summary).replace(/\.$/, "")} conversando, sempre com as suas próprias permissões.`,
+    highlights: [
+      "**Nada para instalar do seu lado.** O plugin se conecta ao servidor MCP remoto da Kobana. Você entra na Kobana e autoriza.",
+      "**As suas permissões, nada além.** OAuth 2.1, escopos por recurso e as permissões de dashboard de quem autorizou, verificadas de novo a cada chamada.",
+      "**Uma skill que conhece o produto.** Ela ensina ao agente os fluxos do produto e pede confirmação antes de qualquer ação que movimente dinheiro ou apague dados.",
+    ],
+    contents: "Conteúdo",
+    about: (t) => `Sobre o produto ${t.product}`,
+    ask: "Experimente perguntar",
     install: "Instalação",
-    inClaude: "No Claude Code:",
-    other: "Para outros clientes, veja os",
-    guides: "guias de instalação",
-    guidesPath: "../../install/README.pt-BR.md",
+    installText:
+      "No claude.ai e no Cowork, adicione o plugin pelo diretório. No Claude Code, adicione o marketplace uma vez e instale o plugin:",
+    other: (url) => `Para ChatGPT, Codex, Cursor, Copilot, Gemini e mais de 20 outros clientes, veja os [guias de instalação](${url}).`,
+    guides: "install/README.pt-BR.md",
     servers: "Servidores MCP",
     cols: "| Servidor | URL |",
     sandbox: "sandbox, dados separados da produção",
-    auth: "A autenticação é OAuth 2.1: no primeiro uso, o cliente abre o login da Kobana.",
+    auth: "A autenticação é OAuth 2.1 com PKCE: no primeiro uso, o cliente abre o login da Kobana. Não há client secret.",
+    security: "Segurança desde o projeto",
+    report: (security, whiteHat) =>
+      `Para reportar uma vulnerabilidade, veja a [política de segurança](${security}) e a nossa [Política White Hat](${whiteHat}).`,
+    securityFile: "i18n/SECURITY.pt-BR.md",
+    others: "Outros plugins da Kobana",
     links: "Links",
     labels: { site: "Site", docs: "Documentação", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacidade", terms: "Termos de uso" },
+    license: "Licença",
+    licenseText: (url) => `[MIT](${url}). Kobana e o logo da Kobana são marcas da Kobana.`,
     generated: "Esta pasta é gerada a partir do `catalog.json` e de `src/` do repositório. Não edite à mão.",
+    switcher: "[🇺🇸 English](README.md) · **🇧🇷 Português** · [🇪🇸 Español](README.es.md)",
   },
   es: {
-    switcher: () => `[🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**`,
-    title: (p, t) => `Plugin Kobana ${t.product}`,
-    intro: (t) => `El plugin oficial de Kobana para ${t.product}: ${t.summary.charAt(0).toLowerCase() + t.summary.slice(1)} Conecta tu agente de IA al servidor MCP remoto de Kobana y agrega una skill con los flujos y las reglas de seguridad del producto.`,
+    file: "README.es.md",
+    title: (t) => `Kobana ${t.product}`,
+    intro: (t, site) =>
+      `El plugin oficial de [Kobana](${site}) para **${t.product}**. Conecta Claude, o cualquier otro agente de IA, a tu cuenta Kobana y trabaja con ${lower(t.summary).replace(/\.$/, "")} conversando, siempre con tus propios permisos.`,
+    highlights: [
+      "**Nada que instalar de tu lado.** El plugin se conecta al servidor MCP remoto de Kobana. Inicias sesión en Kobana y autorizas.",
+      "**Tus permisos, nada más.** OAuth 2.1, alcances por recurso y los permisos del panel de quien autorizó, verificados de nuevo en cada llamada.",
+      "**Una skill que conoce el producto.** Le enseña al agente los flujos del producto y pide confirmación antes de cualquier acción que mueva dinero o borre datos.",
+    ],
+    contents: "Contenido",
+    about: (t) => `Acerca de ${t.product}`,
+    ask: "Prueba a preguntar",
     install: "Instalación",
-    inClaude: "En Claude Code:",
-    other: "Para otros clientes, consulta las",
-    guides: "guías de instalación",
-    guidesPath: "../../install/README.es.md",
+    installText:
+      "En claude.ai y en Cowork, agrega el plugin desde el directorio. En Claude Code, agrega el marketplace una vez e instala el plugin:",
+    other: (url) => `Para ChatGPT, Codex, Cursor, Copilot, Gemini y más de 20 clientes, consulta las [guías de instalación](${url}).`,
+    guides: "install/README.es.md",
     servers: "Servidores MCP",
     cols: "| Servidor | URL |",
     sandbox: "sandbox, datos aislados de producción",
-    auth: "La autenticación es OAuth 2.1: en el primer uso, tu cliente abre el inicio de sesión de Kobana.",
+    auth: "La autenticación es OAuth 2.1 con PKCE: en el primer uso, tu cliente abre el inicio de sesión de Kobana. No hay client secret.",
+    security: "Seguridad desde el diseño",
+    report: (security, whiteHat) =>
+      `Para reportar una vulnerabilidad, consulta la [política de seguridad](${security}) y nuestra [Política White Hat](${whiteHat}).`,
+    securityFile: "i18n/SECURITY.es.md",
+    others: "Otros plugins de Kobana",
     links: "Enlaces",
     labels: { site: "Sitio web", docs: "Documentación", api: "API", mcp: "MCP", cli: "CLI", privacy: "Privacidad", terms: "Términos de uso" },
+    license: "Licencia",
+    licenseText: (url) => `[MIT](${url}). Kobana y el logo de Kobana son marcas de Kobana.`,
     generated: "Esta carpeta se genera a partir de `catalog.json` y `src/` del repositorio. No la edites a mano.",
+    switcher: "[🇺🇸 English](README.md) · [🇧🇷 Português](README.pt-BR.md) · **🇪🇸 Español**",
   },
+};
+const sitePages = {
+  home: { en: "https://www.kobana.com.br/en", "pt-BR": "https://www.kobana.com.br", es: "https://www.kobana.com.br/es" },
+  privacy: { en: shared.privacyPolicy, "pt-BR": "https://www.kobana.com.br/privacidade", es: "https://www.kobana.com.br/es/privacidad" },
+  terms: { en: shared.termsOfService, "pt-BR": "https://www.kobana.com.br/termos", es: "https://www.kobana.com.br/es/terminos" },
+  whiteHat: { en: "https://www.kobana.com.br/en/white-hat", "pt-BR": "https://www.kobana.com.br/white-hat", es: "https://www.kobana.com.br/es/white-hat" },
 };
 
 for (const p of plugins) {
@@ -158,9 +222,8 @@ for (const p of plugins) {
   binaries[`${dir}/assets/icon.png`] = "assets/icon.png";
 
   // README in three languages
-  const privacyPages = { en: shared.privacyPolicy, "pt-BR": "https://www.kobana.com.br/privacidade", es: "https://www.kobana.com.br/es/privacidad" };
-  const termsPages = { en: shared.termsOfService, "pt-BR": "https://www.kobana.com.br/termos", es: "https://www.kobana.com.br/es/terminos" };
   for (const [lang, t] of Object.entries(readmeText)) {
+    const l = p.i18n[lang];
     const docs = `${p.docs.base}/${lang === "pt-BR" ? "pt" : lang}`;
     const links = [
       ["site", p.pages[lang]],
@@ -168,28 +231,46 @@ for (const p of plugins) {
       ["api", `${docs}/api/overview`],
       ["mcp", `${docs}/mcp/overview/introduction`],
       ["cli", p.docs.cli ? `${docs}/cli/overview/introduction` : shared.developerPages[lang]],
-      ["privacy", privacyPages[lang]],
-      ["terms", termsPages[lang]],
+      ["privacy", sitePages.privacy[lang]],
+      ["terms", sitePages.terms[lang]],
     ];
-    const l = p.i18n[lang];
     const serverRows = p.servers
       .map((s) => `| \`${s.id}\`${s.sandbox ? ` (${t.sandbox})` : ""} | \`${s.url}\` |`)
       .join("\n");
-    const name = lang === "en" ? "README.md" : `README.${lang}.md`;
-    files[`${dir}/${name}`] = [
+    const others = plugins
+      .filter((o) => o !== p)
+      .map((o) => `- **[${o.i18n[lang].product}](${treeUrl(`plugins/${o.name}`)})** (\`${o.name}\`): ${o.i18n[lang].summary}`)
+      .join("\n");
+    const sections = [t.about(l), t.ask, t.install, t.servers, t.security, t.others, t.links, t.license];
+    files[`${dir}/${t.file}`] = [
       `<!-- ${header} -->`,
-      `# ${t.title(p, l)}`,
-      t.switcher(),
-      t.intro(l),
+      `# ${t.title(l)}`,
+      t.switcher,
+      t.intro(l, sitePages.home[lang]),
+      `> ${shared.i18n[lang].tagline}`,
+      t.highlights.map((h) => `- ${h}`).join("\n"),
+      `## ${t.contents}`,
+      sections.map((h) => `- [${h}](${anchor(h)})`).join("\n"),
+      `## ${t.about(l)}`,
+      l.about,
+      `## ${t.ask}`,
+      l.prompts.map((q) => `- "${q}"`).join("\n"),
       `## ${t.install}`,
-      t.inClaude,
+      t.installText,
       "```text\n" + `/plugin marketplace add universokobana/${mkt.name}\n${installCommand(p)}` + "\n```",
-      `${t.other} [${t.guides}](${t.guidesPath}).`,
+      t.other(repoUrl(t.guides)),
       `## ${t.servers}`,
       `${t.cols}\n|---|---|\n${serverRows}`,
       t.auth,
+      `## ${t.security}`,
+      shared.i18n[lang].security.join("\n"),
+      t.report(repoUrl(t.securityFile), sitePages.whiteHat[lang]),
+      `## ${t.others}`,
+      others,
       `## ${t.links}`,
       links.map(([key, url]) => `- **${t.labels[key]}**: ${url}`).join("\n"),
+      `## ${t.license}`,
+      t.licenseText(repoUrl("LICENSE")),
       `> ${t.generated}`,
     ].join("\n\n") + "\n";
   }

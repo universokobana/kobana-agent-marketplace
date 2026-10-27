@@ -27,6 +27,7 @@ Los plugins oficiales de [Kobana](https://www.kobana.com.br/es) para agentes de 
 - [Servidores MCP](#servidores-mcp)
 - [Instalación](#instalación)
 - [Plugins](#plugins)
+- [Enlaces](#enlaces)
 - [Seguridad desde el diseño](#seguridad-desde-el-diseño)
 - [Estructura del repositorio](#estructura-del-repositorio)
 - [Desarrollo](#desarrollo)
@@ -177,6 +178,29 @@ Cada producto es un plugin independiente, con su servidor MCP y una skill que le
 - "¿Qué suscripciones están activas?"
 - "¿Qué acuerdos están en curso?"
 - "¿Qué usuarios del portal todavía no aceptaron la invitación?"
+
+## Enlaces
+
+Todo sobre cada producto, en español:
+
+| Producto | Sitio web | Documentación | API | MCP | CLI |
+|---|---|---|---|---|---|
+| **Gateway Bancario** | [Sitio](https://www.kobana.com.br/es/productos/gateway-bancario) | [Docs](https://docs.banking.kobana.com.br/es) | [API](https://docs.banking.kobana.com.br/es/api/overview) | [MCP](https://docs.banking.kobana.com.br/es/mcp/overview/introduction) | [CLI](https://docs.banking.kobana.com.br/es/cli/overview/introduction) |
+| **Facturación Automática** | [Sitio](https://www.kobana.com.br/es/productos/facturacion-automatica) | [Docs](https://docs.billing.kobana.com.br/es) | [API](https://docs.billing.kobana.com.br/es/api/overview) | [MCP](https://docs.billing.kobana.com.br/es/mcp/overview/introduction) | [CLI](https://docs.billing.kobana.com.br/es/cli/overview/introduction) |
+| **Financiero Inteligente** | [Sitio](https://www.kobana.com.br/es/productos/financiero-inteligente) | [Docs](https://docs.finance.kobana.com.br/es) | [API](https://docs.finance.kobana.com.br/es/api/overview) | [MCP](https://docs.finance.kobana.com.br/es/mcp/overview/introduction) | [CLI](https://docs.finance.kobana.com.br/es/cli/overview/introduction) |
+| **Regla de Cobranza** | [Sitio](https://www.kobana.com.br/es/productos/cobranza) | [Docs](https://docs.dunning.kobana.com.br/es) | [API](https://docs.dunning.kobana.com.br/es/api/overview) | [MCP](https://docs.dunning.kobana.com.br/es/mcp/overview/introduction) | [CLI](https://www.kobana.com.br/es/desarrolladores/cli) |
+| **Dashboard Mágico** | [Sitio](https://www.kobana.com.br/es/productos/dashboard-magico) | [Docs](https://docs.dashboards.kobana.com.br/es) | [API](https://docs.dashboards.kobana.com.br/es/api/overview) | [MCP](https://docs.dashboards.kobana.com.br/es/mcp/overview/introduction) | [CLI](https://docs.dashboards.kobana.com.br/es/cli/overview/introduction) |
+
+- [Sitio web de Kobana](https://www.kobana.com.br/es)
+- [Desarrolladores](https://www.kobana.com.br/es/desarrolladores)
+- [MCP para desarrolladores](https://www.kobana.com.br/es/desarrolladores/mcp)
+- [Conecta tu asistente de IA](https://www.kobana.com.br/es/ia/mcp-servers)
+- [Kobana CLI](https://www.kobana.com.br/es/desarrolladores/cli)
+- [Centro de ayuda (en portugués)](https://ajuda.kobana.com.br)
+- [Privacidad](https://www.kobana.com.br/es/privacidad)
+- [Términos de uso](https://www.kobana.com.br/es/terminos)
+- [Política White Hat](https://www.kobana.com.br/es/white-hat)
+- [Agenda una demostración](https://www.kobana.com.br/es/agendar)
 
 ## Seguridad desde el diseño
 
