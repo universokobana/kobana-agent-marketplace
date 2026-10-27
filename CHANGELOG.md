@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.4] - 2026-10-26
+
+### Changed
+
+- The Claude plugin manifests declare `privacyPolicyUrl` again, because the plugin directory reads the privacy policy from there. The claude.ai marketplace sync does not know this field and shows a warning that it was ignored; the sync still works.
+
 ## [2.0.3] - 2026-10-26
 
 ### Fixed
@@ -43,7 +49,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.4...HEAD
+[2.0.4]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.0...v2.0.1

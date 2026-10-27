@@ -1,6 +1,6 @@
 {
   "name": "kobana-banking",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Kobana Banking Gateway for AI agents: boletos, bolepix, Pix charges, payments, Pix and TED transfers, bank accounts, balances and statements across 40+ Brazilian banks. Includes the sandbox server for safe testing.",
   "author": {
     "name": "Kobana",

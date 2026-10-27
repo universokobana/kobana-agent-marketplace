@@ -1,6 +1,6 @@
 {
   "name": "kobana-dunning",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Kobana Dunning for AI agents: overdue charges, multichannel dunning workflows, payment agreements, disputes and the debtor portal.",
   "author": {
     "name": "Kobana",
@@ -22,5 +22,6 @@
     "agreements",
     "debt"
   ],
-  "displayName": "Kobana - Dunning / Régua de Cobrança"
+  "displayName": "Kobana - Dunning / Régua de Cobrança",
+  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
 }

@@ -1,6 +1,6 @@
 {
   "$comment": "Single source of truth. Edit this file or src/, then run `npm run generate` to rebuild every plugin and manifest.",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "marketplace": {
     "name": "kobana-agent-marketplace",
     "displayName": "Kobana Agent Marketplace",

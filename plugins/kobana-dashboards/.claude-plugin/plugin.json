@@ -1,6 +1,6 @@
 {
   "name": "kobana-dashboards",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Kobana Magic Dashboard for AI agents: customer portal users and invitations, team members and organization settings.",
   "author": {
     "name": "Kobana",
@@ -21,5 +21,6 @@
     "portal-users",
     "white-label"
   ],
-  "displayName": "Kobana - Magic Dashboard / Dashboard Mágico"
+  "displayName": "Kobana - Magic Dashboard / Dashboard Mágico",
+  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy"
 }

@@ -113,9 +113,9 @@ for (const p of plugins) {
   files[`${dir}/plugin.json`] = { $schema: "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", ...meta };
   files[`${dir}/mcp.json`] = { mcpServers: httpServers(p.servers) };
 
-  // Claude Code (also read by Codex). The icon is found at assets/icon.png and the privacy policy through the
-  // README link: claude.ai marketplace sync strips unknown plugin.json keys such as `icon` and `privacyPolicyUrl`.
-  files[`${dir}/.claude-plugin/plugin.json`] = { ...meta, displayName };
+  // Claude Code (also read by Codex). The plugin directory reads `privacyPolicyUrl` from here; claude.ai marketplace
+  // sync does not know it and strips it with a warning. The icon is found at assets/icon.png without a key.
+  files[`${dir}/.claude-plugin/plugin.json`] = { ...meta, displayName, privacyPolicyUrl: shared.privacyPolicy };
   files[`${dir}/.mcp.json`] = { mcpServers: httpServers(p.servers) };
 
   // OpenAI Codex
