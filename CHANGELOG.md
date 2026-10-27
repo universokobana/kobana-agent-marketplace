@@ -4,11 +4,17 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-10-26
+
+### Fixed
+
+- Plugin display names use English and Portuguese only, for example "Kobana - Automatic Billing / Faturamento Automático", because claude.ai rejects names longer than 64 characters. The generator now checks this limit.
+
 ## [2.0.1] - 2026-10-26
 
 ### Changed
 
-- Plugins have readable names in the three languages, for example "Kobana - Banking Gateway / Gateway Bancário / Gateway Bancario" (`displayName`).
+- Plugins have readable names in the three languages, with a `displayName` built from the product name in each language.
 - The Claude plugin manifests no longer declare `icon` and `privacyPolicyUrl`, which the claude.ai marketplace sync ignores with a warning. The icon is read from `assets/icon.png`, and each plugin README links the privacy policy in its language.
 - The Kobana logo appears at the top of the READMEs.
 
@@ -31,7 +37,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/universokobana/kobana-agent-marketplace/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/universokobana/kobana-agent-marketplace/releases/tag/v1.0.0

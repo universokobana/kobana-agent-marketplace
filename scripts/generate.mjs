@@ -21,8 +21,9 @@ const allServers = plugins.flatMap((p) => p.servers);
 const read = (path) => readFileSync(join(root, path), "utf8");
 const httpServers = (servers) => Object.fromEntries(servers.map((s) => [s.id, { type: "http", url: s.url }]));
 const installCommand = (p) => `/plugin install ${p.name}@${mkt.name}`;
-// "Kobana - Banking Gateway / Gateway Bancário / Gateway Bancario": the product name in each language, without repeats
-const pluginTitle = (p) => `Kobana - ${[...new Set(Object.values(p.i18n).map((t) => t.product))].join(" / ")}`;
+// "Kobana - Banking Gateway / Gateway Bancário": English and Portuguese product names, without repeats.
+// Spanish is left out because claude.ai rejects display names longer than 64 characters.
+const pluginTitle = (p) => `Kobana - ${[...new Set([p.i18n.en.product, p.i18n["pt-BR"].product])].join(" / ")}`;
 
 // --- Skills: product skill + shared core rules (with the product table) ---
 const productsTable = [
@@ -297,6 +298,11 @@ for (const p of plugins) {
   if (!description) problems.push(`${file}: description is required`);
   else if (description.length > 1024) problems.push(`${file}: description exceeds 1024 characters`);
   if (!read(file).includes("{{core}}")) problems.push(`${file}: must include the {{core}} marker`);
+}
+
+for (const p of plugins) {
+  const title = pluginTitle(p);
+  if (title.length > 64) problems.push(`${p.name}: display name "${title}" exceeds 64 characters (claude.ai limit)`);
 }
 
 if (stale.length) console.error(`Out of date (run \`npm run generate\`):\n  ${stale.join("\n  ")}`);
