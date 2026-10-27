@@ -2,6 +2,12 @@
 
 How a release of this repository reaches each directory. Internal maintainer notes (English only).
 
+## Repositories
+
+The private repository is the source of truth: `main` there is mirrored to the public repository by `.github/workflows/mirror.yml` (fast-forward only, same history). The claude.ai organization marketplace syncs from the private repository, because it only accepts private or internal repositories.
+
+Pull requests and issues from the community arrive on the public repository. To merge a pull request: `git fetch public pull/<N>/head:pr-<N>`, merge it into `main`, push to `origin` and the mirror publishes it. Never push directly to the public `main`: the mirror would fail until both are equal again.
+
 ## Release
 
 1. Bump `version` in `catalog.json`.

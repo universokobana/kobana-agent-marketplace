@@ -1,0 +1,36 @@
+name: Mirror to public repository
+
+# The private repository is the source of truth. Every push to main is mirrored, with the same history, to the
+# public repository. Only main is mirrored. The push is a fast-forward: it fails instead of overwriting if the public
+# main has commits that aren't here (bring them in first).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror-public
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    if: github.repository == 'universokobana/kobana-agent-marketplace-private'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push main to the public repository
+        env:
+          PUBLIC_MIRROR_DEPLOY_KEY: ${{ secrets.PUBLIC_MIRROR_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$PUBLIC_MIRROR_DEPLOY_KEY" > ~/.ssh/public_mirror
+          chmod 600 ~/.ssh/public_mirror
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/public_mirror -o IdentitiesOnly=yes"
+          git push git@github.com:universokobana/kobana-agent-marketplace.git HEAD:refs/heads/main

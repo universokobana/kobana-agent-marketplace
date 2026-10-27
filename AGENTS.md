@@ -8,6 +8,8 @@ The Kobana Agent Marketplace: one plugin per Kobana product (`plugins/kobana-*`)
 
 ## Rules
 
+- `main` is public. It is mirrored to the public repository on every push, so never commit internal material (credentials, OAuth client details, internal processes) to `main`. Internal material lives on the `internal` branch, which is never mirrored and never merged into `main`.
+
 - `catalog.json` and `src/` are the single source of truth. Skill sources are `src/skills/<plugin>/SKILL.md`; the rules shared by every skill are `src/shared/core.md` (injected at `{{core}}`). After changing them, run `npm run generate`, then `npm run check`.
 - Never hand-edit generated files: `plugins/`, `skills/`, `registry/`, `.claude-plugin/`, `.agents/`, `.cursor-plugin/`, `gemini-extension.json`, `GEMINI.md`.
 - User-facing Markdown exists in three languages: `name.md` (English, default), `name.pt-BR.md` and `name.es.md`, except install guides, which live in `install/en-US/`, `install/pt-BR/` and `install/es/` with the same file names. Update all three together. Translations of the root community files (CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, SUPPORT) live in `i18n/`, because GitHub would otherwise pick a translation as the default. CI fails when a translation file is missing.
