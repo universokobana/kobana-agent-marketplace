@@ -1,0 +1,30 @@
+{
+  "name": "kobana-inbox",
+  "version": "2.1.0",
+  "description": "Kobana Autonomous Inbox for AI agents: inboxes, e-mails, AI agents that read and process e-mails, agent runs, webhooks and the event log.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://docs.inbox.kobana.com.br/en",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "inbox",
+    "email",
+    "ai-agents",
+    "automation",
+    "webhooks"
+  ],
+  "displayName": "Kobana - Autonomous Inbox / Inbox Autônomo",
+  "documentationUrl": "https://docs.inbox.kobana.com.br/en/mcp/overview/introduction",
+  "supportUrl": "https://github.com/universokobana/kobana-agent-marketplace/blob/main/SUPPORT.md",
+  "privacyPolicyUrl": "https://www.kobana.com.br/en/privacy",
+  "termsOfServiceUrl": "https://www.kobana.com.br/en/terms"
+}

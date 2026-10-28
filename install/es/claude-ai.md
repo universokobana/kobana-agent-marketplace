@@ -16,24 +16,27 @@ Agrega Kobana como **conector personalizado** en Claude. No necesitas instalar n
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 Agrega un conector por cada producto que quieras usar.
 
 ## Pasos
 
-1. Abre [claude.ai](https://claude.ai) (o la app de escritorio) → **Settings → Connectors**.
-2. Haz clic en **Add custom connector**.
+1. Abre [claude.ai](https://claude.ai) (o la app de escritorio) → **Configuración → Conectores** (Settings → Connectors).
+2. Haz clic en **Agregar conector personalizado** (Add custom connector).
 3. Nombre: `Kobana Banking` (por ejemplo). URL: `https://mcp.banking.kobana.com.br`.
 4. Deja vacíos **OAuth Client ID** y **OAuth Client Secret** en la configuración avanzada.
-5. Haz clic en **Add** y luego en **Connect**. Claude abre la página de login de Kobana.
-6. Elige la cuenta, los recursos y el nivel de acceso (lectura o escritura) y autoriza.
-7. En un chat, abre el menú **Search and tools** y asegúrate de que el conector de Kobana esté habilitado.
+5. Haz clic en **Agregar** (Add) y luego en **Conectar** (Connect). Claude abre la página de login de Kobana.
+6. Elige la cuenta y los recursos, y autoriza.
+7. En un chat, abre el menú **Búsqueda y herramientas** (Search and tools) y asegúrate de que el conector de Kobana esté habilitado.
+
+**Solo lectura fuera del Gateway Bancario.** Fuera del Gateway Bancario, los clientes OAuth registrados dinámicamente, como Claude, reciben acceso de solo lectura. Para crear o cambiar registros en los demás productos, usa un token personal en un cliente que lo acepte, como [Claude Code](claude-code.md).
 
 Los conectores agregados en la web también están disponibles en las apps móviles de Claude.
 
 ### Team y Enterprise
 
-Los propietarios agregan el conector en **Admin settings → Connectors** (u **Organization settings → Connectors**). Luego cada miembro se conecta con su propio login de Kobana, así cada persona mantiene sus propios permisos.
+Los propietarios agregan el conector en **Configuración de administrador → Conectores** (Admin settings → Connectors) o **Configuración de la organización → Conectores** (Organization settings → Connectors). Luego cada miembro se conecta con su propio login de Kobana, así cada persona mantiene sus propios permisos.
 
 ### Claude Desktop con servidores locales
 
@@ -64,7 +67,7 @@ Claude Desktop también lee `claude_desktop_config.json` para servidores locales
 
 ### ¿También quieres las skills?
 
-Las skills de Kobana ([`skills/`](../../skills), una por producto) se pueden subir en **Settings → Capabilities → Skills**: comprime en zip la carpeta de una skill (por ejemplo `kobana-banking/`) y súbela.
+Las skills de Kobana ([`skills/`](../../skills), una por producto) se pueden subir en **Configuración → Capacidades → Skills** (Settings → Capabilities → Skills): comprime en zip la carpeta de una skill (por ejemplo `kobana-banking/`) y súbela.
 
 ## Próximos pasos
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "br.com.kobana/inbox",
+  "title": "Kobana Autonomous Inbox",
+  "description": "Inboxes, e-mails, AI agents, agent runs and webhooks of Kobana Autonomous Inbox.",
+  "version": "2.1.0",
+  "websiteUrl": "https://docs.inbox.kobana.com.br/en/mcp/overview/introduction",
+  "repository": {
+    "url": "https://github.com/universokobana/kobana-agent-marketplace",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.inbox.kobana.com.br"
+    }
+  ]
+}

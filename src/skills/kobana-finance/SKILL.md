@@ -4,7 +4,7 @@ description: "Operate Kobana Smart Finance through the kobana-finance MCP server
 license: MIT
 metadata:
   author: Kobana
-  version: "1.0.0"
+  version: "{{version}}"
 ---
 
 # Kobana Smart Finance
@@ -12,7 +12,7 @@ metadata:
 Smart Finance is Kobana's financial back-office for Brazil: accounts payable and receivable, bank reconciliation and multi-company workspaces, with real-time balances. Its MCP server exposes about 96 tools.
 
 - Server: `kobana-finance` at `https://mcp.finance.kobana.com.br`
-- Docs: https://docs.finance.kobana.com.br/pt/mcp/overview/introduction
+- Docs: https://docs.finance.kobana.com.br/en/mcp/overview/introduction
 
 ## Workspaces come first
 

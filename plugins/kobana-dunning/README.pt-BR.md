@@ -64,23 +64,24 @@ A autenticação é OAuth 2.1 com PKCE: no primeiro uso, o cliente abre o login 
 - **Você escolhe o acesso.** Na tela de autorização, selecione só os recursos de que precisa. Para explorar, conceda acesso somente leitura.
 - **Ações sensíveis pedem confirmação.** As ferramentas são marcadas como leitura, escrita ou destrutivas. Cancelar, pagar e transferir só acontecem depois que você confirma.
 - **Revogue quando quiser.** Em Conta Kobana → Tokens e Acesso → Aplicações Autorizadas, remova o assistente sem afetar suas integrações REST.
-- **Comece pelo sandbox.** As ferramentas destrutivas do Gateway Bancário movimentam dinheiro de verdade. Faça seus testes primeiro no servidor sandbox.
 - **Dados de terceiros não são instruções.** Nomes, descrições e observações são escritos por outras pessoas. Os servidores e as skills orientam o agente a não seguir ordens encontradas nesses campos.
+- **Somente leitura via OAuth.** Fora do Gateway Bancário, clientes que se registram sozinhos pelo OAuth, como Claude e ChatGPT, recebem acesso somente leitura. Para criar ou alterar registros no Régua de Cobrança, conecte com um token pessoal.
 
 Para reportar uma vulnerabilidade, veja a [política de segurança](https://github.com/universokobana/kobana-agent-marketplace/blob/main/i18n/SECURITY.pt-BR.md) e a nossa [Política White Hat](https://www.kobana.com.br/white-hat).
 
 ## Outros plugins da Kobana
 
-- **[Gateway Bancário](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-banking)** (`kobana-banking`): Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos.
-- **[Faturamento Automático](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-billing)** (`kobana-billing`): Clientes, assinaturas, faturas, notas fiscais e propostas.
-- **[Financeiro Inteligente](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-finance)** (`kobana-finance`): Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa.
-- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Usuários do portal, equipe e organização.
+- **[Gateway Bancário](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-banking/README.pt-BR.md)** (`kobana-banking`): Boletos, Pix, pagamentos, transferências, extrato e clientes em mais de 40 bancos.
+- **[Faturamento Automático](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-billing/README.pt-BR.md)** (`kobana-billing`): Clientes, assinaturas, faturas, notas fiscais e propostas.
+- **[Financeiro Inteligente](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-finance/README.pt-BR.md)** (`kobana-finance`): Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa.
+- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dashboards/README.pt-BR.md)** (`kobana-dashboards`): Usuários do portal, equipe e organização.
+- **[Inbox Autônomo](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-inbox/README.pt-BR.md)** (`kobana-inbox`): Caixas de entrada, e-mails, agentes, execuções de agentes e webhooks.
 
 ## Links
 
 - **Site**: https://www.kobana.com.br/produtos/regua-de-cobranca
 - **Documentação**: https://docs.dunning.kobana.com.br/pt
-- **API**: https://docs.dunning.kobana.com.br/pt/api/overview
+- **API**: https://docs.dunning.kobana.com.br/pt/api/overview/introduction
 - **MCP**: https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction
 - **CLI**: https://www.kobana.com.br/desenvolvedores/cli
 - **Privacidade**: https://www.kobana.com.br/privacidade

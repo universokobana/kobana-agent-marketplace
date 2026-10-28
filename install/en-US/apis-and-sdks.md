@@ -6,6 +6,8 @@ Call Kobana MCP servers from your own code: Anthropic Messages API, OpenAI Respo
 
 **Auth:** personal token (`Authorization: Bearer`) or an OAuth access token your app obtains for the user.
 
+The examples below use the Banking Gateway sandbox. Sandbox tokens are separate from production ones: create them at https://account.sandbox.kobana.com.br.
+
 ## Anthropic Messages API (MCP connector)
 
 ```python
@@ -22,11 +24,11 @@ response = client.beta.messages.create(
         {
             "type": "url",
             "url": "https://mcp.banking.sandbox.kobana.com.br",
-            "name": "kobana-banking",
-            "authorization_token": os.environ["KOBANA_MCP_TOKEN"],
+            "name": "kobana-banking-sandbox",
+            "authorization_token": os.environ["KOBANA_SANDBOX_MCP_TOKEN"],
         }
     ],
-    tools=[{"type": "mcp_toolset", "mcp_server_name": "kobana-banking"}],
+    tools=[{"type": "mcp_toolset", "mcp_server_name": "kobana-banking-sandbox"}],
     messages=[{"role": "user", "content": "List my overdue boletos"}],
 )
 print(response.content)
@@ -47,9 +49,9 @@ response = client.responses.create(
     tools=[
         {
             "type": "mcp",
-            "server_label": "kobana_banking",
+            "server_label": "kobana_banking_sandbox",
             "server_url": "https://mcp.banking.sandbox.kobana.com.br",
-            "authorization": os.environ["KOBANA_MCP_TOKEN"],
+            "authorization": os.environ["KOBANA_SANDBOX_MCP_TOKEN"],
             "require_approval": "always",
         }
     ],
@@ -67,10 +69,10 @@ Any MCP client with Streamable HTTP works. Point it at the server URL and send `
 ```python
 options = ClaudeAgentOptions(
     mcp_servers={
-        "kobana-banking": {
+        "kobana-banking-sandbox": {
             "type": "http",
             "url": "https://mcp.banking.sandbox.kobana.com.br",
-            "headers": {"Authorization": f"Bearer {os.environ['KOBANA_MCP_TOKEN']}"},
+            "headers": {"Authorization": f"Bearer {os.environ['KOBANA_SANDBOX_MCP_TOKEN']}"},
         }
     },
 )
@@ -87,7 +89,7 @@ curl https://mcp.banking.kobana.com.br/ \
   -d '{ "jsonrpc": "2.0", "id": 1, "method": "tools/list" }'
 ```
 
-The servers are stateless: one JSON-RPC message per POST, no session. To act on a sub-account, send `X-Account-Uid: <uid>`.
+The servers are stateless: one JSON-RPC message per POST, no session. On Banking Gateway, to act on a sub-account, send `X-Account-Uid: <uid>`. On Autonomous Inbox, when the account has more than one workspace, choose it with `X-Workspace-Id: <id>`.
 
 ## Production checklist
 
@@ -106,6 +108,7 @@ The servers are stateless: one JSON-RPC message per POST, no session. To act on 
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Next steps
 

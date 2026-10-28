@@ -46,6 +46,7 @@ Goose también carga Agent Skills: copia `skills/*` en `~/.config/goose/skills/`
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

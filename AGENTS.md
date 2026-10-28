@@ -6,13 +6,11 @@ Guidance for AI coding agents working on this repository.
 
 The Kobana Agent Marketplace: one plugin per Kobana product (`plugins/kobana-*`), each packaging the product's remote MCP server and Agent Skill for every AI client, plus install guides per client.
 
-## Repositories and publishing
+## Publishing
 
-- **Two repositories.** `origin` is the private repository (`universokobana/kobana-agent-marketplace-private`), the source of truth, which the claude.ai organization marketplace syncs from (claude.ai only accepts private or internal repositories). `public` is the public repository (`universokobana/kobana-agent-marketplace`). `scripts/setup-remotes.mjs` adds the `public` remote automatically (on `npm install` and at the start of a Claude Code session).
-- **Push only to `origin`.** `.github/workflows/mirror.yml` copies `main` to the public repository on every push, with the same history. Never push to `public`: the mirror is fast-forward only and fails if the public `main` diverges. A ruleset on the public repository only accepts updates to `main` from the mirror's deploy key.
-- **`main` is public.** Never commit internal material to `main`: credentials, OAuth client details, Slack app configuration, internal processes. Internal material lives on the `internal` branch, which only exists in `origin`, is never mirrored and is never merged into `main` (merge `main` into `internal`, not the other way around). The mirror workflow refuses to publish when `main` contains the `internal` branch or an `internal/` folder.
-- **Community pull requests** arrive on the public repository. Bring them in with `git fetch public pull/<N>/head:pr-<N>`, merge into `main` and push to `origin`; the mirror publishes the result.
-- **Releases.** Bump `version` in `catalog.json`, run `npm run generate` and `npm run check`, add a `CHANGELOG.md` entry, commit and push to `origin`. See `docs/publishing.md`.
+- **This repository is public.** Never commit internal material: credentials, OAuth client details, Slack app configuration, internal processes or directory submissions.
+- **Maintainers** follow the workflow in `internal/MAINTAINERS.md` on the maintainers' `internal` branch (`git show origin/internal:internal/MAINTAINERS.md`). Read it before pushing, tagging or publishing. Never merge that branch into `main`.
+- **Releases.** Bump `version` in `catalog.json` and `package.json`, run `npm run generate` and `npm run check`, add a `CHANGELOG.md` entry and tag `vX.Y.Z`.
 
 ## Rules
 

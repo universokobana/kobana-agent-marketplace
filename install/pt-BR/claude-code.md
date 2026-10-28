@@ -15,6 +15,7 @@ Instale os **plugins Kobana** deste marketplace, um por produto. Cada plugin con
 | `kobana-finance` | Financeiro Inteligente | `kobana-finance` |
 | `kobana-dunning` | Régua de Cobrança | `kobana-dunning` |
 | `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
+| `kobana-inbox` | Inbox Autônomo | `kobana-inbox` |
 
 Em uma sessão do Claude Code, adicione o marketplace uma vez e instale os produtos que você usa:
 
@@ -25,6 +26,7 @@ Em uma sessão do Claude Code, adicione o marketplace uma vez e instale os produ
 /plugin install kobana-finance@kobana-agent-marketplace
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
+/plugin install kobana-inbox@kobana-agent-marketplace
 ```
 
 Ou pelo terminal:
@@ -93,6 +95,7 @@ claude mcp add --transport http kobana-banking https://mcp.banking.kobana.com.br
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Atualize ou remova
 

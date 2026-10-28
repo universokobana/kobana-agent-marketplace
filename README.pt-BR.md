@@ -33,7 +33,7 @@ Os plugins oficiais da [Kobana](https://www.kobana.com.br) para agentes de IA. C
 
 ## Produtos Kobana
 
-Somos uma plataforma financeira com IA nativa. São sete produtos em três camadas, da infraestrutura bancária à inteligência artificial, trabalhando juntos para automatizar suas operações financeiras de ponta a ponta. Cinco deles têm servidor MCP, e cada um tem o seu próprio plugin neste marketplace.
+Somos uma plataforma financeira com IA nativa. São oito produtos em três camadas, da infraestrutura bancária à inteligência artificial, trabalhando juntos para automatizar suas operações financeiras de ponta a ponta. Seis deles têm servidor MCP, e cada um tem o seu próprio plugin neste marketplace.
 
 ### Plataforma de infraestrutura
 
@@ -92,6 +92,16 @@ Somos uma plataforma financeira com IA nativa. São sete produtos em três camad
 
 [Conhecer o Dashboard Mágico](https://www.kobana.com.br/produtos/dashboard-magico)
 
+#### Inbox Autônomo
+
+**Caixas de entrada com agentes de IA que leem e processam e-mails.** Cada caixa recebe e-mails, e os agentes leem, extraem o que importa e agem, com cada execução registrada.
+
+- Caixas de entrada e e-mails
+- Agentes de IA, suas execuções e uso
+- Webhooks e log de eventos
+
+[Conhecer o Inbox Autônomo](https://docs.inbox.kobana.com.br/pt)
+
 ### Inteligência artificial
 
 - **[Kia](https://www.kobana.com.br/ia/kia)**: o ambiente integrado do financeiro. Lê os arquivos que você já usa, analisa e executa operações bancárias, sempre com a sua aprovação.
@@ -107,10 +117,11 @@ Cada produto tem seu próprio servidor MCP remoto: Streamable HTTP, stateless, O
 | Gateway Bancário (sandbox) | `kobana-banking-sandbox` | `https://mcp.banking.sandbox.kobana.com.br` | 289 | [docs](https://docs.banking.kobana.com.br/pt/mcp/overview/introduction) |
 | Faturamento Automático | `kobana-billing` | `https://mcp.billing.kobana.com.br` | 293 | [docs](https://docs.billing.kobana.com.br/pt/mcp/overview/introduction) |
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` | 96 | [docs](https://docs.finance.kobana.com.br/pt/mcp/overview/introduction) |
-| Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` | — | [docs](https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction) |
+| Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` | 119 | [docs](https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction) |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` | 220 | [docs](https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction) |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` | 53 | [docs](https://docs.inbox.kobana.com.br/pt/mcp/overview/introduction) |
 
-O sandbox tem contas e tokens próprios, separados da produção. A quantidade de ferramentas que você vê depende dos escopos que concede e das suas permissões.
+Só o Gateway Bancário tem sandbox, com contas e tokens próprios, separados da produção. No Inbox Autônomo, se a sua conta tem mais de um workspace, escolha-o na conexão com o header `X-Workspace-Id`. A quantidade de ferramentas que você vê depende dos escopos que concede e das suas permissões.
 
 ## Instalação
 
@@ -126,6 +137,7 @@ Adicione o marketplace uma vez e instale o plugin de cada produto que você usa:
 /plugin install kobana-finance@kobana-agent-marketplace
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
+/plugin install kobana-inbox@kobana-agent-marketplace
 ```
 
 Depois rode `/mcp` e escolha **Authenticate** em cada servidor Kobana.
@@ -150,21 +162,22 @@ Escolha o seu cliente para ver o passo a passo:
 | OpenCode | [opencode](install/pt-BR/opencode.md) | Warp | [warp](install/pt-BR/warp.md) |
 | LM Studio | [lm-studio](install/pt-BR/lm-studio.md) | Raycast | [raycast](install/pt-BR/raycast.md) |
 | n8n | [n8n](install/pt-BR/n8n.md) | APIs e SDKs (Anthropic, OpenAI, …) | [apis-and-sdks](install/pt-BR/apis-and-sdks.md) |
-| Slack (Slackbot) | [slack](install/pt-BR/slack.md) | Qualquer outro cliente MCP | [other-clients](install/pt-BR/other-clients.md) |
+| Slack (Slackbot), em breve | [slack](install/pt-BR/slack.md) | Qualquer outro cliente MCP | [other-clients](install/pt-BR/other-clients.md) |
 
 Veja o [índice de instalação](install/pt-BR/README.md) para um resumo de cada cliente.
 
 ## Plugins
 
-Cada produto é um plugin separado, com o seu servidor MCP e uma skill que ensina ao agente os fluxos e as regras de segurança do produto. Toda skill também traz as regras compartilhadas da Kobana: confirmação antes de ações destrutivas, sandbox primeiro e dados de terceiros tratados como dados, nunca como instruções.
+Cada produto é um plugin separado, com o seu servidor MCP e uma skill que ensina ao agente os fluxos e as regras de segurança do produto. Toda skill também traz as regras compartilhadas da Kobana: confirmação antes de ações destrutivas, sandbox primeiro no Gateway Bancário e dados de terceiros tratados como dados, nunca como instruções.
 
 | Plugin | Produto | Servidores MCP | Skill |
 |---|---|---|---|
-| [`kobana-banking`](plugins/kobana-banking) | Gateway Bancário | `kobana-banking`, `kobana-banking-sandbox` | Boletos, Pix, pagamentos, transferências, contas e extratos |
-| [`kobana-billing`](plugins/kobana-billing) | Faturamento Automático | `kobana-billing` | Clientes, planos, assinaturas, faturas e NFS-e |
-| [`kobana-finance`](plugins/kobana-finance) | Financeiro Inteligente | `kobana-finance` | Workspaces, contas a pagar, contas a receber, conciliação e fluxo de caixa |
-| [`kobana-dunning`](plugins/kobana-dunning) | Régua de Cobrança | `kobana-dunning` | Cobranças vencidas, réguas de cobrança, acordos e contestações |
-| [`kobana-dashboards`](plugins/kobana-dashboards) | Dashboard Mágico | `kobana-dashboards` | Usuários do portal, equipe e organização |
+| [`kobana-banking`](plugins/kobana-banking/README.pt-BR.md) | Gateway Bancário | `kobana-banking`, `kobana-banking-sandbox` | Boletos, Pix, pagamentos, transferências, contas e extratos |
+| [`kobana-billing`](plugins/kobana-billing/README.pt-BR.md) | Faturamento Automático | `kobana-billing` | Clientes, planos, assinaturas, faturas e NFS-e |
+| [`kobana-finance`](plugins/kobana-finance/README.pt-BR.md) | Financeiro Inteligente | `kobana-finance` | Workspaces, contas a pagar, contas a receber, conciliação e fluxo de caixa |
+| [`kobana-dunning`](plugins/kobana-dunning/README.pt-BR.md) | Régua de Cobrança | `kobana-dunning` | Cobranças vencidas, réguas de cobrança, acordos e contestações |
+| [`kobana-dashboards`](plugins/kobana-dashboards/README.pt-BR.md) | Dashboard Mágico | `kobana-dashboards` | Usuários do portal, equipe e organização |
+| [`kobana-inbox`](plugins/kobana-inbox/README.pt-BR.md) | Inbox Autônomo | `kobana-inbox` | Caixas de entrada, e-mails, agentes, execuções de agentes e webhooks |
 
 Quer só as skills? Elas também estão em [`skills/`](skills), prontas para qualquer cliente compatível com [Agent Skills](https://agentskills.io).
 
@@ -176,6 +189,7 @@ Quer só as skills? Elas também estão em [`skills/`](skills), prontas para qua
 - "Quais assinaturas estão ativas?"
 - "Quais acordos estão em andamento?"
 - "Quais usuários do portal ainda não aceitaram o convite?"
+- "Quais e-mails chegaram hoje?"
 
 ## Links
 
@@ -188,6 +202,7 @@ Tudo sobre cada produto, em português:
 | **Financeiro Inteligente** | [Site](https://www.kobana.com.br/produtos/financeiro-inteligente) | [Docs](https://docs.finance.kobana.com.br/pt) | [API](https://docs.finance.kobana.com.br/pt/api/overview) | [MCP](https://docs.finance.kobana.com.br/pt/mcp/overview/introduction) | [CLI](https://docs.finance.kobana.com.br/pt/cli/overview/introduction) |
 | **Régua de Cobrança** | [Site](https://www.kobana.com.br/produtos/regua-de-cobranca) | [Docs](https://docs.dunning.kobana.com.br/pt) | [API](https://docs.dunning.kobana.com.br/pt/api/overview) | [MCP](https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction) | [CLI](https://www.kobana.com.br/desenvolvedores/cli) |
 | **Dashboard Mágico** | [Site](https://www.kobana.com.br/produtos/dashboard-magico) | [Docs](https://docs.dashboards.kobana.com.br/pt) | [API](https://docs.dashboards.kobana.com.br/pt/api/overview) | [MCP](https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction) | [CLI](https://docs.dashboards.kobana.com.br/pt/cli/overview/introduction) |
+| **Inbox Autônomo** | [Site](https://docs.inbox.kobana.com.br/pt) | [Docs](https://docs.inbox.kobana.com.br/pt) | [API](https://docs.inbox.kobana.com.br/pt/api/overview/introduction) | [MCP](https://docs.inbox.kobana.com.br/pt/mcp/overview/introduction) | [CLI](https://docs.inbox.kobana.com.br/pt/cli/overview/introduction) |
 
 - [Site da Kobana](https://www.kobana.com.br)
 - [Desenvolvedores](https://www.kobana.com.br/desenvolvedores)
@@ -207,6 +222,7 @@ Tudo sobre cada produto, em português:
 - **Ações sensíveis pedem confirmação.** As ferramentas são marcadas como leitura, escrita ou destrutivas. Cancelar, pagar e transferir só acontecem depois que você confirma.
 - **Revogue quando quiser.** Em Conta Kobana → Tokens e Acesso → Aplicações Autorizadas, remova o assistente sem afetar suas integrações REST.
 - **Comece pelo sandbox.** As ferramentas destrutivas do Gateway Bancário movimentam dinheiro de verdade. Faça seus testes primeiro no servidor sandbox.
+- **Somente leitura via OAuth.** Fora do Gateway Bancário, clientes OAuth registrados dinamicamente (Claude, ChatGPT) recebem acesso somente leitura. Para criar ou alterar registros nos outros produtos, conecte com um token pessoal.
 - **Dados de terceiros não são instruções.** Nomes, descrições e observações são escritos por outras pessoas. Os servidores e as skills orientam o agente a não seguir ordens encontradas nesses campos.
 
 Para reportar uma vulnerabilidade, veja [SECURITY.pt-BR.md](i18n/SECURITY.pt-BR.md) e a nossa [Política White Hat](https://www.kobana.com.br/white-hat).
@@ -249,7 +265,7 @@ npm run generate
 npm run check
 ```
 
-Nunca edite arquivos gerados à mão; altere o `catalog.json` ou o `src/` e gere de novo. Veja [CONTRIBUTING.pt-BR.md](i18n/CONTRIBUTING.pt-BR.md) e [docs/publishing.md](docs/publishing.md) para saber como as versões chegam a cada diretório.
+Nunca edite arquivos gerados à mão; altere o `catalog.json` ou o `src/` e gere de novo. Veja [CONTRIBUTING.pt-BR.md](i18n/CONTRIBUTING.pt-BR.md).
 
 ## Contribuição, suporte e licença
 

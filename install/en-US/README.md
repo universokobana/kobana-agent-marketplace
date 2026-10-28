@@ -2,7 +2,9 @@
 
 **🇺🇸 English** · [🇧🇷 Português](../pt-BR/README.md) · [🇪🇸 Español](../es/README.md)
 
-Every Kobana product has a remote MCP server. Most clients connect with just the URL and a Kobana login (OAuth). Clients marked **Plugin** can also install Kobana plugins from this marketplace: one per product (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`), each with its MCP server and skill. Install only the products you use.
+Every Kobana product has a remote MCP server. Most clients connect with just the URL and a Kobana login (OAuth). Clients marked **Plugin** can also install Kobana plugins from this marketplace: one per product (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`, `kobana-inbox`), each with its MCP server and skill. Install only the products you use.
+
+Outside the Banking Gateway, dynamically registered OAuth clients (Claude, ChatGPT) get read-only access; to write, use a personal token.
 
 | Client | Type | How | Auth | Guide |
 |---|---|---|---|---|
@@ -32,7 +34,7 @@ Every Kobana product has a remote MCP server. Most clients connect with just the
 | Warp | Terminal | MCP servers | OAuth / token | [warp](warp.md) |
 | LM Studio | Local models | `mcp.json` | Token / `mcp-remote` | [lm-studio](lm-studio.md) |
 | Raycast | Launcher | MCP extension | `mcp-remote` | [raycast](raycast.md) |
-| Slack (Slackbot) | Chat | Official Kobana apps | OAuth | [slack](slack.md) |
+| Slack (Slackbot) | Chat | Official Kobana apps (coming soon) | OAuth | [slack](slack.md) |
 | n8n | Automation | MCP Client Tool | Token / OAuth2 | [n8n](n8n.md) |
 | Anthropic, OpenAI and agent SDKs | Code | MCP connector / remote MCP tool | Token | [apis-and-sdks](apis-and-sdks.md) |
 | Anything else | — | Generic values | OAuth / token | [other-clients](other-clients.md) |
@@ -47,5 +49,8 @@ Every Kobana product has a remote MCP server. Most clients connect with just the
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
+
+Only Banking Gateway has a sandbox, with its own accounts and tokens. On Autonomous Inbox, if your account has more than one workspace, choose it on the connection with the `X-Workspace-Id` header.
 
 > Client menus change often. If a step does not match what you see, look for **MCP**, **Connectors**, **Tools** or **Extensions** in the client settings, and open an issue so we can update the guide.

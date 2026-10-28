@@ -41,4 +41,4 @@ Requisitos: Node.js 18 o superior. Sin dependencias.
 
 ## Versiones
 
-Los mantenedores incrementan `version` en `catalog.json`, ejecutan `npm run generate`, actualizan [CHANGELOG.md](../CHANGELOG.md) y crean el tag de la versión. Consulta [docs/publishing.md](../docs/publishing.md).
+Los mantenedores incrementan `version` en `catalog.json`, ejecutan `npm run generate`, actualizan [CHANGELOG.md](../CHANGELOG.md) y crean el tag de la versión.

@@ -1,0 +1,48 @@
+{
+  "name": "kobana-inbox",
+  "version": "2.1.0",
+  "description": "Kobana Autonomous Inbox for AI agents: inboxes, e-mails, AI agents that read and process e-mails, agent runs, webhooks and the event log.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://docs.inbox.kobana.com.br/en",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "inbox",
+    "email",
+    "ai-agents",
+    "automation",
+    "webhooks"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana - Autonomous Inbox / Inbox Autônomo",
+    "shortDescription": "Inboxes, e-mails, agents, runs and webhooks.",
+    "longDescription": "Kobana Autonomous Inbox for AI agents: inboxes, e-mails, AI agents that read and process e-mails, agent runs, webhooks and the event log.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://docs.inbox.kobana.com.br/en",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "Which e-mails arrived today?",
+      "Which agent runs failed this week?"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

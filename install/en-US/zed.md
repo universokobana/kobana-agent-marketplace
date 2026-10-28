@@ -50,6 +50,7 @@ A green dot next to the server in the Agent Panel settings means it is running.
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Next steps
 

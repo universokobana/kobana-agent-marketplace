@@ -41,4 +41,4 @@ Requirements: Node.js 18 or later. No dependencies.
 
 ## Releases
 
-Maintainers bump `version` in `catalog.json`, run `npm run generate`, update [CHANGELOG.md](CHANGELOG.md) and tag the release. See [docs/publishing.md](docs/publishing.md).
+Maintainers bump `version` in `catalog.json`, run `npm run generate`, update [CHANGELOG.md](CHANGELOG.md) and tag the release.

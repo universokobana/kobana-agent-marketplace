@@ -41,6 +41,7 @@ O Amazon Q Developer CLI está evoluindo para o Kiro CLI. Se você usa o Kiro, v
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos passos
 

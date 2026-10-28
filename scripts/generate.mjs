@@ -7,7 +7,7 @@
 // No dependencies: runs on any Node.js >= 18.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from "node:fs";
-import { dirname, join, relative } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -33,8 +33,13 @@ const productsTable = [
     p.servers.map((s) => `| ${p.product}${s.sandbox ? " (sandbox)" : ""} | \`${p.name}\` | \`${s.url}\` | \`${installCommand(p)}\` |`),
   ),
 ].join("\n");
-const core = read("src/shared/core.md").replace("{{products}}", productsTable).trimEnd();
-const skill = (name) => read(`src/skills/${name}/SKILL.md`).replace("{{core}}", core);
+// Function replacements: a string replacement would treat "$&" and similar sequences in the text as patterns
+const core = read("src/shared/core.md").replace("{{products}}", () => productsTable).trimEnd();
+const skill = (name) => {
+  const file = `src/skills/${name}/SKILL.md`;
+  if (!existsSync(join(root, file))) return ""; // reported by the sanity check below
+  return read(file).replace("{{core}}", () => core).replaceAll("{{version}}", version);
+};
 
 const files = {};
 const binaries = {};
@@ -230,7 +235,7 @@ for (const p of plugins) {
     const links = [
       ["site", p.pages[lang]],
       ["docs", docs],
-      ["api", `${docs}/api/overview`],
+      ["api", `${docs}/api/overview/introduction`],
       ["mcp", `${docs}/mcp/overview/introduction`],
       ["cli", p.docs.cli ? `${docs}/cli/overview/introduction` : shared.developerPages[lang]],
       ["privacy", sitePages.privacy[lang]],
@@ -239,10 +244,18 @@ for (const p of plugins) {
     const serverRows = p.servers
       .map((s) => `| \`${s.id}\`${s.sandbox ? ` (${t.sandbox})` : ""} | \`${s.url}\` |`)
       .join("\n");
+    // GitHub shows the English README for a folder, so translations link to the README in their own language
+    const otherUrl = (path) => (lang === "en" ? treeUrl(path) : repoUrl(`${path}/${t.file}`));
     const others = plugins
       .filter((o) => o !== p)
-      .map((o) => `- **[${o.i18n[lang].product}](${treeUrl(`plugins/${o.name}`)})** (\`${o.name}\`): ${o.i18n[lang].summary}`)
+      .map((o) => `- **[${o.i18n[lang].product}](${otherUrl(`plugins/${o.name}`)})** (\`${o.name}\`): ${o.i18n[lang].summary}`)
       .join("\n");
+    const s = shared.i18n[lang];
+    const security = [
+      ...s.security,
+      ...(p.servers.some((x) => x.sandbox) ? [s.sandboxSecurity] : []),
+      ...(p.oauthWrite ? [] : [s.readOnlySecurity.replace("{product}", l.product)]),
+    ];
     const sections = [t.about(l), t.ask, t.install, t.servers, t.security, t.others, t.links, t.license];
     files[`${dir}/${t.file}`] = [
       `<!-- ${header} -->`,
@@ -252,7 +265,7 @@ for (const p of plugins) {
       `# ${t.title(l)}`,
       t.switcher,
       t.intro(l, sitePages.home[lang]),
-      `> ${shared.i18n[lang].tagline}`,
+      `> ${s.tagline}`,
       t.highlights.map((h) => `- ${h}`).join("\n"),
       `## ${t.contents}`,
       sections.map((h) => `- [${h}](${anchor(h)})`).join("\n"),
@@ -268,7 +281,7 @@ for (const p of plugins) {
       `${t.cols}\n|---|---|\n${serverRows}`,
       t.auth,
       `## ${t.security}`,
-      shared.i18n[lang].security.join("\n"),
+      security.join("\n"),
       t.report(repoUrl(t.securityFile), sitePages.whiteHat[lang]),
       `## ${t.others}`,
       others,
@@ -347,7 +360,7 @@ for (const p of plugins) {
       $schema: "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
       name: s.registryName,
       title: `Kobana ${p.product}${s.sandbox ? " (sandbox)" : ""}`,
-      description: s.description.slice(0, 100),
+      description: s.description,
       version,
       websiteUrl: s.docs,
       repository: { url: mkt.repository, source: "github" },
@@ -376,9 +389,10 @@ for (const [path, source] of Object.entries(binaries)) write(path, readFileSync(
 const expected = new Set([...Object.keys(files), ...Object.keys(binaries)]);
 const walk = (dir) =>
   readdirSync(join(root, dir), { withFileTypes: true }).flatMap((e) =>
-    e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)],
+    // Forward slashes on every platform, to match the keys of `files`
+    e.isDirectory() ? walk(`${dir}/${e.name}`) : e.name === ".DS_Store" ? [] : [`${dir}/${e.name}`],
   );
-for (const dir of ["plugins", "skills", "registry"]) {
+for (const dir of ["plugins", "skills", "registry", ".claude-plugin", ".agents", ".cursor-plugin"]) {
   if (!existsSync(join(root, dir))) continue;
   for (const path of walk(dir).filter((f) => !expected.has(f))) {
     if (check) stale.push(`${path} (should not exist)`);
@@ -407,11 +421,21 @@ for (const p of plugins) {
 }
 
 for (const p of plugins) {
+  for (const s of p.servers) {
+    // The MCP Registry limits descriptions to 100 characters
+    if (s.description.length > 100) problems.push(`${s.id}: server description exceeds 100 characters (MCP Registry limit)`);
+  }
   const title = pluginTitle(p);
   if (title.length > 64) problems.push(`${p.name}: display name "${title}" exceeds 64 characters (claude.ai limit)`);
 }
 
+// Versions that are not generated must follow catalog.json
+const pkg = JSON.parse(read("package.json"));
+if (pkg.version !== version) problems.push(`package.json: version ${pkg.version} must equal ${version}`);
+const released = read("CHANGELOG.md").match(/^## \[(\d+\.\d+\.\d+)\]/m)?.[1];
+if (released !== version) problems.push(`CHANGELOG.md: latest entry ${released} must equal ${version}`);
+
 if (stale.length) console.error(`Out of date (run \`npm run generate\`):\n  ${stale.join("\n  ")}`);
-if (problems.length) console.error(`Skill problems:\n  ${problems.join("\n  ")}`);
+if (problems.length) console.error(`Problems:\n  ${problems.join("\n  ")}`);
 if (stale.length || problems.length) process.exit(1);
 console.log(check ? "All generated files are up to date." : `Done. ${header}`);

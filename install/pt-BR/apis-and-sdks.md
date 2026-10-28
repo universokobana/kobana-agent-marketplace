@@ -6,6 +6,8 @@ Chame os servidores MCP da Kobana a partir do seu próprio código: Anthropic Me
 
 **Autenticação:** token pessoal (`Authorization: Bearer`) ou um access token OAuth que a sua aplicação obtém para o usuário.
 
+Os exemplos abaixo usam o sandbox do Gateway Bancário. Os tokens do sandbox são separados dos de produção: crie-os em https://account.sandbox.kobana.com.br.
+
 ## Anthropic Messages API (MCP connector)
 
 ```python
@@ -22,11 +24,11 @@ response = client.beta.messages.create(
         {
             "type": "url",
             "url": "https://mcp.banking.sandbox.kobana.com.br",
-            "name": "kobana-banking",
-            "authorization_token": os.environ["KOBANA_MCP_TOKEN"],
+            "name": "kobana-banking-sandbox",
+            "authorization_token": os.environ["KOBANA_SANDBOX_MCP_TOKEN"],
         }
     ],
-    tools=[{"type": "mcp_toolset", "mcp_server_name": "kobana-banking"}],
+    tools=[{"type": "mcp_toolset", "mcp_server_name": "kobana-banking-sandbox"}],
     messages=[{"role": "user", "content": "Liste meus boletos vencidos"}],
 )
 print(response.content)
@@ -47,9 +49,9 @@ response = client.responses.create(
     tools=[
         {
             "type": "mcp",
-            "server_label": "kobana_banking",
+            "server_label": "kobana_banking_sandbox",
             "server_url": "https://mcp.banking.sandbox.kobana.com.br",
-            "authorization": os.environ["KOBANA_MCP_TOKEN"],
+            "authorization": os.environ["KOBANA_SANDBOX_MCP_TOKEN"],
             "require_approval": "always",
         }
     ],
@@ -67,10 +69,10 @@ Qualquer cliente MCP com Streamable HTTP funciona. Aponte-o para a URL do servid
 ```python
 options = ClaudeAgentOptions(
     mcp_servers={
-        "kobana-banking": {
+        "kobana-banking-sandbox": {
             "type": "http",
             "url": "https://mcp.banking.sandbox.kobana.com.br",
-            "headers": {"Authorization": f"Bearer {os.environ['KOBANA_MCP_TOKEN']}"},
+            "headers": {"Authorization": f"Bearer {os.environ['KOBANA_SANDBOX_MCP_TOKEN']}"},
         }
     },
 )
@@ -87,7 +89,7 @@ curl https://mcp.banking.kobana.com.br/ \
   -d '{ "jsonrpc": "2.0", "id": 1, "method": "tools/list" }'
 ```
 
-Os servidores são stateless: uma mensagem JSON-RPC por POST, sem sessão. Para agir em uma subconta, envie `X-Account-Uid: <uid>`.
+Os servidores são stateless: uma mensagem JSON-RPC por POST, sem sessão. No Gateway Bancário, para agir em uma subconta, envie `X-Account-Uid: <uid>`. No Inbox Autônomo, quando a conta tem mais de um workspace, escolha-o com `X-Workspace-Id: <id>`.
 
 ## Checklist de produção
 
@@ -106,6 +108,7 @@ Os servidores são stateless: uma mensagem JSON-RPC por POST, sem sessão. Para 
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos passos
 

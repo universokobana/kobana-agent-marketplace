@@ -13,7 +13,7 @@ Agrega Kobana a Mistral Le Chat como **conector MCP personalizado**.
 3. Completa:
    - **Connector name:** `kobana-banking`
    - **Connector server:** `https://mcp.banking.kobana.com.br`
-   - **Description:** `Kobana Banking Gateway: boletos, Pix, payments and transfers`
+   - **Description:** `Gateway Bancario Kobana: boletos, Pix, pagos y transferencias`
 4. Elige la autenticación: **OAuth 2.1** (recomendado) o **API key / HTTP header** con `Authorization: Bearer <token>`.
 5. Haz clic en **Connect** y completa el login de Kobana.
 6. En un chat, abre **Tools** y habilita el conector.
@@ -30,6 +30,7 @@ En Le Chat Enterprise, los administradores pueden agregar el conector para toda 
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

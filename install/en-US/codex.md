@@ -17,6 +17,7 @@ This repository ships a Codex marketplace at `.agents/plugins/marketplace.json` 
 | `kobana-finance` | Smart Finance | `kobana-finance` |
 | `kobana-dunning` | Dunning | `kobana-dunning` |
 | `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+| `kobana-inbox` | Autonomous Inbox | `kobana-inbox` |
 
 ```bash
 codex plugin marketplace add universokobana/kobana-agent-marketplace
@@ -63,6 +64,7 @@ Codex reads Agent Skills from `~/.agents/skills/` (personal) and `.agents/skills
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Next steps
 

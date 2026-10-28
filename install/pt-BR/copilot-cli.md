@@ -17,6 +17,7 @@ Em uma sessão do Copilot CLI, adicione o marketplace uma vez e instale os produ
 /plugin install kobana-finance@kobana-agent-marketplace
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
+/plugin install kobana-inbox@kobana-agent-marketplace
 ```
 
 ## Adicione os servidores manualmente
@@ -60,6 +61,7 @@ Para o Copilot coding agent, adicione os servidores em **Repository → Settings
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos passos
 

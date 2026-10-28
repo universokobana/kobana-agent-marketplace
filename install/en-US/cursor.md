@@ -17,6 +17,7 @@ This repository ships a Cursor marketplace at `.cursor-plugin/marketplace.json` 
 | `kobana-finance` | Smart Finance | `kobana-finance` |
 | `kobana-dunning` | Dunning | `kobana-dunning` |
 | `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+| `kobana-inbox` | Autonomous Inbox | `kobana-inbox` |
 
 Add the repository as a plugin source in **Cursor Settings → Plugins** and install the products you use, or install them from the Cursor Marketplace once they are listed.
 
@@ -30,6 +31,7 @@ Open a link in a browser with Cursor installed:
 - [Smart Finance](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-finance&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZmluYW5jZS5rb2JhbmEuY29tLmJyIn0=)
 - [Dunning](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-dunning&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZHVubmluZy5rb2JhbmEuY29tLmJyIn0=)
 - [Magic Dashboard](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-dashboards&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZGFzaGJvYXJkcy5rb2JhbmEuY29tLmJyIn0=)
+- [Autonomous Inbox](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-inbox&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuaW5ib3gua29iYW5hLmNvbS5iciJ9)
 
 ## Add servers manually
 
@@ -55,6 +57,9 @@ Create `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (this project):
     },
     "kobana-dashboards": {
       "url": "https://mcp.dashboards.kobana.com.br"
+    },
+    "kobana-inbox": {
+      "url": "https://mcp.inbox.kobana.com.br"
     }
   }
 }
@@ -89,6 +94,7 @@ MCP tools are used by Cursor's **Agent** mode.
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Next steps
 

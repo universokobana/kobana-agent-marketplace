@@ -4,7 +4,7 @@ description: "Operate Kobana Banking Gateway through the kobana-banking MCP serv
 license: MIT
 metadata:
   author: Kobana
-  version: "1.0.0"
+  version: "{{version}}"
 ---
 
 # Kobana Banking Gateway
@@ -13,7 +13,7 @@ Banking Gateway is Kobana's unified banking API: one integration, 40+ Brazilian 
 
 - Production: `https://mcp.banking.kobana.com.br` (server `kobana-banking`)
 - Sandbox: `https://mcp.banking.sandbox.kobana.com.br` (server `kobana-banking-sandbox`). Sandbox tokens and data are separate from production.
-- Docs: https://docs.banking.kobana.com.br/pt/mcp/overview/introduction
+- Docs: https://docs.banking.kobana.com.br/en/mcp/overview/introduction
 
 ## What it covers
 

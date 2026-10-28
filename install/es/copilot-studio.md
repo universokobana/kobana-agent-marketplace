@@ -12,7 +12,7 @@ Dales a tus agentes de Copilot Studio las herramientas de Kobana agregando los s
 2. Ve a **Tools → Add a tool → New tool → Model Context Protocol**.
 3. Completa:
    - **Server name:** `Kobana Banking`
-   - **Server description:** `Boletos, Pix, payments, transfers and bank statements on Kobana`
+   - **Server description:** `Boletos, Pix, pagos, transferencias y extractos bancarios en Kobana`
    - **Server URL:** `https://mcp.banking.kobana.com.br`
 4. Autenticación:
    - **OAuth 2.0 → Dynamic discovery** (recomendado). Deja vacíos el client ID y el secret si se ofrece el registro dinámico.
@@ -32,6 +32,7 @@ Los agentes de Copilot Studio pueden ejecutarse sin una persona en el circuito. 
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

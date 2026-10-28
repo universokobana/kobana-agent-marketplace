@@ -3,8 +3,8 @@
   "name": "br.com.kobana/banking-sandbox",
   "title": "Kobana Banking Gateway (sandbox)",
   "description": "Kobana Banking Gateway sandbox: test boletos, Pix and payments with data isolated from production.",
-  "version": "2.0.8",
-  "websiteUrl": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction",
+  "version": "2.1.0",
+  "websiteUrl": "https://docs.banking.kobana.com.br/en/mcp/overview/introduction",
   "repository": {
     "url": "https://github.com/universokobana/kobana-agent-marketplace",
     "source": "github"

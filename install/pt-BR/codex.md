@@ -17,6 +17,7 @@ Este repositório traz um marketplace do Codex em `.agents/plugins/marketplace.j
 | `kobana-finance` | Financeiro Inteligente | `kobana-finance` |
 | `kobana-dunning` | Régua de Cobrança | `kobana-dunning` |
 | `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
+| `kobana-inbox` | Inbox Autônomo | `kobana-inbox` |
 
 ```bash
 codex plugin marketplace add universokobana/kobana-agent-marketplace
@@ -63,6 +64,7 @@ O Codex lê Agent Skills de `~/.agents/skills/` (pessoais) e `.agents/skills/` (
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos passos
 

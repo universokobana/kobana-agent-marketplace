@@ -16,6 +16,7 @@ Add each Kobana product as a **custom app (connector)** in ChatGPT using its MCP
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Steps
 
@@ -33,13 +34,15 @@ Add each Kobana product as a **custom app (connector)** in ChatGPT using its MCP
 
 Repeat for each product.
 
+**Read-only outside Banking Gateway.** Outside the Banking Gateway, dynamically registered OAuth clients such as ChatGPT get read-only access. To create or change records in the other products, use a personal token in a client that accepts one, such as [Codex](codex.md).
+
 ## Workspace admins (Business and Enterprise)
 
 Admins can create the connector once in **Workspace settings → Apps & Connectors** and publish it to members. Each member still signs in to Kobana with their own user, so permissions are per person.
 
 ## Write actions
 
-ChatGPT asks for confirmation before running tools that change data. Kobana destructive tools (pay, transfer, cancel) also require confirmation. Read the summary before approving.
+Write tools are available on ChatGPT only for Banking Gateway. ChatGPT asks for confirmation before running tools that change data, and Kobana destructive tools (pay, transfer, cancel) also require confirmation. Read the summary before approving.
 
 ## Codex
 

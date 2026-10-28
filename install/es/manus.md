@@ -8,14 +8,14 @@ Agrega los servidores MCP de Kobana a Manus como **conectores MCP personalizados
 
 ## Pasos
 
-1. En Manus, abre **Settings → Connectors** (o **Integrations**).
+1. En Manus, abre **Configuración → Conectores** (Settings → Connectors), o **Integraciones** (Integrations).
 2. Haz clic en **Add connectors → Custom MCP → Add custom MCP**.
 3. Elige **Direct configuration** (o **Import by JSON**).
 4. Completa:
    - **Server name:** `kobana-banking`
    - **Transport:** HTTP (Streamable HTTP)
    - **URL:** `https://mcp.banking.kobana.com.br`
-   - **Headers:** `Authorization: Bearer <your Kobana MCP token>` (si no se ofrece OAuth)
+   - **Headers:** `Authorization: Bearer <tu token MCP de Kobana>` (si no se ofrece OAuth)
 5. Guarda y habilita el conector en tu tarea.
 
 Importar por JSON:
@@ -50,6 +50,7 @@ Manus ejecuta tareas de forma autónoma. Prefiere tokens de solo lectura y empie
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

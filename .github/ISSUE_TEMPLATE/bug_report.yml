@@ -25,6 +25,7 @@ body:
         - Smart Finance
         - Dunning
         - Magic Dashboard
+        - Autonomous Inbox
         - Not product specific
   - type: textarea
     id: what-happened

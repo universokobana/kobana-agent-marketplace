@@ -31,7 +31,7 @@ The official [Kobana](https://www.kobana.com.br/en) plugin for **Banking Gateway
 **Unified banking operations. One API, 40+ banks.** Connect your company to the Brazilian banking system through a single API. Issue boletos, receive Pix, make TED transfers, manage bank accounts and balances, all without changing banks.
 
 - Receivables: Pix, boleto, bolepix and payment links
-- Payments: boletos, Pix and taxes
+- Payments: boletos, Pix and taxes, in batches or scheduled
 - Transfers: Pix, TED and between accounts
 - Bank accounts, balances, statements, reconciliation and DDA
 
@@ -67,8 +67,8 @@ Authentication is OAuth 2.1 with PKCE: on first use, your client opens the Koban
 - **You choose the access.** On the authorization screen, select only the resources you need. To explore, grant read-only access.
 - **Sensitive actions need confirmation.** Tools are annotated as read, write or destructive. Cancelling, paying and transferring only run after you confirm.
 - **Revoke anytime.** In Kobana Account → Tokens and Access → Authorized Applications, remove the assistant without affecting your REST integrations.
-- **Start in the sandbox.** Banking Gateway destructive tools move real money. Experiment on the sandbox server first.
 - **Third-party data is not instructions.** Names, descriptions and notes are written by other people. The servers and skills instruct the agent not to follow orders found in those fields.
+- **Start in the sandbox.** Banking Gateway destructive tools move real money. Experiment on the sandbox server first.
 
 To report a vulnerability, see the [security policy](https://github.com/universokobana/kobana-agent-marketplace/blob/main/SECURITY.md) and our [White Hat Policy](https://www.kobana.com.br/en/white-hat).
 
@@ -78,12 +78,13 @@ To report a vulnerability, see the [security policy](https://github.com/universo
 - **[Smart Finance](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-finance)** (`kobana-finance`): Accounts payable and receivable, entries, reconciliation and cash flow.
 - **[Dunning](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dunning)** (`kobana-dunning`): Charges, dunning workflows, agreements and disputes.
 - **[Magic Dashboard](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Portal users, team and organization.
+- **[Autonomous Inbox](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-inbox)** (`kobana-inbox`): Inboxes, e-mails, agents, agent runs and webhooks.
 
 ## Links
 
 - **Website**: https://www.kobana.com.br/en/products/banking-gateway
 - **Documentation**: https://docs.banking.kobana.com.br/en
-- **API**: https://docs.banking.kobana.com.br/en/api/overview
+- **API**: https://docs.banking.kobana.com.br/en/api/overview/introduction
 - **MCP**: https://docs.banking.kobana.com.br/en/mcp/overview/introduction
 - **CLI**: https://docs.banking.kobana.com.br/en/cli/overview/introduction
 - **Privacy**: https://www.kobana.com.br/en/privacy

@@ -10,9 +10,10 @@ Los servidores de Kobana siguen el estándar MCP, así que cualquier cliente que
 |---|---|
 | Transporte | Streamable HTTP (stateless). Algunos clientes lo llaman `http`, `streamable-http` o `streamableHttp` |
 | URL | La URL del producto que aparece abajo, raíz del host, sin path |
-| Autenticación | OAuth 2.1 con PKCE y registro dinámico de clientes. Deja vacíos el client ID y el secret |
-| Autenticación alternativa | Header `Authorization: Bearer <personal token>` |
-| Subcuentas | Header `X-Account-Uid: <uid>` |
+| Autenticación | OAuth 2.1 con PKCE y registro dinámico de clientes. Deja vacíos el client ID y el secret. Fuera del Gateway Bancario, estos clientes reciben acceso de solo lectura |
+| Autenticación alternativa | Header `Authorization: Bearer <token personal>`. Necesaria para escribir fuera del Gateway Bancario |
+| Subcuentas (Gateway Bancario) | Header `X-Account-Uid: <uid>` |
+| Workspace (Inbox Autónomo) | Header `X-Workspace-Id: <id>`, cuando la cuenta tiene más de un workspace |
 
 ## Servidores
 
@@ -24,6 +25,7 @@ Los servidores de Kobana siguen el estándar MCP, así que cualquier cliente que
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Configuración JSON genérica
 

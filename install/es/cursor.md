@@ -17,6 +17,7 @@ Este repositorio incluye un marketplace de Cursor en `.cursor-plugin/marketplace
 | `kobana-finance` | Financiero Inteligente | `kobana-finance` |
 | `kobana-dunning` | Regla de Cobranza | `kobana-dunning` |
 | `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
+| `kobana-inbox` | Inbox Autónomo | `kobana-inbox` |
 
 Agrega el repositorio como fuente de plugins en **Cursor Settings → Plugins** e instala los productos que usas, o instálalos desde el Cursor Marketplace cuando estén publicados.
 
@@ -30,6 +31,7 @@ Abre un enlace en un navegador con Cursor instalado:
 - [Financiero Inteligente](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-finance&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZmluYW5jZS5rb2JhbmEuY29tLmJyIn0=)
 - [Regla de Cobranza](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-dunning&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZHVubmluZy5rb2JhbmEuY29tLmJyIn0=)
 - [Dashboard Mágico](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-dashboards&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuZGFzaGJvYXJkcy5rb2JhbmEuY29tLmJyIn0=)
+- [Inbox Autónomo](cursor://anysphere.cursor-deeplink/mcp/install?name=kobana-inbox&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3AuaW5ib3gua29iYW5hLmNvbS5iciJ9)
 
 ## Agrega los servidores manualmente
 
@@ -55,6 +57,9 @@ Crea `~/.cursor/mcp.json` (todos los proyectos) o `.cursor/mcp.json` (este proye
     },
     "kobana-dashboards": {
       "url": "https://mcp.dashboards.kobana.com.br"
+    },
+    "kobana-inbox": {
+      "url": "https://mcp.inbox.kobana.com.br"
     }
   }
 }
@@ -89,6 +94,7 @@ Las herramientas MCP se usan en el modo **Agent** de Cursor.
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

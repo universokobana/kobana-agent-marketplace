@@ -8,7 +8,7 @@ Instala los **agent plugins de Kobana** (Agent Plugins 1.0, uno por producto) en
 
 ## Instala los plugins
 
-Agrega este repositorio como marketplace de plugins en el `settings.json` de VS Code:
+Los agent plugins se activan con la configuración `chat.plugins.enabled`, y la configuración `chat.plugins.marketplaces` todavía es experimental. Agrega este repositorio como marketplace de plugins en el `settings.json` de VS Code:
 
 ```json
 {
@@ -18,7 +18,7 @@ Agrega este repositorio como marketplace de plugins en el `settings.json` de VS 
 }
 ```
 
-Luego abre la vista **Extensions**, busca `@agentPlugins kobana` e instala los productos que usas. Cada plugin trae su servidor MCP (`plugins/<plugin>/mcp.json`) y su skill (`plugins/<plugin>/skills/`).
+Luego ejecuta **Chat: Open Customizations** desde la Command Palette, abre la pestaña **Browse** (o **Plugins → Browse**), busca `kobana` e instala los productos que usas. La primera vez que instalas desde un marketplace nuevo, VS Code te pide confirmar que confías en él. Cada plugin trae su servidor MCP (`plugins/<plugin>/mcp.json`) y su skill (`plugins/<plugin>/skills/`).
 
 | Plugin | Producto | Servidores MCP |
 |---|---|---|
@@ -27,8 +27,9 @@ Luego abre la vista **Extensions**, busca `@agentPlugins kobana` e instala los p
 | `kobana-finance` | Financiero Inteligente | `kobana-finance` |
 | `kobana-dunning` | Regla de Cobranza | `kobana-dunning` |
 | `kobana-dashboards` | Dashboard Mágico | `kobana-dashboards` |
+| `kobana-inbox` | Inbox Autónomo | `kobana-inbox` |
 
-Para recomendarlo a todas las personas que trabajan en un repositorio, agrega a `.vscode/settings.json`:
+Para recomendarlo a todas las personas que trabajan en un repositorio, agrega a `.github/copilot/settings.json` (VS Code también lee `.claude/settings.json`):
 
 ```json
 {
@@ -90,7 +91,7 @@ Con un token personal, usa un input para que el token no quede guardado en texto
     {
       "type": "promptString",
       "id": "kobana-token",
-      "description": "Kobana MCP token",
+      "description": "Token MCP de Kobana",
       "password": true
     }
   ],
@@ -116,6 +117,7 @@ Con un token personal, usa un input para que el token no quede guardado en texto
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 Visual Studio, JetBrains, Eclipse y Xcode con GitHub Copilot usan el mismo formato `servers` en su propia configuración MCP.
 

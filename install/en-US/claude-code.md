@@ -15,6 +15,7 @@ Install the **Kobana plugins** from this marketplace, one per product. Each plug
 | `kobana-finance` | Smart Finance | `kobana-finance` |
 | `kobana-dunning` | Dunning | `kobana-dunning` |
 | `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+| `kobana-inbox` | Autonomous Inbox | `kobana-inbox` |
 
 In a Claude Code session, add the marketplace once and install the products you use:
 
@@ -25,6 +26,7 @@ In a Claude Code session, add the marketplace once and install the products you 
 /plugin install kobana-finance@kobana-agent-marketplace
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
+/plugin install kobana-inbox@kobana-agent-marketplace
 ```
 
 Or from your shell:
@@ -93,6 +95,7 @@ claude mcp add --transport http kobana-banking https://mcp.banking.kobana.com.br
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Update or remove
 

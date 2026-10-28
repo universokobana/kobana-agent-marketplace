@@ -31,7 +31,7 @@ El plugin oficial de [Kobana](https://www.kobana.com.br/es) para **Gateway Banca
 **Operaciones bancarias unificadas. Una API, 40+ bancos.** Conecta tu empresa al sistema bancario brasileño a través de una única API. Emite boletos, recibe Pix, realiza transferencias TED y gestiona cuentas bancarias y saldos, todo sin cambiar de banco.
 
 - Cobros: Pix, boleto, bolepix y links de pago
-- Pagos: boletos, Pix y tributos
+- Pagos: boletos, Pix y tributos, en lote o programados
 - Transferencias: Pix, TED y entre cuentas
 - Cuentas bancarias, saldos, extractos, conciliación y DDA
 
@@ -67,23 +67,24 @@ La autenticación es OAuth 2.1 con PKCE: en el primer uso, tu cliente abre el in
 - **Tú eliges el acceso.** En la pantalla de autorización, selecciona solo los recursos que necesitas. Para explorar, concede acceso de solo lectura.
 - **Las acciones sensibles requieren confirmación.** Las herramientas están anotadas como lectura, escritura o destructivas. Cancelar, pagar y transferir solo se ejecutan después de que confirmas.
 - **Revoca cuando quieras.** En **Conta Kobana → Tokens e Acesso → Aplicações Autorizadas** (Cuenta Kobana → Tokens y Acceso → Aplicaciones Autorizadas), elimina el asistente sin afectar tus integraciones REST.
-- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.
 - **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos.
+- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.
 
 Para reportar una vulnerabilidad, consulta la [política de seguridad](https://github.com/universokobana/kobana-agent-marketplace/blob/main/i18n/SECURITY.es.md) y nuestra [Política White Hat](https://www.kobana.com.br/es/white-hat).
 
 ## Otros plugins de Kobana
 
-- **[Facturación Automática](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-billing)** (`kobana-billing`): Clientes, suscripciones, facturas, NFS-e y propuestas.
-- **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-finance)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
-- **[Regla de Cobranza](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dunning)** (`kobana-dunning`): Cobros, reglas de cobranza, acuerdos y disputas.
-- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
+- **[Facturación Automática](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-billing/README.es.md)** (`kobana-billing`): Clientes, suscripciones, facturas, NFS-e y propuestas.
+- **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-finance/README.es.md)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
+- **[Regla de Cobranza](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dunning/README.es.md)** (`kobana-dunning`): Cobros, reglas de cobranza, acuerdos y disputas.
+- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dashboards/README.es.md)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
+- **[Inbox Autónomo](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-inbox/README.es.md)** (`kobana-inbox`): Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks.
 
 ## Enlaces
 
 - **Sitio web**: https://www.kobana.com.br/es/productos/gateway-bancario
 - **Documentación**: https://docs.banking.kobana.com.br/es
-- **API**: https://docs.banking.kobana.com.br/es/api/overview
+- **API**: https://docs.banking.kobana.com.br/es/api/overview/introduction
 - **MCP**: https://docs.banking.kobana.com.br/es/mcp/overview/introduction
 - **CLI**: https://docs.banking.kobana.com.br/es/cli/overview/introduction
 - **Privacidad**: https://www.kobana.com.br/es/privacidad

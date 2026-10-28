@@ -1,24 +1,27 @@
-name: Mirror to public repository
+name: Publish
 
-# The private repository is the source of truth. Every push to main is mirrored, with the same history, to the
-# public repository. Only main is mirrored. The push is a fast-forward: it fails instead of overwriting if the public
-# main has commits that aren't here (bring them in first).
+# Publishes main and the release tags to the public repository, with the same history. Runs only in the maintainers'
+# repository. Pushes are fast-forward: they fail instead of overwriting.
 
 on:
   push:
     branches: [main]
+    tags: ["v*"]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: mirror-public
+  group: publish
   cancel-in-progress: false
 
 jobs:
-  mirror:
-    if: github.repository == 'universokobana/kobana-agent-marketplace-private'
+  publish:
+    if: >-
+      github.repository_owner == 'universokobana' &&
+      github.repository != 'universokobana/kobana-agent-marketplace' &&
+      (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,15 +29,22 @@ jobs:
           fetch-depth: 0
       - name: Refuse to publish internal material
         run: |
-          # The internal branch must never reach main: neither merged nor copied into an internal/ folder
-          git fetch origin internal || true
-          if git rev-parse -q --verify origin/internal >/dev/null && git merge-base --is-ancestor origin/internal HEAD; then
-            echo "::error::main contains the internal branch. Revert the merge before publishing."; exit 1
+          git fetch origin main internal || true
+          git fetch https://github.com/universokobana/kobana-agent-marketplace.git main:refs/published/main
+          fail() { echo "::error::$1"; exit 1; }
+          # No commit in the published history may touch internal/, where all internal material lives
+          [ -z "$(git rev-list HEAD -- internal/)" ] || fail "A commit in the history touches internal/."
+          # No commit of the internal branch (current or older) may be in the history
+          if git rev-parse -q --verify origin/internal >/dev/null; then
+            for c in $(git rev-list origin/internal --not refs/published/main); do
+              ! git merge-base --is-ancestor "$c" HEAD || fail "The history contains $c from the internal branch."
+            done
           fi
-          if git ls-tree -r --name-only HEAD | grep -E '^internal/'; then
-            echo "::error::main contains internal/ files. Remove them before publishing."; exit 1
-          fi
-      - name: Push main to the public repository
+          # Tags are published only for commits on main
+          case "$GITHUB_REF" in refs/tags/*)
+            git merge-base --is-ancestor HEAD origin/main || fail "The tag points to a commit that is not on main." ;;
+          esac
+      - name: Push to the public repository
         env:
           PUBLIC_MIRROR_DEPLOY_KEY: ${{ secrets.PUBLIC_MIRROR_DEPLOY_KEY }}
         run: |
@@ -43,4 +53,9 @@ jobs:
           chmod 600 ~/.ssh/public_mirror
           ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
           export GIT_SSH_COMMAND="ssh -i ~/.ssh/public_mirror -o IdentitiesOnly=yes"
-          git push git@github.com:universokobana/kobana-agent-marketplace.git HEAD:refs/heads/main
+          # main also carries the release tags already on it (GitHub starts no run when more than three tags are pushed at once)
+          refs="$GITHUB_REF:$GITHUB_REF"
+          if [ "$GITHUB_REF" = refs/heads/main ]; then
+            for t in $(git tag --merged HEAD --list 'v*'); do refs="$refs refs/tags/$t:refs/tags/$t"; done
+          fi
+          git push git@github.com:universokobana/kobana-agent-marketplace.git $refs

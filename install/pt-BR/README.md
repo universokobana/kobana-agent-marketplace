@@ -2,7 +2,9 @@
 
 [🇺🇸 English](../en-US/README.md) · **🇧🇷 Português** · [🇪🇸 Español](../es/README.md)
 
-Cada produto Kobana tem um servidor MCP remoto. A maioria dos clientes se conecta só com a URL e um login na Kobana (OAuth). Os clientes marcados com **Plugin** também podem instalar plugins Kobana deste marketplace: um por produto (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`), cada um com o seu servidor MCP e a sua skill. Instale só os produtos que você usa.
+Cada produto Kobana tem um servidor MCP remoto. A maioria dos clientes se conecta só com a URL e um login na Kobana (OAuth). Os clientes marcados com **Plugin** também podem instalar plugins Kobana deste marketplace: um por produto (`kobana-banking`, `kobana-billing`, `kobana-finance`, `kobana-dunning`, `kobana-dashboards`, `kobana-inbox`), cada um com o seu servidor MCP e a sua skill. Instale só os produtos que você usa.
+
+Fora do Gateway Bancário, clientes OAuth registrados dinamicamente (Claude, ChatGPT) recebem acesso somente leitura; para escrever, use um token pessoal.
 
 | Cliente | Tipo | Como | Autenticação | Guia |
 |---|---|---|---|---|
@@ -32,7 +34,7 @@ Cada produto Kobana tem um servidor MCP remoto. A maioria dos clientes se conect
 | Warp | Terminal | Servidores MCP | OAuth / token | [warp](warp.md) |
 | LM Studio | Modelos locais | `mcp.json` | Token / `mcp-remote` | [lm-studio](lm-studio.md) |
 | Raycast | Launcher | Extensão MCP | `mcp-remote` | [raycast](raycast.md) |
-| Slack (Slackbot) | Chat | Apps oficiais da Kobana | OAuth | [slack](slack.md) |
+| Slack (Slackbot) | Chat | Apps oficiais da Kobana (em breve) | OAuth | [slack](slack.md) |
 | n8n | Automação | MCP Client Tool | Token / OAuth2 | [n8n](n8n.md) |
 | SDKs da Anthropic, da OpenAI e de agentes | Código | Conector MCP / ferramenta MCP remota | Token | [apis-and-sdks](apis-and-sdks.md) |
 | Qualquer outro | — | Valores genéricos | OAuth / token | [other-clients](other-clients.md) |
@@ -47,5 +49,8 @@ Cada produto Kobana tem um servidor MCP remoto. A maioria dos clientes se conect
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
+
+Só o Gateway Bancário tem sandbox, com contas e tokens próprios. No Inbox Autônomo, se a sua conta tem mais de um workspace, escolha-o na conexão com o header `X-Workspace-Id`.
 
 > Os menus dos clientes mudam com frequência. Se algum passo não bater com o que você vê, procure por **MCP**, **Conectores** (Connectors), **Ferramentas** (Tools) ou **Extensões** (Extensions) nas configurações do cliente e abra uma issue para atualizarmos o guia.

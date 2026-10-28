@@ -8,7 +8,7 @@ Conecta Kobana a Perplexity mediante **conectores personalizados** (MCP remoto) 
 
 ## Conector remoto personalizado
 
-1. Abre **Settings → Connectors**.
+1. Abre **Configuración → Conectores** (Settings → Connectors).
 2. Haz clic en **+ Custom connector** (o **Add connector → Custom MCP**).
 3. Ponle el nombre `Kobana Banking` y pega `https://mcp.banking.kobana.com.br`.
 4. Elige **OAuth** como método de autenticación y completa el login de Kobana. Si no se ofrece OAuth, usa **API key / header** con un token personal.
@@ -49,6 +49,7 @@ Crea un token en **Conta Kobana → Tokens e Acesso → Meus Tokens Pessoais →
 | Financiero Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Regla de Cobranza | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autónomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Próximos pasos
 

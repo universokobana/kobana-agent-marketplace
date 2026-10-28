@@ -8,7 +8,7 @@ Install the **Kobana agent plugins** (Agent Plugins 1.0, one per product) in VS 
 
 ## Install the plugins
 
-Add this repository as a plugin marketplace in your VS Code `settings.json`:
+Agent plugins are turned on with the `chat.plugins.enabled` setting, and the `chat.plugins.marketplaces` setting is still experimental. Add this repository as a plugin marketplace in your VS Code `settings.json`:
 
 ```json
 {
@@ -18,7 +18,7 @@ Add this repository as a plugin marketplace in your VS Code `settings.json`:
 }
 ```
 
-Then open the **Extensions** view, search for `@agentPlugins kobana` and install the products you use. Each plugin brings its MCP server (`plugins/<plugin>/mcp.json`) and its skill (`plugins/<plugin>/skills/`).
+Then run **Chat: Open Customizations** from the Command Palette, open the **Browse** tab (or **Plugins → Browse**), search for `kobana` and install the products you use. The first install from a new marketplace asks you to trust it. Each plugin brings its MCP server (`plugins/<plugin>/mcp.json`) and its skill (`plugins/<plugin>/skills/`).
 
 | Plugin | Product | MCP servers |
 |---|---|---|
@@ -27,8 +27,9 @@ Then open the **Extensions** view, search for `@agentPlugins kobana` and install
 | `kobana-finance` | Smart Finance | `kobana-finance` |
 | `kobana-dunning` | Dunning | `kobana-dunning` |
 | `kobana-dashboards` | Magic Dashboard | `kobana-dashboards` |
+| `kobana-inbox` | Autonomous Inbox | `kobana-inbox` |
 
-To recommend it to everyone working on a repository, add to `.vscode/settings.json`:
+To recommend it to everyone working on a repository, add to `.github/copilot/settings.json` (VS Code also reads `.claude/settings.json`):
 
 ```json
 {
@@ -116,6 +117,7 @@ With a personal token, use an input so the token is not stored in plain text:
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 Visual Studio, JetBrains, Eclipse and Xcode with GitHub Copilot use the same `servers` format in their own MCP settings.
 

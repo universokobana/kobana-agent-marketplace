@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kobana-inbox": {
+      "type": "http",
+      "url": "https://mcp.inbox.kobana.com.br"
+    }
+  }
+}

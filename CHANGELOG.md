@@ -4,6 +4,27 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-10-28
+
+### Added
+
+- `kobana-inbox` plugin for Autonomous Inbox (`https://mcp.inbox.kobana.com.br`): inboxes, e-mails, AI agents, agent runs and webhooks.
+- Skills for Dunning and Magic Dashboard pick the workspace first, with `dunning_workspaces_list` and `dashboards_workspaces_list`.
+- Release tags (`vX.Y.Z`) for every version, published to the public repository.
+
+### Changed
+
+- Outside Banking Gateway, OAuth clients that register themselves (Claude, ChatGPT) only read. The skills, plugin READMEs and install guides now say so and point to a personal token for writes.
+- The "start in the sandbox" advice only appears where there is a sandbox server: Banking Gateway.
+- `X-Account-Uid` is documented for Banking Gateway only.
+- Documentation links in English and Spanish point to the documentation in the same language.
+- Skill frontmatter carries the release version.
+
+### Fixed
+
+- `npm run generate` on Windows no longer removes the files it has just written.
+- VS Code team setup uses `.github/copilot/settings.json` instead of `.vscode/settings.json`.
+
 ## [2.0.8] - 2026-10-26
 
 ### Added
@@ -79,7 +100,8 @@ All notable changes to this project are documented in this file. The format is b
 - Manifests for Agent Plugins 1.0, Claude Code, OpenAI Codex, Cursor, Gemini CLI and the official MCP Registry, generated from `catalog.json`.
 - Install guides for 29 clients in English, Portuguese and Spanish.
 
-[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.8...HEAD
+[Unreleased]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.8...v2.1.0
 [2.0.8]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.7...v2.0.8
 [2.0.7]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.6...v2.0.7
 [2.0.6]: https://github.com/universokobana/kobana-agent-marketplace/compare/v2.0.5...v2.0.6

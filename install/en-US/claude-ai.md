@@ -16,6 +16,7 @@ Add Kobana as a **custom connector** in Claude. No installation needed: you past
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 Add one connector per product you want to use.
 
@@ -26,8 +27,10 @@ Add one connector per product you want to use.
 3. Name: `Kobana Banking` (for example). URL: `https://mcp.banking.kobana.com.br`.
 4. Leave **OAuth Client ID** and **OAuth Client Secret** empty under advanced settings.
 5. Click **Add**, then **Connect**. Claude opens the Kobana login page.
-6. Choose the account, the resources and the access level (read or write), then authorize.
+6. Choose the account and the resources, then authorize.
 7. In a chat, open the **Search and tools** menu and make sure the Kobana connector is enabled.
+
+**Read-only outside Banking Gateway.** Outside the Banking Gateway, dynamically registered OAuth clients such as Claude get read-only access. To create or change records in the other products, use a personal token in a client that accepts one, such as [Claude Code](claude-code.md).
 
 Connectors added on the web are also available in the Claude mobile apps.
 

@@ -64,23 +64,24 @@ La autenticación es OAuth 2.1 con PKCE: en el primer uso, tu cliente abre el in
 - **Tú eliges el acceso.** En la pantalla de autorización, selecciona solo los recursos que necesitas. Para explorar, concede acceso de solo lectura.
 - **Las acciones sensibles requieren confirmación.** Las herramientas están anotadas como lectura, escritura o destructivas. Cancelar, pagar y transferir solo se ejecutan después de que confirmas.
 - **Revoca cuando quieras.** En **Conta Kobana → Tokens e Acesso → Aplicações Autorizadas** (Cuenta Kobana → Tokens y Acceso → Aplicaciones Autorizadas), elimina el asistente sin afectar tus integraciones REST.
-- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.
 - **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos.
+- **Solo lectura vía OAuth.** Fuera del Gateway Bancario, los clientes que se registran solos por OAuth, como Claude y ChatGPT, reciben acceso de solo lectura. Para crear o cambiar registros en Regla de Cobranza, conéctate con un token personal.
 
 Para reportar una vulnerabilidad, consulta la [política de seguridad](https://github.com/universokobana/kobana-agent-marketplace/blob/main/i18n/SECURITY.es.md) y nuestra [Política White Hat](https://www.kobana.com.br/es/white-hat).
 
 ## Otros plugins de Kobana
 
-- **[Gateway Bancario](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-banking)** (`kobana-banking`): Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños.
-- **[Facturación Automática](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-billing)** (`kobana-billing`): Clientes, suscripciones, facturas, NFS-e y propuestas.
-- **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-finance)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
-- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
+- **[Gateway Bancario](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-banking/README.es.md)** (`kobana-banking`): Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños.
+- **[Facturación Automática](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-billing/README.es.md)** (`kobana-billing`): Clientes, suscripciones, facturas, NFS-e y propuestas.
+- **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-finance/README.es.md)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
+- **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dashboards/README.es.md)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
+- **[Inbox Autónomo](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-inbox/README.es.md)** (`kobana-inbox`): Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks.
 
 ## Enlaces
 
 - **Sitio web**: https://www.kobana.com.br/es/productos/cobranza
 - **Documentación**: https://docs.dunning.kobana.com.br/es
-- **API**: https://docs.dunning.kobana.com.br/es/api/overview
+- **API**: https://docs.dunning.kobana.com.br/es/api/overview/introduction
 - **MCP**: https://docs.dunning.kobana.com.br/es/mcp/overview/introduction
 - **CLI**: https://www.kobana.com.br/es/desarrolladores/cli
 - **Privacidad**: https://www.kobana.com.br/es/privacidad

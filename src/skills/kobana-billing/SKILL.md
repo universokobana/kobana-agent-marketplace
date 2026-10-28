@@ -4,7 +4,7 @@ description: "Operate Kobana Automatic Billing through the kobana-billing MCP se
 license: MIT
 metadata:
   author: Kobana
-  version: "1.0.0"
+  version: "{{version}}"
 ---
 
 # Kobana Automatic Billing
@@ -12,7 +12,7 @@ metadata:
 Automatic Billing is Kobana's recurring billing platform for SaaS and service companies: subscriptions, invoices, payments, customer portal, NFS-e and dunning. Its MCP server exposes about 293 tools.
 
 - Server: `kobana-billing` at `https://mcp.billing.kobana.com.br`
-- Docs: https://docs.billing.kobana.com.br/pt/mcp/overview/introduction
+- Docs: https://docs.billing.kobana.com.br/en/mcp/overview/introduction
 
 ## Data model
 

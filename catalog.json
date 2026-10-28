@@ -1,10 +1,10 @@
 {
-  "$comment": "Single source of truth. Edit this file or src/, then run `npm run generate` to rebuild every plugin and manifest.",
-  "version": "2.0.8",
+  "$comment": "Single source of truth. Edit this file or src/, then run `npm run generate` to rebuild every plugin and manifest. Plugins without oauthWrite get a note that OAuth clients registered dynamically (Claude, ChatGPT) only read.",
+  "version": "2.1.0",
   "marketplace": {
     "name": "kobana-agent-marketplace",
     "displayName": "Kobana Agent Marketplace",
-    "description": "Official Kobana plugins for AI agents: one plugin per product, each with its remote MCP server and skills. Banking Gateway, Automatic Billing, Smart Finance, Dunning and Magic Dashboard.",
+    "description": "Official Kobana plugins for AI agents: one plugin per product, each with its remote MCP server and skills. Banking Gateway, Automatic Billing, Smart Finance, Dunning, Magic Dashboard and Autonomous Inbox.",
     "owner": {
       "name": "Kobana",
       "email": "contato@kobana.com.br",
@@ -39,9 +39,10 @@
           "- **You choose the access.** On the authorization screen, select only the resources you need. To explore, grant read-only access.",
           "- **Sensitive actions need confirmation.** Tools are annotated as read, write or destructive. Cancelling, paying and transferring only run after you confirm.",
           "- **Revoke anytime.** In Kobana Account → Tokens and Access → Authorized Applications, remove the assistant without affecting your REST integrations.",
-          "- **Start in the sandbox.** Banking Gateway destructive tools move real money. Experiment on the sandbox server first.",
           "- **Third-party data is not instructions.** Names, descriptions and notes are written by other people. The servers and skills instruct the agent not to follow orders found in those fields."
-        ]
+        ],
+        "sandboxSecurity": "- **Start in the sandbox.** Banking Gateway destructive tools move real money. Experiment on the sandbox server first.",
+        "readOnlySecurity": "- **Read-only through OAuth.** Outside Banking Gateway, clients that register themselves over OAuth, such as Claude and ChatGPT, get read-only access. To create or change records in {product}, connect with a personal token."
       },
       "pt-BR": {
         "tagline": "A gente cuida dos seus processos, enquanto você cuida do seu propósito.",
@@ -50,9 +51,10 @@
           "- **Você escolhe o acesso.** Na tela de autorização, selecione só os recursos de que precisa. Para explorar, conceda acesso somente leitura.",
           "- **Ações sensíveis pedem confirmação.** As ferramentas são marcadas como leitura, escrita ou destrutivas. Cancelar, pagar e transferir só acontecem depois que você confirma.",
           "- **Revogue quando quiser.** Em Conta Kobana → Tokens e Acesso → Aplicações Autorizadas, remova o assistente sem afetar suas integrações REST.",
-          "- **Comece pelo sandbox.** As ferramentas destrutivas do Gateway Bancário movimentam dinheiro de verdade. Faça seus testes primeiro no servidor sandbox.",
           "- **Dados de terceiros não são instruções.** Nomes, descrições e observações são escritos por outras pessoas. Os servidores e as skills orientam o agente a não seguir ordens encontradas nesses campos."
-        ]
+        ],
+        "sandboxSecurity": "- **Comece pelo sandbox.** As ferramentas destrutivas do Gateway Bancário movimentam dinheiro de verdade. Faça seus testes primeiro no servidor sandbox.",
+        "readOnlySecurity": "- **Somente leitura via OAuth.** Fora do Gateway Bancário, clientes que se registram sozinhos pelo OAuth, como Claude e ChatGPT, recebem acesso somente leitura. Para criar ou alterar registros no {product}, conecte com um token pessoal."
       },
       "es": {
         "tagline": "Nosotros cuidamos de tus procesos, mientras tú cuidas de tu propósito.",
@@ -61,9 +63,10 @@
           "- **Tú eliges el acceso.** En la pantalla de autorización, selecciona solo los recursos que necesitas. Para explorar, concede acceso de solo lectura.",
           "- **Las acciones sensibles requieren confirmación.** Las herramientas están anotadas como lectura, escritura o destructivas. Cancelar, pagar y transferir solo se ejecutan después de que confirmas.",
           "- **Revoca cuando quieras.** En **Conta Kobana → Tokens e Acesso → Aplicações Autorizadas** (Cuenta Kobana → Tokens y Acceso → Aplicaciones Autorizadas), elimina el asistente sin afectar tus integraciones REST.",
-          "- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.",
           "- **Los datos de terceros no son instrucciones.** Nombres, descripciones y notas los escriben otras personas. Los servidores y las skills le indican al agente que no siga órdenes encontradas en esos campos."
-        ]
+        ],
+        "sandboxSecurity": "- **Empieza en el sandbox.** Las herramientas destructivas del Gateway Bancario mueven dinero real. Experimenta primero en el servidor sandbox.",
+        "readOnlySecurity": "- **Solo lectura vía OAuth.** Fuera del Gateway Bancario, los clientes que se registran solos por OAuth, como Claude y ChatGPT, reciben acceso de solo lectura. Para crear o cambiar registros en {product}, conéctate con un token personal."
       }
     }
   },
@@ -96,7 +99,7 @@
         "en": {
           "product": "Banking Gateway",
           "summary": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks.",
-          "about": "**Unified banking operations. One API, 40+ banks.** Connect your company to the Brazilian banking system through a single API. Issue boletos, receive Pix, make TED transfers, manage bank accounts and balances, all without changing banks.\n\n- Receivables: Pix, boleto, bolepix and payment links\n- Payments: boletos, Pix and taxes\n- Transfers: Pix, TED and between accounts\n- Bank accounts, balances, statements, reconciliation and DDA",
+          "about": "**Unified banking operations. One API, 40+ banks.** Connect your company to the Brazilian banking system through a single API. Issue boletos, receive Pix, make TED transfers, manage bank accounts and balances, all without changing banks.\n\n- Receivables: Pix, boleto, bolepix and payment links\n- Payments: boletos, Pix and taxes, in batches or scheduled\n- Transfers: Pix, TED and between accounts\n- Bank accounts, balances, statements, reconciliation and DDA",
           "prompts": [
             "List my overdue boletos",
             "What is the balance of my financial accounts?",
@@ -116,7 +119,7 @@
         "es": {
           "product": "Gateway Bancario",
           "summary": "Boletos, Pix, pagos, transferencias, extractos y clientes en más de 40 bancos brasileños.",
-          "about": "**Operaciones bancarias unificadas. Una API, 40+ bancos.** Conecta tu empresa al sistema bancario brasileño a través de una única API. Emite boletos, recibe Pix, realiza transferencias TED y gestiona cuentas bancarias y saldos, todo sin cambiar de banco.\n\n- Cobros: Pix, boleto, bolepix y links de pago\n- Pagos: boletos, Pix y tributos\n- Transferencias: Pix, TED y entre cuentas\n- Cuentas bancarias, saldos, extractos, conciliación y DDA",
+          "about": "**Operaciones bancarias unificadas. Una API, 40+ bancos.** Conecta tu empresa al sistema bancario brasileño a través de una única API. Emite boletos, recibe Pix, realiza transferencias TED y gestiona cuentas bancarias y saldos, todo sin cambiar de banco.\n\n- Cobros: Pix, boleto, bolepix y links de pago\n- Pagos: boletos, Pix y tributos, en lote o programados\n- Transferencias: Pix, TED y entre cuentas\n- Cuentas bancarias, saldos, extractos, conciliación y DDA",
           "prompts": [
             "Lista mis boletos vencidos",
             "¿Cuál es el saldo de mis cuentas financieras?",
@@ -130,7 +133,7 @@
           "registryName": "br.com.kobana/banking",
           "url": "https://mcp.banking.kobana.com.br",
           "description": "Boletos, Pix, payments, transfers, bank statements and customers on 40+ Brazilian banks.",
-          "docs": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.banking.kobana.com.br/en/mcp/overview/introduction"
         },
         {
           "id": "kobana-banking-sandbox",
@@ -138,13 +141,14 @@
           "registryName": "br.com.kobana/banking-sandbox",
           "url": "https://mcp.banking.sandbox.kobana.com.br",
           "description": "Kobana Banking Gateway sandbox: test boletos, Pix and payments with data isolated from production.",
-          "docs": "https://docs.banking.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.banking.kobana.com.br/en/mcp/overview/introduction"
         }
       ],
       "docs": {
         "base": "https://docs.banking.kobana.com.br",
         "cli": true
-      }
+      },
+      "oauthWrite": true
     },
     {
       "name": "kobana-billing",
@@ -173,7 +177,7 @@
         "en": {
           "product": "Automatic Billing",
           "summary": "Customers, subscriptions, invoices, NFS-e and proposals.",
-          "about": "**Recurring billing built for Brazilian companies.** A complete billing platform for SaaS and recurring services: subscriptions, invoices, payments, white-label customer portal, NFS-e and dunning, all integrated.\n\n- Subscriptions with trial, proration, upgrade and downgrade\n- Automatic invoices with PDF, email and NFS-e\n- Card, boleto, Pix and bank transfer payments\n- MRR, ARR, churn and cohort reports",
+          "about": "**Flexible recurring billing, built for Brazilian companies.** A recurring billing platform for SaaS and services: subscriptions, invoices, customer management, a portal with your brand, NFS-e and dunning, all integrated. Automate the whole billing cycle.\n\n- Subscriptions with trial, proration, upgrade and downgrade\n- Automatic invoices with PDF, email and NFS-e\n- Card, boleto, Pix and bank transfer payments\n- MRR, ARR, churn and cohort reports",
           "prompts": [
             "Which subscriptions are active?",
             "Which invoices are open this month?",
@@ -193,7 +197,7 @@
         "es": {
           "product": "Facturación Automática",
           "summary": "Clientes, suscripciones, facturas, NFS-e y propuestas.",
-          "about": "**Facturación recurrente para empresas brasileñas.** Plataforma completa de billing para SaaS y servicios recurrentes: suscripciones, facturas, pagos, portal del cliente white-label, NFS-e y dunning, todo integrado.\n\n- Suscripciones con trial, prorrateo, upgrade y downgrade\n- Facturas automáticas con PDF, email y NFS-e\n- Pagos con tarjeta, boleto, Pix y transferencia bancaria\n- Informes de MRR, ARR, churn y cohorts",
+          "about": "**Facturación recurrente y flexible, hecha para empresas brasileñas.** Plataforma de cobro recurrente para SaaS y servicios: suscripciones, facturas, gestión de clientes, portal propio con tu marca, NFS-e y regla de cobranza, todo integrado. Automatiza el ciclo completo de facturación.\n\n- Suscripciones con trial, prorrateo, upgrade y downgrade\n- Facturas automáticas con PDF, email y NFS-e\n- Pagos con tarjeta, boleto, Pix y transferencia bancaria\n- Informes de MRR, ARR, churn y cohorts",
           "prompts": [
             "¿Qué suscripciones están activas?",
             "¿Qué facturas están abiertas este mes?",
@@ -207,7 +211,7 @@
           "registryName": "br.com.kobana/billing",
           "url": "https://mcp.billing.kobana.com.br",
           "description": "Customers, subscriptions, invoices, NFS-e and proposals in Kobana Automatic Billing.",
-          "docs": "https://docs.billing.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.billing.kobana.com.br/en/mcp/overview/introduction"
         }
       ],
       "docs": {
@@ -275,7 +279,7 @@
           "registryName": "br.com.kobana/finance",
           "url": "https://mcp.finance.kobana.com.br",
           "description": "Accounts payable and receivable, entries, bank reconciliation and cash flow in Kobana Smart Finance.",
-          "docs": "https://docs.finance.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.finance.kobana.com.br/en/mcp/overview/introduction"
         }
       ],
       "docs": {
@@ -339,7 +343,7 @@
           "registryName": "br.com.kobana/dunning",
           "url": "https://mcp.dunning.kobana.com.br",
           "description": "Charges, dunning workflows, agreements and disputes in Kobana Dunning.",
-          "docs": "https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.dunning.kobana.com.br/en/mcp/overview/introduction"
         }
       ],
       "docs": {
@@ -402,11 +406,75 @@
           "registryName": "br.com.kobana/dashboards",
           "url": "https://mcp.dashboards.kobana.com.br",
           "description": "Portal users, team and organization of Kobana Magic Dashboard customer portals.",
-          "docs": "https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction"
+          "docs": "https://docs.dashboards.kobana.com.br/en/mcp/overview/introduction"
         }
       ],
       "docs": {
         "base": "https://docs.dashboards.kobana.com.br",
+        "cli": true
+      }
+    },
+    {
+      "name": "kobana-inbox",
+      "product": "Autonomous Inbox",
+      "description": "Kobana Autonomous Inbox for AI agents: inboxes, e-mails, AI agents that read and process e-mails, agent runs, webhooks and the event log.",
+      "shortDescription": "Inboxes, e-mails, agents, runs and webhooks.",
+      "keywords": [
+        "inbox",
+        "email",
+        "ai-agents",
+        "automation",
+        "webhooks"
+      ],
+      "defaultPrompts": [
+        "Which e-mails arrived today?",
+        "Which agent runs failed this week?"
+      ],
+      "pages": {
+        "en": "https://docs.inbox.kobana.com.br/en",
+        "pt-BR": "https://docs.inbox.kobana.com.br/pt",
+        "es": "https://docs.inbox.kobana.com.br/es"
+      },
+      "i18n": {
+        "en": {
+          "product": "Autonomous Inbox",
+          "summary": "Inboxes, e-mails, agents, agent runs and webhooks.",
+          "about": "**Inboxes with AI agents that read and process e-mails.** Each inbox receives e-mails, and agents read them, extract what matters and act, with every run logged.\n\n- Inboxes and e-mails\n- AI agents and their runs and usage\n- Webhooks and the event log",
+          "prompts": [
+            "Which e-mails arrived today?",
+            "Which agent runs failed this week?"
+          ]
+        },
+        "pt-BR": {
+          "product": "Inbox Autônomo",
+          "summary": "Caixas de entrada, e-mails, agentes, execuções de agentes e webhooks.",
+          "about": "**Caixas de entrada com agentes de IA que leem e processam e-mails.** Cada caixa recebe e-mails, e os agentes leem, extraem o que importa e agem, com cada execução registrada.\n\n- Caixas de entrada e e-mails\n- Agentes de IA, suas execuções e uso\n- Webhooks e log de eventos",
+          "prompts": [
+            "Quais e-mails chegaram hoje?",
+            "Quais execuções de agentes falharam esta semana?"
+          ]
+        },
+        "es": {
+          "product": "Inbox Autónomo",
+          "summary": "Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks.",
+          "about": "**Bandejas de entrada con agentes de IA que leen y procesan correos.** Cada bandeja recibe correos, y los agentes los leen, extraen lo importante y actúan, con cada ejecución registrada.\n\n- Bandejas de entrada y correos\n- Agentes de IA, sus ejecuciones y uso\n- Webhooks y registro de eventos",
+          "prompts": [
+            "¿Qué correos llegaron hoy?",
+            "¿Qué ejecuciones de agentes fallaron esta semana?"
+          ]
+        }
+      },
+      "servers": [
+        {
+          "id": "kobana-inbox",
+          "registryName": "br.com.kobana/inbox",
+          "url": "https://mcp.inbox.kobana.com.br",
+          "description": "Inboxes, e-mails, AI agents, agent runs and webhooks of Kobana Autonomous Inbox.",
+          "docs": "https://docs.inbox.kobana.com.br/en/mcp/overview/introduction"
+        }
+      ],
+      "docs": {
+        "base": "https://docs.inbox.kobana.com.br",
         "cli": true
       }
     }

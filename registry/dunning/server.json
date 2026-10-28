@@ -3,8 +3,8 @@
   "name": "br.com.kobana/dunning",
   "title": "Kobana Dunning",
   "description": "Charges, dunning workflows, agreements and disputes in Kobana Dunning.",
-  "version": "2.0.8",
-  "websiteUrl": "https://docs.dunning.kobana.com.br/pt/mcp/overview/introduction",
+  "version": "2.1.0",
+  "websiteUrl": "https://docs.dunning.kobana.com.br/en/mcp/overview/introduction",
   "repository": {
     "url": "https://github.com/universokobana/kobana-agent-marketplace",
     "source": "github"

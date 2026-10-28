@@ -16,6 +16,7 @@ Adicione cada produto Kobana como um **app personalizado (conector)** no ChatGPT
 | Financeiro Inteligente | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Régua de Cobrança | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Dashboard Mágico | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Inbox Autônomo | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Passo a passo
 
@@ -33,13 +34,15 @@ Adicione cada produto Kobana como um **app personalizado (conector)** no ChatGPT
 
 Repita para cada produto.
 
+**Somente leitura fora do Gateway Bancário.** Fora do Gateway Bancário, clientes OAuth registrados dinamicamente, como o ChatGPT, recebem acesso somente leitura. Para criar ou alterar registros nos outros produtos, use um token pessoal em um cliente que aceite token, como o [Codex](codex.md).
+
 ## Administradores de workspace (Business e Enterprise)
 
 Os administradores podem criar o conector uma única vez em **Configurações do workspace → Apps e Conectores** (Workspace settings → Apps & Connectors) e publicá-lo para os membros. Mesmo assim, cada membro entra na Kobana com o próprio usuário, então as permissões são individuais.
 
 ## Ações de escrita
 
-O ChatGPT pede confirmação antes de rodar ferramentas que alteram dados. As ferramentas destrutivas da Kobana (pagar, transferir, cancelar) também exigem confirmação. Leia o resumo antes de aprovar.
+No ChatGPT, ferramentas de escrita só estão disponíveis para o Gateway Bancário. O ChatGPT pede confirmação antes de rodar ferramentas que alteram dados, e as ferramentas destrutivas da Kobana (pagar, transferir, cancelar) também exigem confirmação. Leia o resumo antes de aprovar.
 
 ## Codex
 

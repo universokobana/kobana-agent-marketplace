@@ -10,9 +10,10 @@ Kobana's servers follow the MCP standard, so any client that supports remote ser
 |---|---|
 | Transport | Streamable HTTP (stateless). Some clients call it `http`, `streamable-http` or `streamableHttp` |
 | URL | The product URL below, host root, no path |
-| Authentication | OAuth 2.1 with PKCE and dynamic client registration. Leave client ID and secret empty |
-| Fallback auth | Header `Authorization: Bearer <personal token>` |
-| Sub-accounts | Header `X-Account-Uid: <uid>` |
+| Authentication | OAuth 2.1 with PKCE and dynamic client registration. Leave client ID and secret empty. Outside the Banking Gateway, these clients get read-only access |
+| Fallback auth | Header `Authorization: Bearer <personal token>`. Required to write outside the Banking Gateway |
+| Sub-accounts (Banking Gateway) | Header `X-Account-Uid: <uid>` |
+| Workspace (Autonomous Inbox) | Header `X-Workspace-Id: <id>`, when the account has more than one workspace |
 
 ## Servers
 
@@ -24,6 +25,7 @@ Kobana's servers follow the MCP standard, so any client that supports remote ser
 | Smart Finance | `kobana-finance` | `https://mcp.finance.kobana.com.br` |
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` |
+| Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` |
 
 ## Generic JSON configuration
 

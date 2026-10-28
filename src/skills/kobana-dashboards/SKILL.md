@@ -4,7 +4,7 @@ description: "Operate Kobana Magic Dashboard through the kobana-dashboards MCP s
 license: MIT
 metadata:
   author: Kobana
-  version: "1.0.0"
+  version: "{{version}}"
 ---
 
 # Kobana Magic Dashboard
@@ -12,7 +12,15 @@ metadata:
 Magic Dashboard builds a company's customer portal on top of the data already in its systems (ERP, API or database), with its own brand and domain. Each customer signs in and sees only their own data. Its MCP server exposes about 220 tools.
 
 - Server: `kobana-dashboards` at `https://mcp.dashboards.kobana.com.br`
-- Docs: https://docs.dashboards.kobana.com.br/pt/mcp/overview/introduction
+- Docs: https://docs.dashboards.kobana.com.br/en/mcp/overview/introduction
+
+## Workspaces come first
+
+Every Magic Dashboard call runs inside a workspace, chosen per call:
+
+1. Call `dashboards_workspaces_list` to see the workspaces the user can act on.
+2. If there is more than one, ask the user which one to use.
+3. Pass the chosen `workspace_id` on every subsequent call. Do not switch workspaces silently.
 
 ## What it covers
 
@@ -26,12 +34,14 @@ The portal matches the signed-in user's tenant ID with the owner of each record.
 
 ## Workflow
 
-1. List or search before creating to avoid duplicate users.
-2. Confirm before inviting in bulk, removing users or changing roles.
-3. Report the invitation status and any link the tool returns.
+1. Select the workspace (above).
+2. List or search before creating to avoid duplicate users.
+3. Confirm before inviting in bulk, removing users or changing roles.
+4. Report the invitation status and any link the tool returns.
 
 ## Good first questions
 
+- "Which workspaces can you act on?"
 - "Which portal users have not accepted the invitation yet?"
 - "Who is on my team?"
 
