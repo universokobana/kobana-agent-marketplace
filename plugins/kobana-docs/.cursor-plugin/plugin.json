@@ -1,0 +1,27 @@
+{
+  "name": "kobana-docs",
+  "version": "2.1.0",
+  "description": "Kobana documentation for AI agents: public, read-only MCP servers that search and read the docs of every Kobana product and of the Kobana CLI. No sign-in and no account access.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/developers/mcp",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "documentation",
+    "docs",
+    "search",
+    "cli",
+    "read-only"
+  ],
+  "displayName": "Kobana - Documentation / Documentação",
+  "logo": "assets/icon.svg"
+}

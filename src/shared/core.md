@@ -4,7 +4,7 @@ These rules apply to every Kobana MCP server. They are shared by all Kobana plug
 
 ### How the servers behave
 
-- **Transport**: Streamable HTTP, stateless. The URL is the host root, with no path.
+- **Transport**: Streamable HTTP, stateless. The URL is the host root, with no path. The documentation servers of the `kobana-docs` plugin are the exception: public, read-only, no authentication, URL ending in `/mcp`.
 - **Authentication**: OAuth 2.1 with PKCE. The client opens Kobana's login page; there is no client secret. Clients without OAuth can send a personal token as `Authorization: Bearer <token>` (Kobana Account → Tokens and Access → My Personal Tokens → New Token, with the product's app and the MCP usage).
 - **Permissions**: The token limits access by resource and level (read or write). The dashboard permissions of the person who authorized limit the rest, and they are re-checked on every call.
 - **Read-only through OAuth outside Banking Gateway**: clients that register themselves over OAuth, such as Claude and ChatGPT, only get read tools on Automatic Billing, Smart Finance, Dunning, Magic Dashboard and Autonomous Inbox. If the user asks for a change there and no write tool is available, explain that writing needs a connection with a personal token. Do not look for workarounds.

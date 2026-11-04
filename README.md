@@ -125,6 +125,22 @@ Each product has its own remote MCP server: Streamable HTTP, stateless, OAuth 2.
 
 Only Banking Gateway has a sandbox, with its own accounts and tokens, separate from production. On Autonomous Inbox, if your account has more than one workspace, choose it on the connection with the `X-Workspace-Id` header. The number of tools you see depends on the scopes you grant and on your permissions.
 
+### Documentation servers
+
+Every product and the Kobana CLI also publish a **public documentation MCP server**: Streamable HTTP, read-only, no sign-in and no access to any account, with the tools `list_pages`, `search_docs` and `get_page`. The URL ends in `/mcp`. They all live in the `kobana-docs` plugin.
+
+| Documentation of | Server name | URL |
+|---|---|---|
+| Banking Gateway | `kobana-docs-banking` | `https://docs.banking.kobana.com.br/mcp` |
+| Automatic Billing | `kobana-docs-billing` | `https://docs.billing.kobana.com.br/mcp` |
+| Smart Finance | `kobana-docs-finance` | `https://docs.finance.kobana.com.br/mcp` |
+| Dunning | `kobana-docs-dunning` | `https://docs.dunning.kobana.com.br/mcp` |
+| Magic Dashboard | `kobana-docs-dashboards` | `https://docs.dashboards.kobana.com.br/mcp` |
+| Autonomous Inbox | `kobana-docs-inbox` | `https://docs.inbox.kobana.com.br/mcp` |
+| Hub (Risco Sacado) | `kobana-docs-hub` | `https://docs.hub.kobana.com.br/mcp` |
+| Kadu | `kobana-docs-kadu` | `https://docs.kadu.ia.br/mcp` |
+| Kobana CLI | `kobana-docs-cli` | `https://cli.kobana.com.br/mcp` |
+
 ## Install
 
 ### Claude Code
@@ -140,6 +156,7 @@ Add the marketplace once, then install the plugin of each product you use:
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
 /plugin install kobana-inbox@kobana-agent-marketplace
+/plugin install kobana-docs@kobana-agent-marketplace
 ```
 
 Then run `/mcp` and choose **Authenticate** on each Kobana server.
@@ -180,6 +197,7 @@ Each product is a separate plugin with its MCP server and a skill that teaches t
 | [`kobana-dunning`](plugins/kobana-dunning) | Dunning | `kobana-dunning` | Overdue charges, dunning workflows, agreements and disputes |
 | [`kobana-dashboards`](plugins/kobana-dashboards) | Magic Dashboard | `kobana-dashboards` | Portal users, team and organization |
 | [`kobana-inbox`](plugins/kobana-inbox) | Autonomous Inbox | `kobana-inbox` | Inboxes, e-mails, agents, agent runs and webhooks |
+| [`kobana-docs`](plugins/kobana-docs) | Documentation | `kobana-docs-*` | Search and read the documentation of every product and of the CLI |
 
 Only want the skills? They are also in [`skills/`](skills), ready for any client that supports [Agent Skills](https://agentskills.io).
 

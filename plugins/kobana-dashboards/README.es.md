@@ -76,6 +76,7 @@ Para reportar una vulnerabilidad, consulta la [política de seguridad](https://g
 - **[Financiero Inteligente](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-finance/README.es.md)** (`kobana-finance`): Cuentas por pagar y por cobrar, asientos, conciliación y flujo de caja.
 - **[Regla de Cobranza](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dunning/README.es.md)** (`kobana-dunning`): Cobros, reglas de cobranza, acuerdos y disputas.
 - **[Inbox Autónomo](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-inbox/README.es.md)** (`kobana-inbox`): Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks.
+- **[Documentación](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-docs/README.es.md)** (`kobana-docs`): La documentación de cada producto Kobana y de Kobana CLI, para que tu agente la consulte.
 
 ## Enlaces
 

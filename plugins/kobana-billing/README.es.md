@@ -78,6 +78,7 @@ Para reportar una vulnerabilidad, consulta la [política de seguridad](https://g
 - **[Regla de Cobranza](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dunning/README.es.md)** (`kobana-dunning`): Cobros, reglas de cobranza, acuerdos y disputas.
 - **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dashboards/README.es.md)** (`kobana-dashboards`): Usuarios del portal, equipo y organización.
 - **[Inbox Autónomo](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-inbox/README.es.md)** (`kobana-inbox`): Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks.
+- **[Documentación](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-docs/README.es.md)** (`kobana-docs`): La documentación de cada producto Kobana y de Kobana CLI, para que tu agente la consulte.
 
 ## Enlaces
 

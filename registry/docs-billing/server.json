@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "br.com.kobana/docs-billing",
+  "title": "Kobana Automatic Billing Docs",
+  "description": "Public, read-only search of the Kobana Automatic Billing documentation. No sign-in.",
+  "version": "2.1.0",
+  "websiteUrl": "https://docs.billing.kobana.com.br/en",
+  "repository": {
+    "url": "https://github.com/universokobana/kobana-agent-marketplace",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://docs.billing.kobana.com.br/mcp"
+    }
+  ]
+}

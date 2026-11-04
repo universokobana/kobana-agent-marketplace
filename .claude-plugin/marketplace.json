@@ -179,6 +179,34 @@
         "webhooks"
       ],
       "category": "finance"
+    },
+    {
+      "name": "kobana-docs",
+      "displayName": "Kobana - Documentation / Documentação",
+      "source": "./plugins/kobana-docs",
+      "description": "Kobana documentation for AI agents: public, read-only MCP servers that search and read the docs of every Kobana product and of the Kobana CLI. No sign-in and no account access.",
+      "version": "2.1.0",
+      "author": {
+        "name": "Kobana",
+        "email": "contato@kobana.com.br",
+        "url": "https://www.kobana.com.br/en"
+      },
+      "homepage": "https://www.kobana.com.br/en/developers/mcp",
+      "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "kobana",
+        "mcp",
+        "finance",
+        "fintech",
+        "brazil",
+        "documentation",
+        "docs",
+        "search",
+        "cli",
+        "read-only"
+      ],
+      "category": "finance"
     }
   ]
 }

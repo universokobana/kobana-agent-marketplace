@@ -24,6 +24,33 @@
     },
     "kobana-inbox": {
       "httpUrl": "https://mcp.inbox.kobana.com.br"
+    },
+    "kobana-docs-banking": {
+      "httpUrl": "https://docs.banking.kobana.com.br/mcp"
+    },
+    "kobana-docs-billing": {
+      "httpUrl": "https://docs.billing.kobana.com.br/mcp"
+    },
+    "kobana-docs-finance": {
+      "httpUrl": "https://docs.finance.kobana.com.br/mcp"
+    },
+    "kobana-docs-dunning": {
+      "httpUrl": "https://docs.dunning.kobana.com.br/mcp"
+    },
+    "kobana-docs-dashboards": {
+      "httpUrl": "https://docs.dashboards.kobana.com.br/mcp"
+    },
+    "kobana-docs-inbox": {
+      "httpUrl": "https://docs.inbox.kobana.com.br/mcp"
+    },
+    "kobana-docs-hub": {
+      "httpUrl": "https://docs.hub.kobana.com.br/mcp"
+    },
+    "kobana-docs-kadu": {
+      "httpUrl": "https://docs.kadu.ia.br/mcp"
+    },
+    "kobana-docs-cli": {
+      "httpUrl": "https://cli.kobana.com.br/mcp"
     }
   }
 }

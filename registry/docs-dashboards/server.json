@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "br.com.kobana/docs-dashboards",
+  "title": "Kobana Magic Dashboard Docs",
+  "description": "Public, read-only search of the Kobana Magic Dashboard documentation. No sign-in.",
+  "version": "2.1.0",
+  "websiteUrl": "https://docs.dashboards.kobana.com.br/en",
+  "repository": {
+    "url": "https://github.com/universokobana/kobana-agent-marketplace",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://docs.dashboards.kobana.com.br/mcp"
+    }
+  ]
+}

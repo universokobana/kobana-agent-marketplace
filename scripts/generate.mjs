@@ -30,7 +30,9 @@ const productsTable = [
   "| Product | Plugin | MCP server | Claude Code install |",
   "|---|---|---|---|",
   ...plugins.flatMap((p) =>
-    p.servers.map((s) => `| ${p.product}${s.sandbox ? " (sandbox)" : ""} | \`${p.name}\` | \`${s.url}\` | \`${installCommand(p)}\` |`),
+    p.docsOnly
+      ? [`| ${p.product} (${p.servers.length} public servers, no sign-in) | \`${p.name}\` | \`${p.servers.map((s) => s.url).join("`, `")}\` | \`${installCommand(p)}\` |`]
+      : p.servers.map((s) => `| ${p.product}${s.sandbox ? " (sandbox)" : ""} | \`${p.name}\` | \`${s.url}\` | \`${installCommand(p)}\` |`),
   ),
 ].join("\n");
 // Function replacements: a string replacement would treat "$&" and similar sequences in the text as patterns
@@ -187,7 +189,7 @@ for (const p of plugins) {
   files[`${dir}/.claude-plugin/plugin.json`] = {
     ...meta,
     displayName,
-    documentationUrl: `${p.docs.base}/en/mcp/overview/introduction`,
+    documentationUrl: p.docsOnly ? p.pages.en : `${p.docs.base}/en/mcp/overview/introduction`,
     supportUrl: `${mkt.repository}/blob/main/SUPPORT.md`,
     privacyPolicyUrl: shared.privacyPolicy,
     termsOfServiceUrl: shared.termsOfService,
@@ -205,7 +207,7 @@ for (const p of plugins) {
       longDescription: p.description,
       developerName: mkt.owner.name,
       category: shared.category,
-      capabilities: ["Read", "Write"],
+      capabilities: p.docsOnly ? ["Read"] : ["Read", "Write"],
       websiteURL: p.pages.en,
       privacyPolicyURL: shared.privacyPolicy,
       termsOfServiceURL: shared.termsOfService,
@@ -232,7 +234,13 @@ for (const p of plugins) {
   for (const [lang, t] of Object.entries(readmeText)) {
     const l = p.i18n[lang];
     const docs = `${p.docs.base}/${lang === "pt-BR" ? "pt" : lang}`;
-    const links = [
+    const links = p.docsOnly
+      ? [
+          ["site", p.pages[lang]],
+          ["privacy", sitePages.privacy[lang]],
+          ["terms", sitePages.terms[lang]],
+        ]
+      : [
       ["site", p.pages[lang]],
       ["docs", docs],
       ["api", `${docs}/api/overview/introduction`],
@@ -251,7 +259,7 @@ for (const p of plugins) {
       .map((o) => `- **[${o.i18n[lang].product}](${otherUrl(`plugins/${o.name}`)})** (\`${o.name}\`): ${o.i18n[lang].summary}`)
       .join("\n");
     const s = shared.i18n[lang];
-    const security = [
+    const security = l.security ?? [
       ...s.security,
       ...(p.servers.some((x) => x.sandbox) ? [s.sandboxSecurity] : []),
       ...(p.oauthWrite ? [] : [s.readOnlySecurity.replace("{product}", l.product)]),
@@ -264,9 +272,9 @@ for (const p of plugins) {
       "![Kobana](assets/kobana-logo-light.png#gh-light-mode-only)\n![Kobana](assets/kobana-logo-dark.png#gh-dark-mode-only)",
       `# ${t.title(l)}`,
       t.switcher,
-      t.intro(l, sitePages.home[lang]),
+      l.intro ?? t.intro(l, sitePages.home[lang]),
       `> ${s.tagline}`,
-      t.highlights.map((h) => `- ${h}`).join("\n"),
+      (l.highlights ?? t.highlights).map((h) => `- ${h}`).join("\n"),
       `## ${t.contents}`,
       sections.map((h) => `- [${h}](${anchor(h)})`).join("\n"),
       `## ${t.about(l)}`,
@@ -279,7 +287,7 @@ for (const p of plugins) {
       t.other(repoUrl(t.guides)),
       `## ${t.servers}`,
       `${t.cols}\n|---|---|\n${serverRows}`,
-      t.auth,
+      l.auth ?? t.auth,
       `## ${t.security}`,
       security.join("\n"),
       t.report(repoUrl(t.securityFile), sitePages.whiteHat[lang]),
@@ -359,7 +367,7 @@ for (const p of plugins) {
     files[`registry/${s.id.replace(/^kobana-/, "")}/server.json`] = {
       $schema: "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
       name: s.registryName,
-      title: `Kobana ${p.product}${s.sandbox ? " (sandbox)" : ""}`,
+      title: s.title ?? `Kobana ${p.product}${s.sandbox ? " (sandbox)" : ""}`,
       description: s.description,
       version,
       websiteUrl: s.docs,

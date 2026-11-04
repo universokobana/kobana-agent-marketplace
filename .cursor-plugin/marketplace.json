@@ -38,6 +38,11 @@
       "name": "kobana-inbox",
       "source": "plugins/kobana-inbox",
       "description": "Kobana Autonomous Inbox for AI agents: inboxes, e-mails, AI agents that read and process e-mails, agent runs, webhooks and the event log."
+    },
+    {
+      "name": "kobana-docs",
+      "source": "plugins/kobana-docs",
+      "description": "Kobana documentation for AI agents: public, read-only MCP servers that search and read the docs of every Kobana product and of the Kobana CLI. No sign-in and no account access."
     }
   ]
 }

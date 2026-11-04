@@ -75,6 +75,18 @@
         "authentication": "ON_FIRST_USE"
       },
       "category": "Finance"
+    },
+    {
+      "name": "kobana-docs",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kobana-docs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_FIRST_USE"
+      },
+      "category": "Finance"
     }
   ]
 }

@@ -125,6 +125,22 @@ Cada producto tiene su propio servidor MCP remoto: Streamable HTTP, sin estado, 
 
 Solo el Gateway Bancario tiene sandbox, con cuentas y tokens propios, separados de producción. En Inbox Autónomo, si tu cuenta tiene más de un workspace, elígelo en la conexión con el header `X-Workspace-Id`. La cantidad de herramientas que ves depende de los scopes que concedas y de tus permisos.
 
+### Servidores de documentación
+
+Cada producto y Kobana CLI también publican un **servidor MCP público de documentación**: Streamable HTTP, de solo lectura, sin inicio de sesión y sin acceso a ninguna cuenta, con las herramientas `list_pages`, `search_docs` y `get_page`. La URL termina en `/mcp`. Todos están en el plugin `kobana-docs`.
+
+| Documentación de | Nombre del servidor | URL |
+|---|---|---|
+| Banking Gateway | `kobana-docs-banking` | `https://docs.banking.kobana.com.br/mcp` |
+| Facturación Automática | `kobana-docs-billing` | `https://docs.billing.kobana.com.br/mcp` |
+| Finanzas Inteligentes | `kobana-docs-finance` | `https://docs.finance.kobana.com.br/mcp` |
+| Régua de Cobranza | `kobana-docs-dunning` | `https://docs.dunning.kobana.com.br/mcp` |
+| Dashboard Mágico | `kobana-docs-dashboards` | `https://docs.dashboards.kobana.com.br/mcp` |
+| Inbox Autónomo | `kobana-docs-inbox` | `https://docs.inbox.kobana.com.br/mcp` |
+| Hub (Riesgo Sacado) | `kobana-docs-hub` | `https://docs.hub.kobana.com.br/mcp` |
+| Kadu | `kobana-docs-kadu` | `https://docs.kadu.ia.br/mcp` |
+| Kobana CLI | `kobana-docs-cli` | `https://cli.kobana.com.br/mcp` |
+
 ## Instalación
 
 ### Claude Code
@@ -140,6 +156,7 @@ Agrega el marketplace una vez y luego instala el plugin de cada producto que usa
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
 /plugin install kobana-inbox@kobana-agent-marketplace
+/plugin install kobana-docs@kobana-agent-marketplace
 ```
 
 Luego ejecuta `/mcp` y elige **Authenticate** en cada servidor Kobana.
@@ -180,6 +197,7 @@ Cada producto es un plugin independiente, con su servidor MCP y una skill que le
 | [`kobana-dunning`](plugins/kobana-dunning/README.es.md) | Regla de Cobranza | `kobana-dunning` | Cobros vencidos, reglas de cobranza, acuerdos y disputas |
 | [`kobana-dashboards`](plugins/kobana-dashboards/README.es.md) | Dashboard Mágico | `kobana-dashboards` | Usuarios del portal, equipo y organización |
 | [`kobana-inbox`](plugins/kobana-inbox/README.es.md) | Inbox Autónomo | `kobana-inbox` | Bandejas de entrada, correos, agentes, ejecuciones de agentes y webhooks |
+| [`kobana-docs`](plugins/kobana-docs/README.es.md) | Documentación | `kobana-docs-*` | Búsqueda y lectura de la documentación de cada producto y del CLI |
 
 ¿Solo quieres las skills? También están en [`skills/`](skills), listas para cualquier cliente compatible con [Agent Skills](https://agentskills.io).
 

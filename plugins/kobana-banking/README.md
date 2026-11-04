@@ -79,6 +79,7 @@ To report a vulnerability, see the [security policy](https://github.com/universo
 - **[Dunning](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dunning)** (`kobana-dunning`): Charges, dunning workflows, agreements and disputes.
 - **[Magic Dashboard](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-dashboards)** (`kobana-dashboards`): Portal users, team and organization.
 - **[Autonomous Inbox](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-inbox)** (`kobana-inbox`): Inboxes, e-mails, agents, agent runs and webhooks.
+- **[Documentation](https://github.com/universokobana/kobana-agent-marketplace/tree/main/plugins/kobana-docs)** (`kobana-docs`): The documentation of every Kobana product and of the Kobana CLI, searchable by your agent.
 
 ## Links
 

@@ -123,6 +123,22 @@ Cada produto tem seu próprio servidor MCP remoto: Streamable HTTP, stateless, O
 
 Só o Gateway Bancário tem sandbox, com contas e tokens próprios, separados da produção. No Inbox Autônomo, se a sua conta tem mais de um workspace, escolha-o na conexão com o header `X-Workspace-Id`. A quantidade de ferramentas que você vê depende dos escopos que concede e das suas permissões.
 
+### Servidores de documentação
+
+Cada produto e o Kobana CLI também publicam um **servidor MCP público de documentação**: Streamable HTTP, somente leitura, sem login e sem acesso a nenhuma conta, com as ferramentas `list_pages`, `search_docs` e `get_page`. A URL termina em `/mcp`. Todos ficam no plugin `kobana-docs`.
+
+| Documentação de | Nome do servidor | URL |
+|---|---|---|
+| Gateway Bancário | `kobana-docs-banking` | `https://docs.banking.kobana.com.br/mcp` |
+| Faturamento Automático | `kobana-docs-billing` | `https://docs.billing.kobana.com.br/mcp` |
+| Financeiro Inteligente | `kobana-docs-finance` | `https://docs.finance.kobana.com.br/mcp` |
+| Régua de Cobrança | `kobana-docs-dunning` | `https://docs.dunning.kobana.com.br/mcp` |
+| Dashboard Mágico | `kobana-docs-dashboards` | `https://docs.dashboards.kobana.com.br/mcp` |
+| Inbox Autônomo | `kobana-docs-inbox` | `https://docs.inbox.kobana.com.br/mcp` |
+| Hub (Risco Sacado) | `kobana-docs-hub` | `https://docs.hub.kobana.com.br/mcp` |
+| Kadu | `kobana-docs-kadu` | `https://docs.kadu.ia.br/mcp` |
+| Kobana CLI | `kobana-docs-cli` | `https://cli.kobana.com.br/mcp` |
+
 ## Instalação
 
 ### Claude Code
@@ -138,6 +154,7 @@ Adicione o marketplace uma vez e instale o plugin de cada produto que você usa:
 /plugin install kobana-dunning@kobana-agent-marketplace
 /plugin install kobana-dashboards@kobana-agent-marketplace
 /plugin install kobana-inbox@kobana-agent-marketplace
+/plugin install kobana-docs@kobana-agent-marketplace
 ```
 
 Depois rode `/mcp` e escolha **Authenticate** em cada servidor Kobana.
@@ -178,6 +195,7 @@ Cada produto é um plugin separado, com o seu servidor MCP e uma skill que ensin
 | [`kobana-dunning`](plugins/kobana-dunning/README.pt-BR.md) | Régua de Cobrança | `kobana-dunning` | Cobranças vencidas, réguas de cobrança, acordos e contestações |
 | [`kobana-dashboards`](plugins/kobana-dashboards/README.pt-BR.md) | Dashboard Mágico | `kobana-dashboards` | Usuários do portal, equipe e organização |
 | [`kobana-inbox`](plugins/kobana-inbox/README.pt-BR.md) | Inbox Autônomo | `kobana-inbox` | Caixas de entrada, e-mails, agentes, execuções de agentes e webhooks |
+| [`kobana-docs`](plugins/kobana-docs/README.pt-BR.md) | Documentação | `kobana-docs-*` | Busca e leitura da documentação de cada produto e do CLI |
 
 Quer só as skills? Elas também estão em [`skills/`](skills), prontas para qualquer cliente compatível com [Agent Skills](https://agentskills.io).
 

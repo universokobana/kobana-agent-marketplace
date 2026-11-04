@@ -1,0 +1,48 @@
+{
+  "name": "kobana-docs",
+  "version": "2.1.0",
+  "description": "Kobana documentation for AI agents: public, read-only MCP servers that search and read the docs of every Kobana product and of the Kobana CLI. No sign-in and no account access.",
+  "author": {
+    "name": "Kobana",
+    "email": "contato@kobana.com.br",
+    "url": "https://www.kobana.com.br/en"
+  },
+  "homepage": "https://www.kobana.com.br/en/developers/mcp",
+  "repository": "https://github.com/universokobana/kobana-agent-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kobana",
+    "mcp",
+    "finance",
+    "fintech",
+    "brazil",
+    "documentation",
+    "docs",
+    "search",
+    "cli",
+    "read-only"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Kobana - Documentation / Documentação",
+    "shortDescription": "Search and read the Kobana product and CLI documentation.",
+    "longDescription": "Kobana documentation for AI agents: public, read-only MCP servers that search and read the docs of every Kobana product and of the Kobana CLI. No sign-in and no account access.",
+    "developerName": "Kobana",
+    "category": "Finance",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://www.kobana.com.br/en/developers/mcp",
+    "privacyPolicyURL": "https://www.kobana.com.br/en/privacy",
+    "termsOfServiceURL": "https://www.kobana.com.br/en/terms",
+    "defaultPrompt": [
+      "How do I create a boleto with the Kobana API?",
+      "How do I install the Kobana CLI?",
+      "How do subscriptions work in Automatic Billing?"
+    ],
+    "brandColor": "#D3FD54",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

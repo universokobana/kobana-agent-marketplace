@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "kobana-docs-banking": {
+      "type": "http",
+      "url": "https://docs.banking.kobana.com.br/mcp"
+    },
+    "kobana-docs-billing": {
+      "type": "http",
+      "url": "https://docs.billing.kobana.com.br/mcp"
+    },
+    "kobana-docs-finance": {
+      "type": "http",
+      "url": "https://docs.finance.kobana.com.br/mcp"
+    },
+    "kobana-docs-dunning": {
+      "type": "http",
+      "url": "https://docs.dunning.kobana.com.br/mcp"
+    },
+    "kobana-docs-dashboards": {
+      "type": "http",
+      "url": "https://docs.dashboards.kobana.com.br/mcp"
+    },
+    "kobana-docs-inbox": {
+      "type": "http",
+      "url": "https://docs.inbox.kobana.com.br/mcp"
+    },
+    "kobana-docs-hub": {
+      "type": "http",
+      "url": "https://docs.hub.kobana.com.br/mcp"
+    },
+    "kobana-docs-kadu": {
+      "type": "http",
+      "url": "https://docs.kadu.ia.br/mcp"
+    },
+    "kobana-docs-cli": {
+      "type": "http",
+      "url": "https://cli.kobana.com.br/mcp"
+    }
+  }
+}

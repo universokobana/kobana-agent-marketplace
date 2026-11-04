@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+### Added
+
+- `kobana-docs` plugin with the nine public documentation MCP servers (no sign-in, read-only): Banking Gateway, Automatic Billing, Smart Finance, Dunning, Magic Dashboard, Autonomous Inbox, Hub, Kadu and the Kobana CLI (`https://cli.kobana.com.br/mcp`). Each has a `registry/docs-*/server.json`.
+- Plugins can set `docsOnly` in `catalog.json` for public servers without OAuth: README text, security notes and the Codex capabilities follow.
+
 ## [2.1.0] - 2026-10-28
 
 ### Added

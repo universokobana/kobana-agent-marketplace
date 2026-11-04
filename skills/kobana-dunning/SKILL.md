@@ -50,7 +50,7 @@ These rules apply to every Kobana MCP server. They are shared by all Kobana plug
 
 ### How the servers behave
 
-- **Transport**: Streamable HTTP, stateless. The URL is the host root, with no path.
+- **Transport**: Streamable HTTP, stateless. The URL is the host root, with no path. The documentation servers of the `kobana-docs` plugin are the exception: public, read-only, no authentication, URL ending in `/mcp`.
 - **Authentication**: OAuth 2.1 with PKCE. The client opens Kobana's login page; there is no client secret. Clients without OAuth can send a personal token as `Authorization: Bearer <token>` (Kobana Account → Tokens and Access → My Personal Tokens → New Token, with the product's app and the MCP usage).
 - **Permissions**: The token limits access by resource and level (read or write). The dashboard permissions of the person who authorized limit the rest, and they are re-checked on every call.
 - **Read-only through OAuth outside Banking Gateway**: clients that register themselves over OAuth, such as Claude and ChatGPT, only get read tools on Automatic Billing, Smart Finance, Dunning, Magic Dashboard and Autonomous Inbox. If the user asks for a change there and no write tool is available, explain that writing needs a connection with a personal token. Do not look for workarounds.
@@ -87,6 +87,7 @@ Each Kobana product is a separate plugin with its own MCP server. When a request
 | Dunning | `kobana-dunning` | `https://mcp.dunning.kobana.com.br` | `/plugin install kobana-dunning@kobana-agent-marketplace` |
 | Magic Dashboard | `kobana-dashboards` | `https://mcp.dashboards.kobana.com.br` | `/plugin install kobana-dashboards@kobana-agent-marketplace` |
 | Autonomous Inbox | `kobana-inbox` | `https://mcp.inbox.kobana.com.br` | `/plugin install kobana-inbox@kobana-agent-marketplace` |
+| Documentation (9 public servers, no sign-in) | `kobana-docs` | `https://docs.banking.kobana.com.br/mcp`, `https://docs.billing.kobana.com.br/mcp`, `https://docs.finance.kobana.com.br/mcp`, `https://docs.dunning.kobana.com.br/mcp`, `https://docs.dashboards.kobana.com.br/mcp`, `https://docs.inbox.kobana.com.br/mcp`, `https://docs.hub.kobana.com.br/mcp`, `https://docs.kadu.ia.br/mcp`, `https://cli.kobana.com.br/mcp` | `/plugin install kobana-docs@kobana-agent-marketplace` |
 
 Setup guides for every client: https://github.com/universokobana/kobana-agent-marketplace/blob/main/install/en-US/README.md
 

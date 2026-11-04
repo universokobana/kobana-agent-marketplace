@@ -76,6 +76,7 @@ Para reportar uma vulnerabilidade, veja a [política de segurança](https://gith
 - **[Financeiro Inteligente](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-finance/README.pt-BR.md)** (`kobana-finance`): Contas a pagar e a receber, lançamentos, conciliação e fluxo de caixa.
 - **[Régua de Cobrança](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dunning/README.pt-BR.md)** (`kobana-dunning`): Cobranças, réguas, acordos e disputas.
 - **[Dashboard Mágico](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-dashboards/README.pt-BR.md)** (`kobana-dashboards`): Usuários do portal, equipe e organização.
+- **[Documentação](https://github.com/universokobana/kobana-agent-marketplace/blob/main/plugins/kobana-docs/README.pt-BR.md)** (`kobana-docs`): A documentação de cada produto Kobana e do Kobana CLI, para o seu agente pesquisar.
 
 ## Links
 
